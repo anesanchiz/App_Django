@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block clientes %}
+<table>
+    <tr>
+        <td>DNI/CIF</td>
+        <td>{{ Clientes.CIF }}</td>
+    </tr>
+    <tr>
+        <td>NOMBRE</td>
+        <td>{{ Clientes.nombre }}</td>
+    </tr>
+    <tr>
+        <td>ANTIGUEDAD</td>
+        <td>{{ Clientes.telefono }}</td>
+    </tr>
+
+</table>
+
+{% endblock %}
