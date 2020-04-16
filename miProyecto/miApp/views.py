@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
 
 #Devuelve el listado de clientes
 from .models import Pedido, Productos, Cliente, Componente
