@@ -1,8 +1,8 @@
-from django.shortcuts import render
-from .models import Cliente
 from django.http import HttpResponse
 
 #Devuelve el listado de clientes
+from .models import Pedido, Productos, Cliente, Componente
+
 def index(request):
     clientes = Cliente.objects.order_by('empresa')
     output = ', '.join([d.empresa for d in clientes])
