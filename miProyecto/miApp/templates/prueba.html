@@ -1,0 +1,24 @@
+
+
+<body>
+    <h1>Listado de clientes</h1>
+    <ul>
+        {% for cli in lista_clientes %}
+        <li>
+            {{cli.id}}: {{cli.empresa}}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+<footer id="copyright" class="clear">
+    <p class="foot_left">Copyright &copy; 2020 <a href="Roboti.html">Deustronic</a> | All Rights Reserved</p>
+    <p class="foot_right"><a href="www.facebook.com"><img src="images/face.png" width="35" alt="facebook"></a>
+                          <a href="www.twitter.com"><img src="images/twit.png" width="50" alt="twitter"></a>
+                          <a href="www.instagram.com"><img src="images/inst.png" width="35" alt="instagram"></a>
+    </p>
+</footer>
+
+
+
+</html>

@@ -21,7 +21,6 @@ class Productos(models.Model):
     tipo_componentes = models.ManyToManyField(Componente)
 
 
-
 class Pedido(models.Model):
     codigo = models.CharField #PRIMARY KEY (?)
     fecha = models.DateField()
