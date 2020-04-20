@@ -16,9 +16,19 @@ def index(request):
     return render(request, 'prueba.html', context)
 
 #Devuelve los datos del cliente dado
-def detail(request, cliente_id):
-    clientes = Cliente.objects.get(pk=cliente_id)
+def cliente(request, cliente_CIF):
+    clientes = Cliente.objects.get(pk=cliente_CIF)
     return HttpResponse(clientes)
 
+def componente(request, componente_codigo):
+    componente = Componente.objects.get(pk=componente_codigo)
+    return HttpResponse(componente)
 
+def productos(request, productos_referencia):
+    productos = Productos.objects.get(pk=productos_referencia)
+    return HttpResponse(productos)
+
+def pedido(request, pedido_codigo):
+    pedido = Pedido.objects.get(pk=pedido_codigo)
+    return HttpResponse(pedido)
 

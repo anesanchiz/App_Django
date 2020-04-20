@@ -5,11 +5,18 @@ class Cliente (models.Model):
     empresa = models.CharField(max_length=30)
     telefono = models.IntegerField()
 
+    def __str__(self):
+        return f"CIF: {self.CIF}, Empresa: {self.empresa}, Telefono: {self.telefono}"
+
 
 class Componente(models.Model):
     codigo = models.CharField(max_length=10)
     modelo = models.CharField(max_length=30)
     marca = models.CharField(max_length=30)
+
+    def __str__(self):
+        return f"Codigo: {self.codigo}, Modelo: {self.modelo}, Marca: {self.marca}"
+
 
 
 class Productos(models.Model):
@@ -20,6 +27,8 @@ class Productos(models.Model):
     categoria = models.CharField(max_length=40) #DICCIONARIO DE CATEGORIAS(?
     tipo_componentes = models.ManyToManyField(Componente)
 
+    def __str__(self):
+        return f"Referencia: {self.referencia}, Precio: {self.precio}, Nombre: {self.nombre}, Descripcion: {self.descripcion}, Categoria: {self.categoria}, Tipo de componentes: {self.tipo_componentes}"
 
 class Pedido(models.Model):
     codigo = models.CharField #PRIMARY KEY (?)
@@ -28,3 +37,6 @@ class Pedido(models.Model):
     productos = models.ManyToManyField(Productos)
     cantidad = models.IntegerField
     precio_total = models.IntegerField
+
+    def __str__(self):
+        return f"Codigo: {self.codigo}, Fecha: {self.fecha}, Datos de cliente: {self.datos_cliente}, Productos: {self.productos}, Cantidad: {self.cantidad}, Precio total: {self.precio_total}"
