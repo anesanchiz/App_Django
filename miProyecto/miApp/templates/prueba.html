@@ -1,6 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Deustronic</title>
+</head>
 
 
 <body>
+<div class="base cabecera">
+    <header id="cabecera" class="clear">
+        <div id="inicio">
+            <h1> DEUSTRONIC TECHNOLOGY </h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="Contact.html">Menu1</a></li>
+                <li><a href="user.html">Menu2</a></li>
+            </ul>
+        </nav>
+
+    </header>
+</div>
+
+
+<div class="base pagina">
+<div id="contenido" class="clear">
     <h1>Listado de clientes</h1>
     <ul>
         {% for cli in lista_clientes %}
@@ -9,8 +35,11 @@
         </li>
         {% endfor %}
     </ul>
-</body>
+</div>
+</div>
 
+
+<div class="base foot">
 <footer id="copyright" class="clear">
     <p class="foot_left">Copyright &copy; 2020 <a href="Roboti.html">Deustronic</a> | All Rights Reserved</p>
     <p class="foot_right"><a href="www.facebook.com"><img src="images/face.png" width="35" alt="facebook"></a>
@@ -18,7 +47,64 @@
                           <a href="www.instagram.com"><img src="images/inst.png" width="35" alt="instagram"></a>
     </p>
 </footer>
+</div>
 
 
 
+<style>
+.clear:after{
+    content:".";
+    display:block;
+    clear:both;
+    visibility:hidden;
+        }
+
+div.base{
+    display:block;
+    width:100%;
+    margin:0;
+    padding:0;
+    text-align:left;
+        }
+
+.cabecera{color:#C0BAB6; background: url(https://image.freepik.com/vector-gratis/conexion-internet-sentido-abstracto-ciencia-fondo_41981-1306.jpg);}
+#inicio{float:center; margin:0 0 10px 0;}
+#inicio h1{text-align:center; color:#BB0060; font-family: Arial}
+#cabecera{padding: 30px 0; display:block; width:100%; margin:0 auto;}
+#cabecera nav{display:block; float:center; margin:10px 0 0 0; padding:20px 0; color:#C0BAB6; background-color:#2c2d33c4;}
+#cabecera ul{padding:0 10px;}
+#cabecera li{display:inline; margin-right:left;}
+
+
+body{
+    padding:100; margin:0 auto;
+    font-size:14px;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    color:#0C4469;
+    background-color:#B6B6B6;
+    display:block; width:100%;
+    }
+
+.pagina{color:#979797; background-color:#FFFFFF;}
+.pagina a{color:#FF9900; background-color:#FFFFFF;}
+.pagina h2, h4{color:#FF9900; background-color:#FFFFFF;}
+.pagina p{color:#8d8c8c; background-color:#FFFFFF;}
+#contenido{padding:30px 30px; display:block; width:100%; margin:0 auto;}
+
+
+h1 {font-family: Calibri;font-size:30px; color: #636260; padding-top: 30px;}
+h1 strong{font-size:30px; color: #d89313;}
+h2{font-weight:normal; font-style:italic; line-height:normal;}
+
+
+
+footer{padding:20px 0; font-size:13px; line-height:1.4em;}
+.foot{color:#919191; background: url(https://image.freepik.com/vector-gratis/conexion-internet-sentido-abstracto-ciencia-fondo_41981-1306.jpg);}
+#copyright{display:block; width:100%; margin:0 auto;padding:20px 0;}
+#copyright a{color:#9E1362;}
+.foot_left{float:left;}
+.foot_right{float:right;}
+
+</style>
+</body>
 </html>
