@@ -18,7 +18,8 @@ def index(request):
 #Devuelve los datos del cliente dado
 def cliente(request, cliente_CIF):
     clientes = Cliente.objects.get(pk=cliente_CIF)
-    return HttpResponse(clientes)
+    context = {'lista_clientes': clientes}
+    return render(request, 'clientes.html', context)
 
 def componente(request, componente_codigo):
     componente = Componente.objects.get(pk=componente_codigo)
