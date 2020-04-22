@@ -10,6 +10,11 @@ from .models import Pedido, Productos, Cliente, Componente
 #    output = ', '.join([d.empresa for d in clientes])
 #    return HttpResponse(output)
 
+def indexprod(request):
+    productos = Productos.objects.order_by('referencia')
+    context = {'lista_productos' : productos}
+    return render(request, 'productos.html', context)
+
 def index(request):
     clientes = Cliente.objects.order_by('empresa')
     context = {'lista_clientes' : clientes}

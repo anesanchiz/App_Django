@@ -1,0 +1,12 @@
+{% extends "prueba.html" %}
+{% block contenido %}
+
+    <h1>Listado de clientes</h1>
+    <ul>
+        {% for cli in lista_clientes %}
+        <li>
+            {{cli.id}}: {{cli.empresa}}
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

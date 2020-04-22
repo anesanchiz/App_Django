@@ -26,16 +26,11 @@
 
 
 <div class="base pagina">
-<div id="contenido" class="clear">
-    <h1>Listado de clientes</h1>
-    <ul>
-        {% for cli in lista_clientes %}
-        <li>
-            {{cli.id}}: {{cli.empresa}}
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+    <div id="contenido" class="clear">
+
+{% block contenido %}{% endblock %}
+
+    </div>
 </div>
 
 
@@ -71,7 +66,7 @@ div.base{
 #inicio{float:center; margin:0 0 10px 0;}
 #inicio h1{text-align:center; color:#BB0060; font-family: Arial}
 #cabecera{padding: 30px 0; display:block; width:100%; margin:0 auto;}
-#cabecera nav{display:block; float:center; margin:10px 0 0 0; padding:20px 0; color:#C0BAB6; background-color:#2c2d33c4;}
+#cabecera nav{display:block; float:center; margin:10px 0 0 0; padding:20px 30px; color:#C0BAB6; background-color:#2c2d33c4;}
 #cabecera ul{padding:0 10px;}
 #cabecera li{display:inline; margin-right:left;}
 
@@ -106,5 +101,6 @@ footer{padding:20px 0; font-size:13px; line-height:1.4em;}
 .foot_right{float:right;}
 
 </style>
+
 </body>
 </html>
