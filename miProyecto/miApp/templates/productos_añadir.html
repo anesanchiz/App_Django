@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir producto</title>
+</head>
+<body>
+    <form action="." method="post">
+        {% csrf_token %}
+        <p>
+            <label>Referencia</label>
+            <input type="text" name="Referencia">
+        </p>
+        <p>
+            <label>Precio</label>
+            <input type="number" name="Precio">
+        </p>
+        <p>
+            <label>Nombre</label>
+            <input type="text" name="Nombre">
+        </p>
+        <p>
+            <label>Descripcion</label>
+            <input type="text" name="Descripcion">
+        </p>
+        <p>
+            <label>Categoria</label>
+            <input type="text" name="Categoria">
+        </p>
+        <p>
+            <label>Tipo de componentes</label>
+            <select id="groups" name="Tipo_componentes">
+                <optgroup label="fruits">
+                    <option>Banana</option>
+                    <option selected>Cherry</option>
+                    <option>Lemon</option>
+                 </optgroup>
+            </select>
+        </p>
+
+        <p>
+            <input type="submit" value="Registrar">
+
+        </p>
+
+
+
+    </form>
+
+</body>
+</html>

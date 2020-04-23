@@ -4,14 +4,12 @@
 <table class="t-products">
                 <colgroup>
                     <col span="5">
-
+                <a href = "productos/añadir">[Añadir]</a>
                 <thead>
                     <tr>
                         <td>referencia</td>
                         <td>nombre</td>
-                        <td>descripcion</td>
                         <td>precio</td>
-                        <td>categoria</td>
                     </tr>
                 </thead>
 
@@ -20,9 +18,8 @@
                     <tr>
                         <td>{{prod.referencia}}</td>
                         <td>{{prod.nombre}}</td>
-                        <td>{{prod.descripcion}}</td>
                         <td>{{prod.precio}}</td>
-                        <td>{{prod.categoria}}</td>
+                        <td><a href = "productos/{{prod.id}}">[+]</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

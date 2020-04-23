@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="488be51d-cfaf-489f-b942-de4344b02f0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/miApp/templates/productos_añadir.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miApp/templates/productos_detalle.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miApp/templates/clientes.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/clientes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miApp/templates/productos.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/productos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -20,9 +32,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/miApp/templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Industria 4.0\Documents\Industria digital\2º\2.CUATRI\Ingenieria Web\Entregable2\RETO2\miProyecto\miApp\templates" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -38,6 +56,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1587656577137">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587656577137" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1587397773743">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
