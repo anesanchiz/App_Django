@@ -1,7 +1,7 @@
-{% extends "prueba.html" %}
+{% extends "base.html" %}
 {% block contenido %}
 
-<table class="t-products">
+<table class="tabla">
                 <colgroup>
                     <col span="5">
                     <h1> Detalles del producto </h1>
@@ -23,46 +23,4 @@
                     {% endfor %}
                 </tbody>
 </table>
-
-<style>
-
-    *{
-    position: relative}
-.t-products{
-    width: 100%;
-    border: 1px solid #295C80;
-    border-collapse:collapse;
-    background-color: #F5F5F5;
-}
-
-
-.t-products thead td{
-    text-align: center;
-    font-weight: bold;
-    padding: 10px 0;
-    background-color: rgb(245, 12, 121);
-    color: white;
-}
-
-
-.t-products tbody tr:nth-child(odd){
-    background-color: #E9E9E9;
-    height: 30px;
-}
-
-.t-products td[data-type="number"],.t-products td[data-type="total"]{
-    text-align: right;
-}
-
-.t-products td[data-type="total"]{
-    color: #EA6153;
-    font-weight: bold;
-}
-
-.t-products tbody tr:hover{
-    background-color: rgb(179, 184, 228);
-}
-
-</style>
-
 {% endblock %}

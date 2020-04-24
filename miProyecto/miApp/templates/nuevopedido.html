@@ -1,19 +1,25 @@
-{% extends "base.html" %}
-{% block contenido %}
+{% extends "pedidos.html"%}
+{% block nuevopedido %}
 
-    <form action="." method="post">
+<!--Desde Cliente existente-->
+<form action="." method="post">
         {% csrf_token %}
         <p>
-            <label>Referencia</label>
-            <input type="text" name="Referencia">
+            <label>Código</label>
+            <input type="text" name="Codigo">
         </p>
         <p>
-            <label>Precio</label>
-            <input type="number" name="Precio">
+            <label>Fecha</label>
+            <input type="date" name="Fecha">
         </p>
         <p>
-            <label>Nombre</label>
-            <input type="text" name="Nombre">
+            <label>Cliente</label>
+            <select id="cliente" name="Cliente">
+                <optgroup label="cliente">
+                    {% for cli in lista_clientes %}
+                    <option>{{cli.empresa}}</option>
+                </optgroup>
+            </select>
         </p>
         <p>
             <label>Descripcion</label>
