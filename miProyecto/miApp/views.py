@@ -33,18 +33,25 @@ def cliente_nombre(request):
 
 
 # Listado de pedidos ordenado por codigo
-def pedidos(request):
+def lista_pedidos(request):
     pedidos = Pedido.objects.order_by('codigo')
     context = {'lista_pedidos': pedidos}
     return render(request, 'pedidos.html', context)
 
+def pedido_por_codigo(request, pedido_codigo):
+    pedidos = Pedido.objects.get(pk=pedido_codigo)
+    context = {'lista_pedidos': pedidos}
+    return render(request,'nuevopedido.html', context)
+
+def añadir_pedido(request):
+    return render(request, 'nuevopedido.html')
 
 def componente(request, componente_codigo):
     componente = Componente.objects.get(pk=componente_codigo)
     return HttpResponse(componente)
 
 
-def productos(request):
+def lista_productos(request):
     productos = Productos.objects.order_by('referencia')
     context = {'lista_productos': productos}
     return render(request, 'productos.html', context)
@@ -71,6 +78,4 @@ def mostrar_prod_añadido(request):
     Productos.object.add(context)
 
 
-def pedido(request, pedido_codigo):
-    pedido = Pedido.objects.get(pk=pedido_codigo)
-    return HttpResponse(pedido)
+
