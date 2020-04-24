@@ -10,10 +10,7 @@ from .models import Pedido, Productos, Cliente, Componente
 #    output = ', '.join([d.empresa for d in clientes])
 #    return HttpResponse(output)
 
-def indexprod(request):
-    productos = Productos.objects.order_by('referencia')
-    context = {'lista_productos' : productos}
-    return render(request, 'productos.html', context)
+
 
 def index(request):
     clientes = Cliente.objects.order_by('empresa')
@@ -21,22 +18,39 @@ def index(request):
     return render(request, 'prueba.html', context)
 
 #Devuelve los datos del cliente dado
-def cliente(request, cliente_CIF):
-    #clientes = Cliente.objects.get(pk=cliente_CIF)
-    context = {
-        'CIF':Cliente.objects.get(pk=cliente_CIF),
-        'empresa': Cliente.objects.get(pk=cliente_CIF),
-        'telefono':Cliente.objects.get(pk=cliente_CIF)
-    }
-    return render(request, 'base.html', context)
+def cliente(request):
+    clientes = Cliente.objects.order_by('CIF')
+    context = {'lista_clientes' : clientes}
+    return render(request, 'clientes.html', context)
 
 def componente(request, componente_codigo):
     componente = Componente.objects.get(pk=componente_codigo)
     return HttpResponse(componente)
 
-def productos(request, productos_referencia):
-    productos = Productos.objects.get(pk=productos_referencia)
-    return HttpResponse(productos)
+def productos(request):
+    productos = Productos.objects.order_by('referencia')
+    context = {'lista_productos' : productos}
+    return render(request, 'productos.html', context)
+
+def producto(request, producto_id):
+    producto = Productos.objects.get(pk=producto_id)
+    return HttpResponse(producto)
+
+
+def añadir_prod(request):
+    return render(request, 'productos_añadir.html')
+
+def mostrar_prod_añadido(request):
+    context = {
+        'referencia' : request.POST("Referencia"),
+        'precio' : request.POST("Precio"),
+        'nombre' : request.POST("Nombre"),
+        'descripcion' : request.POST("Descripcion"),
+        'categoria' : request.POST("Categoria"),
+        'tipo_componentes' : request.POST("Tipo_componentes")
+    }
+    Productos.object.add(context)
+
 
 def pedido(request, pedido_codigo):
     pedido = Pedido.objects.get(pk=pedido_codigo)
