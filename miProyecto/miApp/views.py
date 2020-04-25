@@ -65,6 +65,8 @@ def producto(request, producto_id):
 def añadir_prod(request):
     return render(request, 'productos_añadir.html')
 
+def prueba1(request):
+    return render(request, 'Usos.html')
 
 def mostrar_prod_añadido(request):
     context = {
@@ -76,6 +78,9 @@ def mostrar_prod_añadido(request):
         'tipo_componentes': request.POST("Tipo_componentes")
     }
     Productos.object.add(context)
+
+
+
 
 
 
