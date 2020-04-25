@@ -1,23 +1,15 @@
 {% extends "base.html" %}
+
+
+{% block intro %}
+
+{% block nuevopedido%} {% endblock %}
+
+{% endblock %}
+
+
+
 {% block contenido %}
-
-
-<div>
-    <nav class="contenedor">
-        <ul class="menu1">
-            <li><a href="#">Crear un pedido</a>
-            <ul class="menuD">
-                <li><a href="#">Cliente nuevo</a></li>
-                <li><a href="cli_exist/">Cliente existente</a></li>
-            </ul></li>
-            <li><a href="#">Enlace 2</a></li>
-            <li><a href="#">Enlace 3</a></li>
-        </ul>
-    </nav>
-</div>
-
-{% block nuevopedido %}{% endblock %}
-
 <div>
     <table class="tabla">
 
@@ -25,12 +17,12 @@
                     <col span="5">
                 <thead>
                     <tr>
-                        <td>Código</td>
-                        <td>Productos</td>
-                        <td>Cantidad</td>
-                        <td>Precio Total</td>
-                        <td>Cliente</td>
-                        <td>Fecha</td>
+                        <td>CODIGO</td>
+                        <td>PRODUCTOS</td>
+                        <td>CANTIDAD</td>
+                        <td>PRECIO TOTAL</td>
+                        <td>CLIENTE</td>
+                        <td>FECHA</td>
 
                     </tr>
                 </thead>
@@ -50,63 +42,5 @@
                 </tbody>
     </table>
 </div>
-
-<style>
-.contenedor{
- display: block;
- list-style:none;
- text-transform:uppercase;
- font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border-top:1px solid #8DB7AB;
-  border-bottom:1px solid #8DB7AB;
-  margin:0 0 20px 0;
-  padding:5px;
-  height:
-}
-
-.contenedor ul li a{
-  text-decoration:none;
-  color:#30A685;
-  text-align: right;
-}
-
-.contenedor ul li a:hover{
-  font-weight:bold;
-}
-
-.menu1 > li{
-  display:inline-block;
-  color:#30A685;
-}
-
-.menu1 li a{
-  text-decoration:none;
-  display:block;
-  padding:5px;
-  width:90px;
-}
-
-li ul{
-  position:absolute;
-  display:none;
-  text-decoration:none;
-}
-
-.menuD li{
-text-decoration: none;
-}
-
-.menuD a{
-  display:block;
-  padding:2px;
-  text-decoration:none;
-}
-
-li:hover ul{
-  display:block;
-
-}
-</style>
-
 
 {% endblock contenido %}

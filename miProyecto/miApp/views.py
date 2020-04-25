@@ -15,14 +15,14 @@ from .models import Pedido, Productos, Cliente, Componente
 # Pagina de inicio
 def index(request):
     clientes = Cliente.objects.order_by('empresa')
-    context = {'lista_clientes': clientes}
+    context = {'titulo_pagina':'Gestiones' ,'lista_clientes': clientes}
     return render(request, 'base.html', context)
 
 
 # Devuelve los datos del cliente dado
 def cliente(request):
     clientes = Cliente.objects.order_by('CIF')
-    context = {'lista_clientes': clientes}
+    context = {'titulo_pagina':'Listado de clientes','lista_clientes': clientes}
     return render(request, 'clientes.html', context)
 
 
@@ -35,7 +35,7 @@ def cliente_nombre(request):
 # Listado de pedidos ordenado por codigo
 def lista_pedidos(request):
     pedidos = Pedido.objects.order_by('codigo')
-    context = {'lista_pedidos': pedidos}
+    context = {'titulo_pagina':'Listado de pedidos','lista_pedidos': pedidos}
     return render(request, 'pedidos.html', context)
 
 def pedido_por_codigo(request, pedido_codigo):
@@ -53,9 +53,8 @@ def componente(request, componente_codigo):
 
 def lista_productos(request):
     productos = Productos.objects.order_by('referencia')
-    context = {'lista_productos': productos}
+    context = {'titulo_pagina':'Listado de productos','lista_productos': productos}
     return render(request, 'productos.html', context)
-
 
 def producto(request, producto_id):
     producto = Productos.objects.get(pk=producto_id)

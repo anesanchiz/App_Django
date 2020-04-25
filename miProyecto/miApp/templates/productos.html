@@ -7,10 +7,10 @@
                 <a href = "añadir/">[Añadir]</a>
                 <thead>
                     <tr>
-                        <td>Referencia</td>
-                        <td>Nombre</td>
-                        <td>Precio</td>
-                        <td>Detalles </td>
+                        <td>REFERENCIA</td>
+                        <td>NOMBRE</td>
+                        <td>PRECIO</td>
+                        <td>DETALLES </td>
                     </tr>
                 </thead>
 
@@ -20,9 +20,21 @@
                         <td>{{prod.referencia}}</td>
                         <td>{{prod.nombre}}</td>
                         <td>{{prod.precio}}</td>
-                        <td><a href = "productos/{{prod.id}}">[+]</a></td>
+                        <td><a id="mas" href = "productos/{{prod.id}}">[+]</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
 </table>
+<style>
+
+    #mas{
+    text-decoration: none;
+    color: #A3016D ;
+    }
+
+
+
+</style>
 {% endblock %}
+
+
