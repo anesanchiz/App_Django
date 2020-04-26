@@ -7,20 +7,23 @@
                     <h1> Detalles del producto </h1>
                 <thead>
                     <tr>
-                        <td>referencia</td>
-                        <td>nombre</td>
-                        <td>precio</td>
+                        <td>REFERENCIA</td>
+                        <td>NOMBRE</td>
+                        <td>DESCRIPCION</td>
+                        <td>COMPONENTES</td>
+                        <td>PRECIO</td>
+
                     </tr>
                 </thead>
 
                 <tbody>
-                    {% for pro in producto %}
                     <tr>
                         <td>{{pro.referencia}}</td>
                         <td>{{pro.nombre}}</td>
+                        <td>{{pro.descripcion}}</td>
+                        <td>{{pro.componentes}}</td>
                         <td>{{pro.precio}}</td>
                     </tr>
-                    {% endfor %}
                 </tbody>
 </table>
 {% endblock %}

@@ -1,10 +1,57 @@
 {% extends "base.html" %}
+
+{% block intro %}
+				<form class="contact100-form validate-form">
+					<!-- REFERENCIA -->
+					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir una referencia">
+						<input class="input100" type="text" name="ref" placeholder="Referencia">
+						<span class="focus-input100"></span>
+					</div>
+
+					<!-- NOMBRE -->
+					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un nombre">
+						<input class="input100" type="text" name="nombre" placeholder="Nombre">
+						<span class="focus-input100"></span>
+					</div>
+
+					<!-- DESCRIPCION -->
+					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un telefono">
+						<input class="input100" type="text" name="descripcion" placeholder="Descripcion">
+						<span class="focus-input100"></span>
+					</div>
+
+                    <!-- PRECIO -->
+					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un precio">
+						<input class="input100" type="number" name="precio" placeholder="Precio">
+						<span class="focus-input100"></span>
+					</div>
+
+<!--ARREGLAR MULTIPLE CHOICE--><!-- TIPO DE COMPONENTES -->
+					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir componentes">
+						<input class="input100" type="text" name="descripcion" placeholder="Componentes">
+						<span class="focus-input100"></span>
+					</div>
+                    <div class="container-contact100-form-btn">
+						<button class="contact100-form-btn" id="botonchi">
+							AÑADIR
+						</button>
+                    </div>
+                </form>
+<style>
+
+#botonchi{
+    padding:0 ;
+}
+
+</style>
+{% endblock intro %}
+
+
 {% block contenido %}
 
 <table class="tabla">
                 <colgroup>
                     <col span="5">
-                <a href = "añadir/">[Añadir]</a>
                 <thead>
                     <tr>
                         <td>REFERENCIA</td>
@@ -20,21 +67,21 @@
                         <td>{{prod.referencia}}</td>
                         <td>{{prod.nombre}}</td>
                         <td>{{prod.precio}}</td>
-                        <td><a id="mas" href = "productos/{{prod.id}}">[+]</a></td>
+                        <td><a id="mas" href = "http://127.0.0.1:8000/miApp/productos/{{prod.id}}">[+]</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
 </table>
+
 <style>
 
-    #mas{
+#mas{
     text-decoration: none;
     color: #A3016D ;
     }
 
-
-
 </style>
+
 {% endblock %}
 
 

@@ -3,27 +3,28 @@ from django.shortcuts import get_object_or_404, render
 from .models import Pedido, Productos, Cliente, Componente
 
 
-# CLIENTES
-
-# Devuelve los clientes ordenados por orden alf
-# def index(request):
-#    clientes = Cliente.objects.order_by('empresa')
-#    output = ', '.join([d.empresa for d in clientes])
-#    return HttpResponse(output)
-
-
-# Pagina de inicio
+#PAGINA DE INICIO
 def index(request):
-    clientes = Cliente.objects.order_by('empresa')
-    context = {'titulo_pagina':'Gestiones' ,'lista_clientes': clientes}
-    return render(request, 'base.html', context)
+    return render(request, 'base.html')
 
+def prueba1(request):
+    return render(request, 'Usos.html')
 
-# Devuelve los datos del cliente dado
+# CLIENTES
+# Listado de clientes
 def cliente(request):
     clientes = Cliente.objects.order_by('CIF')
-    context = {'titulo_pagina':'Listado de clientes','lista_clientes': clientes}
+    context = {'titulo_form': 'Listado de clientes','titulo_pagina':'Añadir un cliente','lista_clientes': clientes}
     return render(request, 'clientes.html', context)
+
+
+
+#PEDIDOS
+# Listado de pedidos
+def lista_pedidos(request):
+    pedidos = Pedido.objects.order_by('codigo')
+    context = {'titulo_form': 'Añadir un pedido','titulo_pagina':'Listado de pedidos','lista_pedidos': pedidos}
+    return render(request, 'pedidos.html', context)
 
 
 def cliente_nombre(request):
@@ -32,40 +33,37 @@ def cliente_nombre(request):
     return render(request, 'pedidos.html', context)
 
 
-# Listado de pedidos ordenado por codigo
-def lista_pedidos(request):
-    pedidos = Pedido.objects.order_by('codigo')
-    context = {'titulo_pagina':'Listado de pedidos','lista_pedidos': pedidos}
-    return render(request, 'pedidos.html', context)
-
 def pedido_por_codigo(request, pedido_codigo):
     pedidos = Pedido.objects.get(pk=pedido_codigo)
     context = {'lista_pedidos': pedidos}
     return render(request,'nuevopedido.html', context)
 
+
 def añadir_pedido(request):
     return render(request, 'nuevopedido.html')
 
+
+
+#COMPONENTES
 def componente(request, componente_codigo):
     componente = Componente.objects.get(pk=componente_codigo)
     return HttpResponse(componente)
 
 
+#PRODUCTOS
 def lista_productos(request):
     productos = Productos.objects.order_by('referencia')
-    context = {'titulo_pagina':'Listado de productos','lista_productos': productos}
+    context = {'titulo_form':'Listado de productos','lista_productos': productos}
     return render(request, 'productos.html', context)
 
-def producto(request, producto_id):
+def producto_id(request, producto_id):
     producto = Productos.objects.get(pk=producto_id)
-    return HttpResponse(producto)
+    return render(request, 'productos.html')
 
 
 def añadir_prod(request):
     return render(request, 'productos_añadir.html')
 
-def prueba1(request):
-    return render(request, 'Usos.html')
 
 def mostrar_prod_añadido(request):
     context = {

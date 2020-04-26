@@ -1,11 +1,39 @@
 {% extends "base.html" %}
 
+{% block intro %}
+
+				<form class="contact100-form validate-form">
+					<!-- CIF -->
+					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un cif">
+						<input class="input100" type="text" name="cif" placeholder="CIF/DNI">
+						<span class="focus-input100"></span>
+					</div>
+
+					<!-- NOMBRE -->
+					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un nombre">
+						<input class="input100" type="tex" name="nombre" placeholder="Nombre">
+						<span class="focus-input100"></span>
+					</div>
+
+					<!-- TELEFONO -->
+					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un telefono">
+						<input class="input100" type="number" name="telefono" placeholder="Telefono">
+						<span class="focus-input100"></span>
+					</div>
+
+                    <div class="container-contact100-form-btn">
+						<button class="contact100-form-btn">
+							AÑADIR
+						</button>
+                    </div>
+                </form>
+{% endblock intro %}
+
 {% block contenido %}
 
 <table class="tabla">
                 <colgroup>
                     <col span="5">
-                <a href = "clientes/añadir">[Añadir]</a>
                 <thead>
                     <tr>
                         <td>CIF</td>

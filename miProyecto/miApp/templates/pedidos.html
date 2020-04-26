@@ -1,15 +1,89 @@
 {% extends "base.html" %}
 
+{% block contenido %}
+	<div class="bg-contact100">
+		<div class="container-contact100">
+			<div class="wrap-contact100">
+
+				<form class="contact100-form validate-form">
+					<!-- CODIGO -->
+					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un código">
+						<input class="input100" type="text" name="codigo" placeholder="Código">
+						<span class="focus-input100"></span>
+					</div>
+
+					<!-- FECHA -->
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="date" name="fecha" placeholder="Fecha">
+						<span class="focus-input100"></span>
+					</div>
+
+					<!-- CLIENTE -->
+					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un código">
+						<input class="input100" type="text" name="cliente" placeholder="Cliente">
+                            <span class="focus-input100"></span>
+
+                        <!--
+                        <select class="input100" name="productos" placeholder="Productos">
+                			<optgroup label="">
+								{% for cli in lista_clientes %}
+                    		<option value="{{cli.cif}}">{{cli.empresa}}</option>
+                    			{% endfor %}
+                			</optgroup>
+                		</select>
+                		-->
+
+
+					</div>
+
+					<!-- PRODUCTOS -->
+					<div class="wrap-input100 validate-input" data-validate = "Selecciona un producto">
+                    <div class="prods">
+
+                        <input type="checkbox" name="producto" value="1">Producto1
+                        <div class="wrap-input100">
+						<input class="input100 uds" type="number" name="uds" placeholder="Cantidad">
+						<span class="focus-input100"></span>
+					    </div>
+
+                    </div>
+
+                    <div class="prods">
+                        <input type="checkbox" name="producto" value="2">Producto2
+                        <div class="wrap-input100">
+						<input class="input100 uds" type="number" name="uds" placeholder="Cantidad">
+						<span class="focus-input100"></span>
+                        </div>
+                    </div>
+
+                    <div class="prods">
+                        <input type="checkbox" name="producto" value="3">Producto3
+                        <div class="wrap-input100">
+						<input class="input100 uds" type="number" name="uds" placeholder="Cantidad">
+						<span class="focus-input100"></span>
+                        </div>
+                    </div>
+
+
+					<div class="container-contact100-form-btn">
+						<button class="contact100-form-btn">
+							AÑADIR
+						</button>
+
+
+					</div>
+                    </div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+{% endblock contenido %}
+
+
 
 {% block intro %}
-
-{% block nuevopedido%} {% endblock %}
-
-{% endblock %}
-
-
-
-{% block contenido %}
 <div>
     <table class="tabla">
 
@@ -43,4 +117,4 @@
     </table>
 </div>
 
-{% endblock contenido %}
+{% endblock intro %}
