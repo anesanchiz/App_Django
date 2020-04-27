@@ -18,7 +18,7 @@ urlpatterns = [
 
      path('clientes/', views.cliente, name='cliente'),
      path('clientes/<int:cliente_id>/', views.cliente_id, name='cliente'),
-     path('productos/añadido/', views.mostrar_cli_añadido, name='cliente_añadido'),
+     path('clientes/añadido/', views.mostrar_cli_añadido, name='cliente_añadido'),
 
      #URLS QUE NO FUNCIONAN
 

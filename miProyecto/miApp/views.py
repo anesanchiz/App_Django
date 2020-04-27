@@ -26,13 +26,13 @@ def añadir_cli(request):
 
 
 def mostrar_cli_añadido(request):
-    cli = Productos(
+    cli = Cliente(
             CIF = request.POST["cif"],
             empresa = request.POST["empresa"],
             telefono = request.POST["telefono"])
 
-    Productos.object.add(cli)
-    return HttpResponse(f"El producto ha sido correctamente añadido")
+    cli.save()
+    return HttpResponse(f"El cliente ha sido correctamente añadido")
 
 
 #PEDIDOS

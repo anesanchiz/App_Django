@@ -2,7 +2,7 @@
 
 {% block intro %}
 
-				<form action="{% url= 'cliente_añadido' %}" method="post" class="contact100-form validate-form">
+				<form action="{% url 'cliente_añadido' %}" method="post" class="contact100-form validate-form">
 					{% csrf_token %}
                     <!-- CIF -->
 					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un cif">
@@ -50,8 +50,6 @@
                         <td>{{cli.CIF}}</td>
                         <td>{{cli.empresa}}</td>
                         <td>{{cli.telefono}}</td>
-                        <td><a id="mas" href = "http://127.0.0.1:8000/miApp/clientes/{{cli.id}}">[+]</a></td>
-
                     </tr>
                     {% endfor %}
                 </tbody>
