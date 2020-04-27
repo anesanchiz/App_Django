@@ -2,16 +2,17 @@
 
 {% block intro %}
 
-				<form class="contact100-form validate-form">
-					<!-- CIF -->
+				<form action="{% url= 'cliente_añadido' %}" method="post" class="contact100-form validate-form">
+					{% csrf_token %}
+                    <!-- CIF -->
 					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un cif">
 						<input class="input100" type="text" name="cif" placeholder="CIF/DNI">
 						<span class="focus-input100"></span>
 					</div>
 
-					<!-- NOMBRE -->
-					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un nombre">
-						<input class="input100" type="tex" name="nombre" placeholder="Nombre">
+					<!-- EMPRESA -->
+					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un nombre de empresa">
+						<input class="input100" type="tex" name="empresa" placeholder="Empresa">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -25,6 +26,7 @@
 						<button class="contact100-form-btn">
 							AÑADIR
 						</button>
+
                     </div>
                 </form>
 {% endblock intro %}
@@ -48,6 +50,8 @@
                         <td>{{cli.CIF}}</td>
                         <td>{{cli.empresa}}</td>
                         <td>{{cli.telefono}}</td>
+                        <td><a id="mas" href = "http://127.0.0.1:8000/miApp/clientes/{{cli.id}}">[+]</a></td>
+
                     </tr>
                     {% endfor %}
                 </tbody>

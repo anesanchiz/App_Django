@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block contenido %}
 
-    <form action="{% url= 'producto_añadido' %}" method="post">
+    <form action="{% url= 'cliente_añadido' %}" method="post">
         {% csrf_token %}
         <p>
             <label>Referencia</label>

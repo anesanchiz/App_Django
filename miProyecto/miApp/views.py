@@ -17,6 +17,22 @@ def cliente(request):
     context = {'titulo_form': 'Listado de clientes','titulo_pagina':'Añadir un cliente','lista_clientes': clientes}
     return render(request, 'clientes.html', context)
 
+def cliente_id(request, cliente_id):
+    cliente = Productos.objects.get(pk=cliente_id)
+    return render(request, 'clientes.html')
+
+def añadir_cli(request):
+    return render(request, 'productos_añadir.html')
+
+
+def mostrar_cli_añadido(request):
+    cli = Productos(
+            CIF = request.POST["cif"],
+            empresa = request.POST["empresa"],
+            telefono = request.POST["telefono"])
+
+    Productos.object.add(cli)
+    return HttpResponse(f"El producto ha sido correctamente añadido")
 
 
 #PEDIDOS
@@ -66,15 +82,18 @@ def añadir_prod(request):
 
 
 def mostrar_prod_añadido(request):
-    context = {
-        'referencia': request.POST("Referencia"),
-        'precio': request.POST("Precio"),
-        'nombre': request.POST("Nombre"),
-        'descripcion': request.POST("Descripcion"),
-        'categoria': request.POST("Categoria"),
-        'tipo_componentes': request.POST("Tipo_componentes")
-    }
-    Productos.object.add(context)
+    prod = Productos(
+            referencia = request.POST["Referencia"],
+            precio = request.POST["Precio"],
+            nombre = request.POST["Nombre"],
+            descripcion = request.POST["Descripcion"],
+            categoria = request.POST["Categoria"],
+            tipo_componentes = request.POST["Tipo_componentes"])
+
+    Productos.object.add(prod)
+    return HttpResponse(f"El producto ha sido correctamente añadido")
+
+
 
 
 
