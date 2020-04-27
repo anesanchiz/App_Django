@@ -8,17 +8,14 @@ urlpatterns = [
      path('', views.index, name='index'),
 
      path('productos/', views.lista_productos, name='indexprod'),
-     path('productos/añadir/', views.añadir_prod, name='productos'),
-     path('productos/añadido/', views.mostrar_prod_añadido, name='producto_añadido'),
-     path('productos/<producto_id>', views.producto_id, name='producto'),
-     path('prueba1',views.prueba1, name = 'prueba'),
+     path('productonuevo/', views.ProductosCreateView.as_view(), name='productonuevo'),
+     path('productos/<int:pk>/', views.ProdcutoDetailView.as_view(), name='productiño'),
 
      path('pedidos/', views.lista_pedidos, name='pedidos'),
      path('pedidos/cli_exist/', views.añadir_pedido, name='newpedido'),
 
+     path('clientenuevo/', views.ClienteCreateView.as_view(), name = 'cliente_nuevo'),
      path('clientes/', views.cliente, name='cliente'),
-     path('clientes/<int:cliente_id>/', views.cliente_id, name='cliente'),
-     path('clientes/añadido/', views.mostrar_cli_añadido, name='cliente_añadido'),
 
      #URLS QUE NO FUNCIONAN
 

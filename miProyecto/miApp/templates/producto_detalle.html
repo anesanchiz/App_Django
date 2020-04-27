@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block contenido %}
+
+{{ productos.referencia }}
+{{ productos.precio }}
+{{ productos.nombre }}
+{{ productos.descripcion }}
+{{ productos.categoria }}
+{% for comp in object.tipo_componentes.all %}
+    {{ comp.codigo }}
+{% endfor %}
+{% endblock %}

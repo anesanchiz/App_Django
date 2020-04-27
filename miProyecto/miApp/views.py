@@ -1,6 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
+
+from .forms import ClienteForm, ProductoForm
 from .models import Pedido, Productos, Cliente, Componente
+from django.views.generic import CreateView, DeleteView, DetailView
 
 
 #PAGINA DE INICIO
@@ -21,18 +25,15 @@ def cliente_id(request, cliente_id):
     cliente = Productos.objects.get(pk=cliente_id)
     return render(request, 'clientes.html')
 
-def añadir_cli(request):
-    return render(request, 'productos_añadir.html')
 
+class ClienteCreateView(CreateView):
+    model = Cliente
+    form_class = ClienteForm
+    template_name = 'cliente_añadir.html'
 
-def mostrar_cli_añadido(request):
-    cli = Cliente(
-            CIF = request.POST["cif"],
-            empresa = request.POST["empresa"],
-            telefono = request.POST["telefono"])
+    def get_success_url(self):
+        return reverse('cliente')
 
-    cli.save()
-    return HttpResponse(f"El cliente ha sido correctamente añadido")
 
 
 #PEDIDOS
@@ -72,26 +73,24 @@ def lista_productos(request):
     context = {'titulo_form':'Listado de productos','lista_productos': productos}
     return render(request, 'productos.html', context)
 
-def producto_id(request, producto_id):
-    producto = Productos.objects.get(pk=producto_id)
-    return render(request, 'productos.html')
+
+class ProductosCreateView(CreateView):
+    model = Productos
+    form_class = ProductoForm
+    template_name = 'productoañadir.html'
+
+    def get_success_url(self):
+        return reverse('indexprod')
 
 
-def añadir_prod(request):
-    return render(request, 'productos_añadir.html')
+class ProdcutoDetailView(DetailView):
+    model = Productos
+    template_name = 'producto_detalle.html'
 
-
-def mostrar_prod_añadido(request):
-    prod = Productos(
-            referencia = request.POST["Referencia"],
-            precio = request.POST["Precio"],
-            nombre = request.POST["Nombre"],
-            descripcion = request.POST["Descripcion"],
-            categoria = request.POST["Categoria"],
-            tipo_componentes = request.POST["Tipo_componentes"])
-
-    Productos.object.add(prod)
-    return HttpResponse(f"El producto ha sido correctamente añadido")
+    def get_context_data(self, **kwargs):
+        context = super(ProdcutoDetailView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Detalles del proyecto'
+        return context
 
 
 
