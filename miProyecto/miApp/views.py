@@ -1,10 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
-from django.urls import reverse
+from django.urls import reverse,reverse_lazy
 
 from .forms import ClienteForm, ProductoForm
 from .models import Pedido, Productos, Cliente, Componente
 from django.views.generic import CreateView, DeleteView, DetailView
+
 
 
 #PAGINA DE INICIO
@@ -92,7 +93,10 @@ class ProdcutoDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles del proyecto'
         return context
 
-
+class ProductoDelete(DeleteView):
+    model = Productos
+    template_name = 'producto_eliminar.html'
+    success_url = reverse_lazy('indexprod')
 
 
 
