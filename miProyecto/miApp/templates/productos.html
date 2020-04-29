@@ -69,6 +69,8 @@
                         <td>{{prod.nombre}}</td>
                         <td>{{prod.precio}}</td>
                         <td><a id="mas" href = "http://127.0.0.1:8000/miApp/productos/{{prod.id}}">[+]</a></td>
+						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/productoeliminar/{{prod.id}}">X</a></td>
+						<td><a id="editar" href = "http://127.0.0.1:8000/miApp/productoeditar/{{prod.id}}">Editar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

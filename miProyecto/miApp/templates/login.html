@@ -1,0 +1,18 @@
+
+<div class="login-wrapper">
+  <h2>Iniciar sesión</h2>
+  <form action="{%url 'do_login'%}" method="POST">
+    {%csrf_token%} {{login.as_p}}
+    <input type="submit" value="Iniciar Sesión" />
+  </form>
+
+  <div class="dropdown-divider"></div>
+  <h2>Registrarse</h2>
+  <form action="{%url 'do_register'%}" method="POST">
+    {%csrf_token%}
+    <label for="">Usuario: </label>{{form.username}} <br />
+    <label for="">Contraseña: </label><input type="password" name="password" /> <br />
+    <label for="">Repite la contraseña: </label><input type="password" name="password1" /> <br />
+    <input type="submit" value="Registrarse" />
+  </form>
+</div>

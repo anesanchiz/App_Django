@@ -2,7 +2,15 @@
 {% block contenido %}
 
     <form method="post">{% csrf_token %}
-    <p>Are you sure you want to delete "{{ object }}"?</p>
+        <p>Estas seguro de que quieres eliminar el producto:</p>
+        <p>"{{ productos.referencia }}
+        {{ productos.precio }}
+        {{ productos.nombre }}
+        {{ productos.descripcion }}
+        {{ productos.categoria }}
+        {% for comp in object.tipo_componentes.all %}
+          {{ comp.codigo }}
+        {% endfor %} "?</p>
     <input type="submit" value="Confirm">
     </form>
 

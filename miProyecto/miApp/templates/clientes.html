@@ -52,6 +52,9 @@
                         <td>{{cli.CIF}}</td>
                         <td>{{cli.empresa}}</td>
                         <td>{{cli.telefono}}</td>
+						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/clienteeliminar/{{cli.id}}">X</a></td>
+						<td><a id="editar" href = "http://127.0.0.1:8000/miApp/clienteeditar/{{cli.id}}">Editar</a></td>
+
                     </tr>
                     {% endfor %}
                 </tbody>

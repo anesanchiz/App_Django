@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block contenido %}
+
+{{ pedido.codigo }}
+{{ pedido.fecha }}
+{{ pedido.datos_cliente }}
+{% for pedi in object.productos.all %}
+    {{ pedi.codigo }}
+{% endfor %}
+{{ pedido.cantidad }}
+{{ pedido.precio_total }}
+
+{% endblock %}
