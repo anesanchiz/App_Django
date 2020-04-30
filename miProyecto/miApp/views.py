@@ -63,7 +63,7 @@ def register(req):
 # Listado de clientes
 def cliente(request):
     clientes = Cliente.objects.order_by('CIF')
-    context = {'titulo_form': 'Listado de clientes','titulo_pagina':'Añadir un cliente','lista_clientes': clientes}
+    context = {'titulo_form': 'Listado de clientes','titulo_pagina':'Clientes','lista_clientes': clientes}
     return render(request, 'clientes.html', context)
 
 #Añadir
@@ -97,7 +97,7 @@ class ClienteUpdate(UpdateView):
 # Listado de pedidos
 def lista_pedidos(request):
     pedidos = Pedido.objects.order_by('codigo')
-    context = {'titulo_form': 'Añadir un pedido','titulo_pagina':'Listado de pedidos','lista_pedidos': pedidos}
+    context = {'titulo_form': 'Listado de pedidos','titulo_pagina':'Pedidos','lista_pedidos': pedidos}
     return render(request, 'pedidos.html', context)
 
 #Añadir
@@ -116,7 +116,9 @@ class PedidoDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(PedidoDetailView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Detalles del pedido'
         return context
+
 
 #Eliminar
 class PedidoDelete(DeleteView):
@@ -140,7 +142,7 @@ class PedidoUpdate(UpdateView):
 #Listado de Componentes
 def lista_componente(request):
     componente = Componente.objects.order_by('codigo')
-    context = {'titulo_form': 'Añadir un componente','titulo_pagina':'Listado de componentes','lista_componente': componente}
+    context = {'titulo_form': 'Listado de componentes','titulo_pagina':'Componentes','lista_componente': componente}
     return render(request, 'componentes.html', context)
 
 #Añadir
@@ -159,6 +161,7 @@ class ComponenteDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ComponenteDetailView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Detalles del componente'
         return context
 
 #Eliminar
@@ -179,12 +182,11 @@ class ComponenteUpdate(UpdateView):
     success_url = reverse_lazy('componentes')
 
 
-
 #PRODUCTOS
-#Listado de prductos
+#Listado de productos
 def lista_productos(request):
     productos = Productos.objects.order_by('referencia')
-    context = {'titulo_form':'Listado de productos','lista_productos': productos}
+    context = {'titulo_form':'Listado de productos','titulo_pagina':'Productos' ,'lista_productos': productos}
     return render(request, 'productos.html', context)
 
 #Añadir
@@ -196,13 +198,14 @@ class ProductosCreateView(CreateView):
     def get_success_url(self):
         return reverse('indexprod')
 
+
 #Detalles
-class ProdcutoDetailView(DetailView):
+class ProductoDetailView(DetailView):
     model = Productos
     template_name = 'producto_detalle.html'
 
     def get_context_data(self, **kwargs):
-        context = super(ProdcutoDetailView, self).get_context_data(**kwargs)
+        context = super(ProductoDetailView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Detalles del producto'
         return context
 

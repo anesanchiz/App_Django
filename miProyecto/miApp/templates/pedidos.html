@@ -1,89 +1,49 @@
 {% extends "base.html" %}
 
-{% block contenido %}
-	<div class="bg-contact100">
-		<div class="container-contact100">
-			<div class="wrap-contact100">
-
-				<form class="contact100-form validate-form">
-					<!-- CODIGO -->
-					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un código">
-						<input class="input100" type="text" name="codigo" placeholder="Código">
-						<span class="focus-input100"></span>
-					</div>
-
-					<!-- FECHA -->
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="date" name="fecha" placeholder="Fecha">
-						<span class="focus-input100"></span>
-					</div>
-
-					<!-- CLIENTE -->
-					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un código">
-						<input class="input100" type="text" name="cliente" placeholder="Cliente">
-                            <span class="focus-input100"></span>
-
-                        <!--
-                        <select class="input100" name="productos" placeholder="Productos">
-                			<optgroup label="">
-								{% for cli in lista_clientes %}
-                    		<option value="{{cli.cif}}">{{cli.empresa}}</option>
-                    			{% endfor %}
-                			</optgroup>
-                		</select>
-                		-->
-
-
-					</div>
-
-					<!-- PRODUCTOS -->
-					<div class="wrap-input100 validate-input" data-validate = "Selecciona un producto">
-                    <div class="prods">
-
-                        <input type="checkbox" name="producto" value="1">Producto1
-                        <div class="wrap-input100">
-						<input class="input100 uds" type="number" name="uds" placeholder="Cantidad">
-						<span class="focus-input100"></span>
-					    </div>
-
-                    </div>
-
-                    <div class="prods">
-                        <input type="checkbox" name="producto" value="2">Producto2
-                        <div class="wrap-input100">
-						<input class="input100 uds" type="number" name="uds" placeholder="Cantidad">
-						<span class="focus-input100"></span>
-                        </div>
-                    </div>
-
-                    <div class="prods">
-                        <input type="checkbox" name="producto" value="3">Producto3
-                        <div class="wrap-input100">
-						<input class="input100 uds" type="number" name="uds" placeholder="Cantidad">
-						<span class="focus-input100"></span>
-                        </div>
-                    </div>
-
-
-					<div class="container-contact100-form-btn">
-						<button class="contact100-form-btn">
-							AÑADIR
-						</button>
-
-
-					</div>
-                    </div>
-				</form>
-
-			</div>
-		</div>
-	</div>
-
-{% endblock contenido %}
-
-
-
 {% block intro %}
+
+
+    <section id="productos" class="clear">
+          <!--Producto 1-->
+          <article class="productos">
+               <figure>
+                   <img src="https://media1.tenor.com/images/e68cc33983bed347554ce23fe2bd08bd/tenor.gif?itemid=13876443"
+                        width="60" height="auto" alt="destacado">
+               </figure>
+               <h3>PENDIENTES</h3>
+                <p> No hay pedidos pendientes de entrega.
+                </p>
+          </article>
+
+
+          <!--Producto 2-->
+          <article class="productos">
+               <figure>
+                   <img src="https://lh3.googleusercontent.com/proxy/U-UUMwjS7_i4BP058NGgQdEBVpSjFbudlYFr1kdXeo1hD0I_U9P_Gtq2XzG0fsEDIdkmtq9EZUS8cRAiBkObgCE7jtmTwC1DqVBMKEYWoTE3btHUnJlvKWcfr8q0ahyeLCaXpbvOVg"
+                        width="80" height="auto" alt="destacado">
+               </figure>
+               <h3>IMPAGADOS</h3>
+                <input type="checkbox" >5643<BR>
+                <input type="checkbox" >3453<BR>
+                <input type="checkbox" >2367<BR>
+          </article>
+
+
+          <!--Producto 3-->
+        <article class="lastbox">
+            <a href = "http://127.0.0.1:8000/miApp/pedidonuevo/" id="enlace">
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        AÑADIR
+                    </button>
+                </div>
+            </a>
+        </article>
+    </section>
+
+{% endblock intro %}
+
+{% block contenido %}
 <div>
     <table class="tabla">
 
@@ -92,30 +52,37 @@
 
 
                 <thead>
-                <a id="añadir" href = "http://127.0.0.1:8000/miApp/pedidonuevo/">Añadir</a>
                     <tr>
-                        <td>CODIGO</td>
-                        <td>PRODUCTOS</td>
-                        <td>CANTIDAD</td>
-                        <td>PRECIO TOTAL</td>
-                        <td>CLIENTE</td>
-                        <td>FECHA</td>
-                        <td>DETALLE</td>
+                        <td>Código</td>
+                        <td>Productos</td>
+                        <td>Cliente</td>
+                        <td>Fecha</td>
+
                     </tr>
                 </thead>
+
+
+
 
                 <tbody>
                     {% for pedid in lista_pedidos %}
                     <tr>
-                        <td>{{pedid.codigo}}</td>
-                        <td>{{pedid.productos}}</td><!-- Aqui añadir un enlace a dicho producto.ref-->
-                        <td>{{pedid.cantidad}}</td>
-                        <td data-type="total">{{pedid.precio_total}}</td>
-                        <td>{{pedid.datos_cliente.empresa}}</td> <!-- Aqui añadir un enlace a dicho cliente.cif-->
-                        <td>{{pedid.fecha}}</td>
+                        <td>{{ pedid.codigo }}</td>
+                        <td>{{ pedid.productos }}</td>
+                                {% for prod in object.productos.all %}
+                        <td>{{ prod.nombre }}</td>
+                                {% endfor %}
+                                                                <!-- Aqui añadir un enlace a dicho producto.ref-->
+                        <td>{{ pedid.datos_cliente.empresa }}</td> <!-- Aqui añadir un enlace a dicho cliente.cif-->
+                        <td>{{ pedid.fecha }}</td>
+
                         <td><a id="mas" href = "http://127.0.0.1:8000/miApp/pedidos/{{pedid.id}}">[+]</a></td>
-						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/pedidoeliminar/{{pedid.id}}">X</a></td>
-						<td><a id="editar" href = "http://127.0.0.1:8000/miApp/pedidoeditar/{{pedid.id}}">Editar</a></td>
+						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/pedidoeliminar/{{pedid.id}}">
+                            <img src="https://static.vecteezy.com/system/resources/previews/000/442/652/non_2x/delete-vector-icon.jpg" width="38px">
+                        </a></td>
+						<td><a id="editar" href = "http://127.0.0.1:8000/miApp/pedidoeditar/{{pedid.id}}">
+                            <img src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-pencil-icon-png-image_4152536.jpg" width="35px">
+                        </a></td>
 
 
                     </tr>
@@ -124,4 +91,4 @@
     </table>
 </div>
 
-{% endblock intro %}
+{% endblock contenido %}

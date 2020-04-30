@@ -1,17 +1,30 @@
 {% extends "base.html" %}
-{% block contenido %}
+
+{% block intro %}
 
     <form method="post">{% csrf_token %}
-        <p>Estas seguro de que quieres eliminar el producto:</p>
-        <p>"{{ pedido.codigo }}
-            {{ pedido.fecha }}
-            {{ pedido.datos_cliente }}
-            {% for pedi in object.productos.all %}
-                {{ pedi.codigo }}
-            {% endfor %}
-            {{ pedido.cantidad }}
-            {{ pedido.precio_total }}"?</p>
-    <input type="submit" value="Confirm">
+        <p id="eliminar">Confirma para eliminar el pedido:</p>
+        <p> Código: {{ pedido.codigo }} <br>
+            Fecha: {{ pedido.fecha }} <br>
+            Cliente: {{ pedido.datos_cliente }} <br>
+            Producto: {{ pedido.productos }} <br>
+            Cantidad: {{ pedido.cantidad }} <br>
+            Precio: {{ pedido.precio_total }}
+        </p>
+
+        <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        <input class="limpito" type="submit" value="Confirm">
+                    </button>
+        </div>
     </form>
 
-{% endblock %}
+{% endblock intro %}
+
+{% block contenido %}
+<style>
+	#main > #work{
+		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
+		}
+</style>
+{% endblock contenido %}

@@ -12,11 +12,11 @@ urlpatterns = [
      path('productonuevo/', views.ProductosCreateView.as_view(), name='productonuevo'),
      path('productoeditar/<int:pk>/', views.ProductoUpdate.as_view(), name='productoeditar'),
      path('productoeliminar/<int:pk>/', views.ProductoDelete.as_view(), name='productoeliminar'),
-     path('productos/<int:pk>/', views.ProdcutoDetailView.as_view(), name='productodetalle'),
+     path('productos/<int:pk>/', views.ProductoDetailView.as_view(), name='productodetalle'),
 
      path('pedidos/', views.lista_pedidos, name='pedidos'),
      path('pedidonuevo/', views.PedidoCreateView.as_view(), name='pedidonuevo'),
-     path('pedidooeditar/<int:pk>/', views.PedidoUpdate.as_view(), name='pedidoeditar'),
+     path('pedidoeditar/<int:pk>/', views.PedidoUpdate.as_view(), name='pedidoeditar'),
      path('pedidoeliminar/<int:pk>/', views.PedidoDelete.as_view(), name='pedidoeliminar'),
      path('pedidos/<int:pk>/', views.PedidoDetailView.as_view(), name='pedidodetalle'),
 

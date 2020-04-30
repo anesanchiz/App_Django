@@ -1,12 +1,55 @@
 {% extends "base.html" %}
+
+{% block intro %}
+
+    <table class="tabla">
+
+                <colgroup>
+                    <col span="5">
+
+
+                <thead>
+                    <tr>
+                        <td>Referencia</td>
+                        <td>Nombre</td>
+                        <td>Descripción</td>
+                        <td>Categoría</td>
+                        <td>Componentes</td>
+                        <td>Precio</td>
+                    </tr>
+                </thead>
+
+                        <tbody>
+                    <tr>
+                        <td>{{ productos.referencia }}</td>
+                        <td>{{ productos.precio }}</td>
+                        <td>{{ productos.nombre }}</td> <!-- Aqui añadir un enlace a dicho cliente.cif-->
+                        <td>{{ productos.descripcion }}</td>
+                        <td>{{ productos.categoria }}</td>
+                            {% for comp in object.tipo_componentes.all %}
+                        <td>{{ comp.codigo }}</td>
+                            {% endfor %}
+                    </tr>
+                        </tbody>
+    </table>
+<style>
+
+
+    .tabla{
+        border: 1px solid #B90C65;
+        padding: 20px;
+    }
+
+</style>
+{% endblock intro %}
+
+
 {% block contenido %}
 
-{{ productos.referencia }}
-{{ productos.precio }}
-{{ productos.nombre }}
-{{ productos.descripcion }}
-{{ productos.categoria }}
-{% for comp in object.tipo_componentes.all %}
-    {{ comp.codigo }}
-{% endfor %}
-{% endblock %}
+ <style>
+	#main > #work{
+		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
+		}
+</style>
+
+{% endblock contenido %}

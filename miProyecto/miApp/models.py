@@ -29,7 +29,7 @@ class Productos(models.Model):
     tipo_componentes = models.ManyToManyField(Componente)
 
     def __str__(self):
-        return f"ID: {self.id}, Referencia: {self.referencia}, Precio: {self.precio}, Nombre: {self.nombre}, Descripcion: {self.descripcion}, Categoria: {self.categoria}, Tipo de componentes: {self.tipo_componentes}"
+        return f"Referencia: {self.referencia}, Precio: {self.precio}, Nombre: {self.nombre}, Descripcion: {self.descripcion}, Categoria: {self.categoria}, Tipo de componentes: {self.tipo_componentes}"
 
 class Pedido(models.Model):
     codigo = models.CharField(max_length=20)

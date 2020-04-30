@@ -1,49 +1,40 @@
 {% extends "base.html" %}
 
 {% block intro %}
-				<form class="contact100-form validate-form">
-					<!-- REFERENCIA -->
-					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir una referencia">
-						<input class="input100" type="text" name="ref" placeholder="Referencia">
-						<span class="focus-input100"></span>
-					</div>
 
-					<!-- NOMBRE -->
-					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un nombre">
-						<input class="input100" type="text" name="nombre" placeholder="Nombre">
-						<span class="focus-input100"></span>
-					</div>
+<section id="productos" class="clear">
+          <!--Producto 1-->
 
-					<!-- DESCRIPCION -->
-					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un telefono">
-						<input class="input100" type="text" name="descripcion" placeholder="Descripcion">
-						<span class="focus-input100"></span>
-					</div>
+          <article class="productos">
+               <figure>
+                   <img src="https://media.vertbaudet.es/Pictures/vertbaudet/3539/alfombra-estrella.jpg?width=457" width="40" height="auto" alt="destacado">
+               </figure>
+                        <h3>PRODUCTO ESTRELLA</h3>
+                        <p>El módulo de sonido Phillips SM30 el producto más vendido el último trimestre.</p>
+          </article>
 
-                    <!-- PRECIO -->
-					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un precio">
-						<input class="input100" type="number" name="precio" placeholder="Precio">
-						<span class="focus-input100"></span>
-					</div>
 
-<!--ARREGLAR MULTIPLE CHOICE--><!-- TIPO DE COMPONENTES -->
-					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir componentes">
-						<input class="input100" type="text" name="descripcion" placeholder="Componentes">
-						<span class="focus-input100"></span>
-					</div>
-                    <div class="container-contact100-form-btn">
-						<button class="contact100-form-btn" id="botonchi">
-							AÑADIR
-						</button>
-                    </div>
-                </form>
-<style>
+          <!--Producto 2-->
+          <article class="productos">
+                <figure>
+                   <img src="https://cdn-tienda.bricogeek.com/2677-thickbox_default/sensor-de-distancia-por-ultrasonidos-hc-sr04.jpg" width="60" height="auto" alt="destacado">
+               </figure>
+               <h3>PRODUCTO A DESTACAR</h3>
+               <p>El sensor de distancia por ultrasonidos de Sonic es el producto sobre el que centraremos las ventas durante este mes.</p>
+          </article>
 
-#botonchi{
-    padding:0 ;
-}
 
-</style>
+          <!--Producto 3-->
+        <article class="lastbox">
+            <a href = "http://127.0.0.1:8000/miApp/componentenuevo/" id="enlace">
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        AÑADIR
+                    </button>
+                </div>
+            </a>
+        </article>
+    </section>
 {% endblock intro %}
 
 
@@ -53,12 +44,11 @@
                 <colgroup>
                     <col span="5">
                 <thead>
-				<a id="añadir" href = "http://127.0.0.1:8000/miApp/productonuevo/">Añadir</a>
                     <tr>
-                        <td>REFERENCIA</td>
-                        <td>NOMBRE</td>
-                        <td>PRECIO</td>
-                        <td>DETALLES </td>
+                        <td>Referencia</td>
+                        <td>Nombre</td>
+                        <td>Precio</td>
+
                     </tr>
                 </thead>
 
@@ -69,21 +59,16 @@
                         <td>{{prod.nombre}}</td>
                         <td>{{prod.precio}}</td>
                         <td><a id="mas" href = "http://127.0.0.1:8000/miApp/productos/{{prod.id}}">[+]</a></td>
-						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/productoeliminar/{{prod.id}}">X</a></td>
-						<td><a id="editar" href = "http://127.0.0.1:8000/miApp/productoeditar/{{prod.id}}">Editar</a></td>
+						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/productoeliminar/{{prod.id}}">
+							     <img src="https://static.vecteezy.com/system/resources/previews/000/442/652/non_2x/delete-vector-icon.jpg" width="38px">
+							</a></td>
+						<td><a id="editar" href = "http://127.0.0.1:8000/miApp/productoeditar/{{prod.id}}">
+							<img src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-pencil-icon-png-image_4152536.jpg" width="35px">
+						</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
 </table>
-
-<style>
-
-#mas{
-    text-decoration: none;
-    color: #A3016D ;
-    }
-
-</style>
 
 {% endblock %}
 

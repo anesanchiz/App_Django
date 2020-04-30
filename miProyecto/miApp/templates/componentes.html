@@ -1,100 +1,30 @@
 {% extends "base.html" %}
 
-{% block contenido %}
-	<div class="bg-contact100">
-		<div class="container-contact100">
-			<div class="wrap-contact100">
-
-				<form class="contact100-form validate-form">
-					<!-- CODIGO -->
-					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un código">
-						<input class="input100" type="text" name="codigo" placeholder="Código">
-						<span class="focus-input100"></span>
-					</div>
-
-					<!-- FECHA -->
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="date" name="fecha" placeholder="Fecha">
-						<span class="focus-input100"></span>
-					</div>
-
-					<!-- CLIENTE -->
-					<div class="wrap-input100 validate-input" data-validate = "Se requiere introducir un código">
-						<input class="input100" type="text" name="cliente" placeholder="Cliente">
-                            <span class="focus-input100"></span>
-
-                        <!--
-                        <select class="input100" name="productos" placeholder="Productos">
-                			<optgroup label="">
-								{% for cli in lista_clientes %}
-                    		<option value="{{cli.cif}}">{{cli.empresa}}</option>
-                    			{% endfor %}
-                			</optgroup>
-                		</select>
-                		-->
-
-
-					</div>
-
-					<!-- PRODUCTOS -->
-					<div class="wrap-input100 validate-input" data-validate = "Selecciona un producto">
-                    <div class="prods">
-
-                        <input type="checkbox" name="producto" value="1">Producto1
-                        <div class="wrap-input100">
-						<input class="input100 uds" type="number" name="uds" placeholder="Cantidad">
-						<span class="focus-input100"></span>
-					    </div>
-
-                    </div>
-
-                    <div class="prods">
-                        <input type="checkbox" name="producto" value="2">Producto2
-                        <div class="wrap-input100">
-						<input class="input100 uds" type="number" name="uds" placeholder="Cantidad">
-						<span class="focus-input100"></span>
-                        </div>
-                    </div>
-
-                    <div class="prods">
-                        <input type="checkbox" name="producto" value="3">Producto3
-                        <div class="wrap-input100">
-						<input class="input100 uds" type="number" name="uds" placeholder="Cantidad">
-						<span class="focus-input100"></span>
-                        </div>
-                    </div>
-
-
-					<div class="container-contact100-form-btn">
-						<button class="contact100-form-btn">
-							AÑADIR
-						</button>
-
-
-					</div>
-                    </div>
-				</form>
-
-			</div>
-		</div>
-	</div>
-
-{% endblock contenido %}
-
-
-
 {% block intro %}
+
+ <a href = "http://127.0.0.1:8000/miApp/componentenuevo/" id="enlace">
+    <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn">
+            AÑADIR
+        </button>
+    </div>
+</a>
+
+{% endblock intro %}
+
+
+{% block contenido %}
 <div>
     <table class="tabla">
 
                 <colgroup>
                     <col span="5">
-                    <a id="añadir" href = "http://127.0.0.1:8000/miApp/componentenuevo/">Añadir</a>
+
                 <thead>
                     <tr>
-                        <td>CODIGO</td>
-                        <td>MARCA</td>
-                        <td>MODELO</td>
+                        <td>Código</td>
+                        <td>Marca</td>
+                        <td>Modelo</td>
                     </tr>
                 </thead>
 
@@ -104,13 +34,17 @@
                         <td>{{comp.codigo}}</td>
                         <td>{{comp.marca}}</td><!-- Aqui añadir un enlace a dicho producto.ref-->
                         <td>{{comp.modelo}}</td>
-                        <td><a id="mas" href = "http://127.0.0.1:8000/miApp/componente/{{comp.id}}">[+]</a></td>
-						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/componenteeliminar/{{comp.id}}">X</a></td>
-						<td><a id="editar" href = "http://127.0.0.1:8000/miApp/componenteeditar/{{comp.id}}">Editar</a></td>
+						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/componenteeliminar/{{comp.id}}">
+                            <img src="https://static.vecteezy.com/system/resources/previews/000/442/652/non_2x/delete-vector-icon.jpg" width="38px">
+                        </a></td>
+						<td><a id="editar" href = "http://127.0.0.1:8000/miApp/componenteeditar/{{comp.id}}">
+                            <img src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-pencil-icon-png-image_4152536.jpg" width="35px">
+                        </a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
     </table>
 </div>
 
-{% endblock intro %}
+{% endblock contenido %}
+

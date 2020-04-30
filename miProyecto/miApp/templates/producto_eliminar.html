@@ -1,17 +1,35 @@
 {% extends "base.html" %}
-{% block contenido %}
+
+{% block intro %}
 
     <form method="post">{% csrf_token %}
-        <p>Estas seguro de que quieres eliminar el producto:</p>
-        <p>"{{ productos.referencia }}
-        {{ productos.precio }}
-        {{ productos.nombre }}
-        {{ productos.descripcion }}
-        {{ productos.categoria }}
+        <p id="eliminar">Confirma para eliminar el producto:</p>
+        <p>
+        Referencia: {{ productos.referencia }}<br>
+        Precio: {{ productos.precio }}<br>
+        Nombre: {{ productos.nombre }}<br>
+        Descripción: {{ productos.descripcion }}<br>
+        Categoría : {{ productos.categoria }}<br>
         {% for comp in object.tipo_componentes.all %}
-          {{ comp.codigo }}
-        {% endfor %} "?</p>
-    <input type="submit" value="Confirm">
+        Código:  {{ comp.codigo }}<br>
+        {% endfor %}
+        </p>
+
+        <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        <input class="limpito" type="submit" value="Confirm">
+                    </button>
+        </div>
     </form>
 
-{% endblock %}
+{% endblock intro %}
+
+{% block contenido %}
+
+<style>
+	#main > #work{
+		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
+		}
+</style>
+
+{% endblock contenido %}
