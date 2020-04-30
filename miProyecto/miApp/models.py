@@ -31,6 +31,18 @@ class Productos(models.Model):
     def __str__(self):
         return f"Referencia: {self.referencia}, Precio: {self.precio}, Nombre: {self.nombre}, Descripcion: {self.descripcion}, Categoria: {self.categoria}, Tipo de componentes: {self.tipo_componentes}"
 
+#class Pedido(models.Model):
+#   codigo = models.CharField(max_length=20)
+#   fecha = models.DateField()
+#   datos_cliente = models.ForeignKey(Cliente, on_delete= models.CASCADE)
+#  productos = models.ManyToManyField(Productos)
+#    cantidad = models.IntegerField()
+#    precio_total = models.IntegerField()
+
+ #   def __str__(self):
+ #       return f"Codigo: {self.codigo}, Fecha: {self.fecha}, Datos de cliente: {self.datos_cliente}, Productos: {self.productos}, Cantidad: {self.cantidad}, Precio total: {self.precio_total}"
+
+
 class Pedido(models.Model):
     codigo = models.CharField(max_length=20)
     fecha = models.DateField()
@@ -41,6 +53,7 @@ class Pedido(models.Model):
 
     def __str__(self):
         return f"Codigo: {self.codigo}, Fecha: {self.fecha}, Datos de cliente: {self.datos_cliente}, Productos: {self.productos}, Cantidad: {self.cantidad}, Precio total: {self.precio_total}"
+
 
 class Usuario(User):
     username = models.CASCADE
