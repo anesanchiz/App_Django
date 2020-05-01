@@ -22,13 +22,13 @@
                         <tbody>
                     <tr>
                         <td>{{ productos.referencia }}</td>
-                        <td>{{ productos.precio }}</td>
                         <td>{{ productos.nombre }}</td> <!-- Aqui añadir un enlace a dicho cliente.cif-->
                         <td>{{ productos.descripcion }}</td>
                         <td>{{ productos.categoria }}</td>
                             {% for comp in object.tipo_componentes.all %}
                         <td>{{ comp.codigo }}</td>
                             {% endfor %}
+                        <td>{{ productos.precio }}</td>
                     </tr>
                         </tbody>
     </table>

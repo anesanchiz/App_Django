@@ -22,7 +22,9 @@
                         <tbody>
                     <tr>
                         <td>{{pedido.codigo}}</td>
-                        <td>{{pedido.productos}}</td>
+                            {% for ped in object.productos.all %}
+                        <td>{{ ped.referencia }}</td>
+                            {% endfor %}
                         <td>{{pedido.datos_cliente.empresa}}</td> <!-- Aqui añadir un enlace a dicho cliente.cif-->
                         <td>{{pedido.fecha}}</td>
                         <td>{{pedido.cantidad}}</td>

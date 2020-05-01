@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="488be51d-cfaf-489f-b942-de4344b02f0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/miApp/migrations/0005_usuario.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miApp/templates/cliente_eliminar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miApp/templates/componente_detalle.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miApp/templates/componente_eliminar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miApp/templates/componentes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miApp/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miApp/templates/pedido_detalle.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miApp/templates/pedido_eliminar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miApp/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miApp/templates/cliente_añadir.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/añadir.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miApp/templates/clientes.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/clientes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miApp/templates/pedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/pedidos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miApp/templates/producto_eliminar.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/producto_eliminar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miApp/templates/productoañadir.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/miApp/templates/productos.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/productos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miApp/templates/pedido_detalle.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/pedido_detalle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miApp/templates/producto_detalle.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/producto_detalle.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miProyecto/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/miProyecto/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

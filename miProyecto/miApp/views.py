@@ -25,7 +25,7 @@ def get_login(req):
 
 # -Funcion para hacer el login
 def do_login(req):
-    print('lego aqui')
+    print('llego aqui')
     username = req.POST['username']
     password = req.POST['password']
     user = authenticate(req, username=username, password=password)
@@ -50,10 +50,10 @@ def register(req):
     form = RegisterForm(req.POST)
     if (form.is_valid):
         form.save()
-        # user=authenticate(req,username=form.cleaned_data['username'],password=form.cleaned_data['password'])
-        # if user is not None:
-        #     login(req, user)
-        print("valido")
+        user=authenticate(req,username=form.cleaned_data['username'],password=form.cleaned_data['password'])
+        if user is not None:
+             login(req, user)
+        print("valido__")
         return redirect('index')
     else:
         print("no valido")
@@ -77,9 +77,9 @@ class ClienteCreateView(CreateView):
 
 #Eliminar
 class ClienteDelete(DeleteView):
-    model = Cliente
-    template_name = 'cliente_eliminar.html'
-    success_url = reverse_lazy('cliente')
+    model = Cliente #modelo que se esta utilizando
+    template_name = 'cliente_eliminar.html' #template que se va a utilizar
+    success_url = reverse_lazy('cliente') #template a la que va a volver
 
     def get_context_data(self, **kwargs):
         context = super(ClienteDelete, self).get_context_data(**kwargs)
