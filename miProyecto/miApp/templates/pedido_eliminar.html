@@ -4,16 +4,18 @@
 
     <form method="post">{% csrf_token %}
         <p id="eliminar">Confirma para eliminar el pedido:</p>
-        <p> Código: {{ pedido.codigo }} <br>
-            Fecha: {{ pedido.fecha }} <br>
-            Cliente: {{ pedido.datos_cliente }} <br>
-            Producto: {{ pedido.productos }} <br>
-            Cantidad: {{ pedido.cantidad }} <br>
-            Precio: {{ pedido.precio_total }}
-        </p>
+        <p> Código: {{ pedido.codigo }} </p>
+        <p> Fecha: {{ pedido.fecha }} </p>
+        <p> Cliente: {{ pedido.datos_cliente.empresa }}</p>
+            {% for ped in object.productos.all %}
+        <p>Producto: {{ ped.nombre }}<p/>
+            {% endfor %}
+        <p> Cantidad: {{ pedido.cantidad }} </p>
+        <p> Precio: {{ pedido.precio_total }}</p>
 
-        <div class="container-contact100-form-btn">
-                    <button class="contact100-form-btn">
+
+        <div class="container-contact100-form-btn" >
+                    <button class="contact100-form-btn" id="bienpuesto">
                         <input class="limpito" type="submit" value="Confirm">
                     </button>
         </div>

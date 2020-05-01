@@ -106,6 +106,7 @@
 	text-decoration: none;
 }
 
+
 .limpito{
 	background-color:transparent;
 	border: none;
@@ -119,10 +120,6 @@
 	padding: 20px;
 	float: right;
 	}
-
-#1{
-	float: left;
-}
 
 
 .clear:after{
@@ -230,8 +227,8 @@ thead td {
 
 
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article, details, figure,
+footer, header, menu, nav, section {
 	display: block;}
 
 
@@ -282,12 +279,9 @@ footer, header, hgroup, menu, nav, section {
 
 		}
 
-	strong, b, h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4 {
 		font-weight: 400;
 		color: #363636;
-	}
-
-	h1 {
 		font-size: 2.4em;
 		letter-spacing: -0.015em;
 	}
@@ -312,9 +306,9 @@ footer, header, hgroup, menu, nav, section {
 
 /* TABLE */
 
-	table {
-		width: 100%;
-	}
+		table {
+			width: 100%;
+		}
 
 		table.default tbody tr {
 			border-bottom: solid 1px #f4f4f4;
@@ -335,7 +329,7 @@ footer, header, hgroup, menu, nav, section {
 		}
 
 
-/* Section/Article */
+/* SECTION */
 
 	section, article {
 		margin-bottom: 3em;
@@ -346,7 +340,6 @@ footer, header, hgroup, menu, nav, section {
 	}
 
 	header {
-
 		margin: 0 0 1.5em 0;
 	}
 
@@ -354,8 +347,6 @@ footer, header, hgroup, menu, nav, section {
 		margin: 0.5em 0 0 0;
 		color: #aaa;
 	}
-
-
 
 /* IMAGE */
 
@@ -379,7 +370,8 @@ footer, header, hgroup, menu, nav, section {
 
 
 
-/* Nav */
+/* NAV */
+
 	#nav {
 		text-align: center;
 		height: 4.25em;
@@ -432,7 +424,12 @@ footer, header, hgroup, menu, nav, section {
 
 
 
-/* WRAPPER */
+
+
+	body.is-preload #wrapper {
+		opacity: 0;
+		}
+		/* WRAPPER */
 
 	#wrapper {
 		width: 45em;
@@ -440,9 +437,6 @@ footer, header, hgroup, menu, nav, section {
 		min-height: 100vh;
 		max-width: 100%;
 		padding: 4em 0;
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
 		display: flex;
 		-moz-flex-direction: column;
 		-webkit-flex-direction: column;
@@ -461,9 +455,6 @@ footer, header, hgroup, menu, nav, section {
 		-ms-transition: opacity 1s ease-in-out;
 		transition: opacity 1s ease-in-out;
 	}
-
-	body.is-preload #wrapper {
-		opacity: 0;
 	}
 
 	@media screen and (max-width: 1280px) {
@@ -523,25 +514,7 @@ footer, header, hgroup, menu, nav, section {
 			}
 
 
-					#main > .panel.intro .pic .arrow {
-						display: block;
-						position: absolute;
-						right: 0;
-						top: 50%;
-						margin-top: -1.375em;
-						width: 2.75em;
-						height: 2.75em;
-						background: pink;
-						color: white;
-						text-align: center;
-						line-height: 2.75em;
-						font-size: 1.5em;
-						z-index: 1;
-						-moz-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
-						-webkit-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
-						-ms-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
-						transition: width .15s ease-in-out, padding-right .15s ease-in-out;
-					}
+
 
 						#main > .panel.intro .pic .arrow:before {
 							position: relative;

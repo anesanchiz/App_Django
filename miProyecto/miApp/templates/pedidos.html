@@ -19,7 +19,7 @@
           <!--Producto 2-->
           <article class="productos">
                <figure>
-                   <img src="https://lh3.googleusercontent.com/proxy/U-UUMwjS7_i4BP058NGgQdEBVpSjFbudlYFr1kdXeo1hD0I_U9P_Gtq2XzG0fsEDIdkmtq9EZUS8cRAiBkObgCE7jtmTwC1DqVBMKEYWoTE3btHUnJlvKWcfr8q0ahyeLCaXpbvOVg"
+                   <img src="https://www.grupointercobros.com/wp-content/uploads/2016/07/gesti%C3%B3n-de-impagados.jpg"
                         width="80" height="auto" alt="destacado">
                </figure>
                <h3>IMPAGADOS</h3>
@@ -54,9 +54,9 @@
                 <thead>
                     <tr>
                         <td>Código</td>
-                        <td>Productos</td>
                         <td>Cliente</td>
                         <td>Fecha</td>
+                        <td>Precio</td>
 
                     </tr>
                 </thead>
@@ -67,14 +67,10 @@
                 <tbody>
                     {% for pedid in lista_pedidos %}
                     <tr>
-                        <td>{{ pedid.codigo }}</td>
-                        <td>{{ pedid.productos }}</td>
-                                {% for prod in object.productos.all %}
-                        <td>{{ prod.nombre }}</td>
-                                {% endfor %}
-                                                                <!-- Aqui añadir un enlace a dicho producto.ref-->
+                        <td>{{ pedid.codigo }}</td>                         <!-- Aqui añadir un enlace a dicho producto.ref-->
                         <td>{{ pedid.datos_cliente.empresa }}</td> <!-- Aqui añadir un enlace a dicho cliente.cif-->
                         <td>{{ pedid.fecha }}</td>
+                        <td>{{ pedid.precio_total }}</td>
 
                         <td><a id="mas" href = "http://127.0.0.1:8000/miApp/pedidos/{{pedid.id}}">[+]</a></td>
 						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/pedidoeliminar/{{pedid.id}}">

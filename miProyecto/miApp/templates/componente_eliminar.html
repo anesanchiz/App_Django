@@ -3,10 +3,10 @@
 {% block intro %}
     <form method="post">{% csrf_token %}
         <p id="eliminar">Confirma para eliminar el componente:</p>
-        <p> Código: {{ componente.codigo }} <br>
-            Marca: {{ componente.marca }} <br>
-            Modelo: {{ componente.modelo }}
-        </p>
+        <p>    Código: {{ componente.codigo }} </p>
+        <p>    Marca: {{ componente.marca }}   </p>
+        <p>    Modelo: {{ componente.modelo }} </p>
+
 
         <div class="container-contact100-form-btn">
             <button class="contact100-form-btn">

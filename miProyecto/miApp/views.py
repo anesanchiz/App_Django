@@ -88,9 +88,11 @@ class ClienteDelete(DeleteView):
 #Actualizar
 class ClienteUpdate(UpdateView):
     model = Cliente
-    fields = ['empresa','telefono']
+    fields = ['CIF','empresa','telefono']
     template_name = 'añadir.html'
     success_url = reverse_lazy('cliente')
+
+
 
 
 #PEDIDOS
@@ -225,4 +227,5 @@ class ProductoUpdate(UpdateView):
     fields = ['referencia','precio','nombre','descripcion','categoria', 'tipo_componentes']
     template_name = 'añadir.html'
     success_url = reverse_lazy('indexprod')
+
 

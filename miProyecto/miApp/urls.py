@@ -8,6 +8,8 @@ urlpatterns = [
      #URLS QUE FUNCIONAN
      path('', login_required(views.index), name='index'),
 
+     path('prueba1/', views.prueba1, name='a ver'),
+
      path('productos/', views.lista_productos, name='indexprod'),
      path('productonuevo/', views.ProductosCreateView.as_view(), name='productonuevo'),
      path('productoeditar/<int:pk>/', views.ProductoUpdate.as_view(), name='productoeditar'),

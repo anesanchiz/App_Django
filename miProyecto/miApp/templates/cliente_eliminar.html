@@ -3,10 +3,9 @@
 {% block intro %}
     <form method="post">{% csrf_token %}
         <p id="eliminar">Confirma para eliminar el cliente:</p>
-        <p>CIF : {{ cliente.CIF }}<br><br>
-        Empresa: {{ cliente.empresa }}<br><br>
-        Telefono: {{ cliente.telefono }}</p>
-        <br>
+        <p>CIF : {{ cliente.CIF }}</p>
+        <p>Empresa: {{ cliente.empresa }}</p>
+        <p>Telefono: {{ cliente.telefono }}</p>
 
         <div class="container-contact100-form-btn">
                     <button class="contact100-form-btn">

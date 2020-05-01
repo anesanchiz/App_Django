@@ -5,15 +5,15 @@
     <form method="post">{% csrf_token %}
         <p id="eliminar">Confirma para eliminar el producto:</p>
         <p>
-        Referencia: {{ productos.referencia }}<br>
-        Precio: {{ productos.precio }}<br>
-        Nombre: {{ productos.nombre }}<br>
-        Descripción: {{ productos.descripcion }}<br>
-        Categoría : {{ productos.categoria }}<br>
+        <p>Referencia: {{ productos.referencia }}</p>
+        <p>Precio: {{ productos.precio }}</p>
+        <p>Nombre: {{ productos.nombre }}</p>
+        <p>Descripción: {{ productos.descripcion }}</p>
+        <p>Categoría : {{ productos.categoria }}</p>
         {% for comp in object.tipo_componentes.all %}
-        Código:  {{ comp.codigo }}<br>
+        <p>Código:  {{ comp.codigo }}</p>
         {% endfor %}
-        </p>
+
 
         <div class="container-contact100-form-btn">
                     <button class="contact100-form-btn">
