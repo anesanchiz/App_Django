@@ -10,6 +10,7 @@ from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
 
 #PAGINA DE INICIO
 def index(request):
+    context = {'titulo_form': 'Menu Principal'}
     return render(request, 'base.html')
 
 def prueba1(request):

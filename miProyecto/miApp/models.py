@@ -7,7 +7,7 @@ class Cliente (models.Model):
     telefono = models.IntegerField()
 
     def __str__(self):
-        return f"CIF: {self.CIF}, Empresa: {self.empresa}, Telefono: {self.telefono}"
+        return f"Empresa: {self.empresa}"
 
 
 class Componente(models.Model):
@@ -19,7 +19,6 @@ class Componente(models.Model):
         return f"Codigo: {self.codigo}, Modelo: {self.modelo}, Marca: {self.marca}"
 
 
-
 class Productos(models.Model):
     referencia = models.CharField(max_length=50)
     precio = models.IntegerField()
@@ -29,7 +28,7 @@ class Productos(models.Model):
     tipo_componentes = models.ManyToManyField(Componente)
 
     def __str__(self):
-        return f"Ref: {self.referencia}, Precio: {self.precio}, Nombre: {self.nombre}, Desc: {self.descripcion}, Categoria: {self.categoria}, Comp: {self.tipo_componentes}"
+        return f"Ref: {self.referencia}; Nombre: {self.nombre}; Precio: {self.precio}"
 
 
 class Pedido(models.Model):
@@ -41,7 +40,7 @@ class Pedido(models.Model):
     precio_total = models.IntegerField()
 
     def __str__(self):
-        return f"Cod: {self.codigo}, Fecha: {self.fecha}, Cliente: {self.datos_cliente}, Product: {self.productos}, Uds: {self.cantidad}, Precio: {self.precio_total}"
+        return f"Cod: {self.codigo}, Cliente: {self.datos_cliente}, Product: {self.productos}, Uds: {self.cantidad}, Precio: {self.precio_total}"
 
 
 class Usuario(User):
