@@ -10,9 +10,24 @@
 
 
 <body class="is-preload">
+				<div class="translate">
+						<div>
+							<div id="google_translate_element">
+						</div>
 
+						<script type="text/javascript">
+						//<![CDATA[
+							function googleTranslateElementInit() {
+							new google.translate.TranslateElement({pageLanguage: 'es'}, 'google_translate_element');
+							}
+						//]]>
+						</script><script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
+						</script>
+						</div>
+				</div>
 		<!-- Wrapper-->
 			<div id="wrapper">
+
 
 				<!-- Nav -->
 					<nav id="nav">
@@ -52,6 +67,10 @@
                				<td>D</td>
              			</table>
 
+
+
+
+
 					<div id="cal-frame">
 
                			<table class="curr">
@@ -63,14 +82,19 @@
 					   			<tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
                        			<tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
                    			</tbody>
-               			</table>
+						</table>
             		</div>
 				</div>
+
+
+
+
+
 									<figure id="grafics">
-										<img src="https://programacion.net/files/article/20170425050426_pie-chart.png" width="300px" alt="gráfica2">
+										<img id="grafico2" src="https://programacion.net/files/article/20170425050426_pie-chart.png" alt="gráfica2">
 									</figure>
 
-								{% endblock %}
+									{% endblock %}
 								</header>
 							</article>
 
@@ -88,16 +112,29 @@
 
 
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="http://127.0.0.1:8000/miApp/clientes" class="image fit"><img src="https://algalia.com/wp-content/uploads/2016/09/empleo.png" alt="clientes">CLIENTES</a>
+											<a href="http://127.0.0.1:8000/miApp/clientes" class="image fit">
+												<img class="ims" src="https://algalia.com/wp-content/uploads/2016/09/empleo.png"
+													 onmouseover="this.width=400;this.height=230;"
+													 onmouseout="this.width=300;this.height=200;"
+													 width="300" height="200" alt="clientes" />CLIENTES</a>
 										</div>
 
 
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="http://127.0.0.1:8000/miApp/pedidos" class="image fit"><img src="https://pngimage.net/wp-content/uploads/2018/06/producto-png-3.png" alt="pedidos">GESTIÓN DE PEDIDOS</a>
+											<a href="http://127.0.0.1:8000/miApp/pedidos" class="image fit">
+												<img class="ims" src="https://pngimage.net/wp-content/uploads/2018/06/producto-png-3.png"
+													 onmouseover="this.width=400;this.height=230;"
+													 onmouseout="this.width=300;this.height=200;"
+													 width="300" height="200" alt="pedidos">GESTIÓN DE PEDIDOS</a>
 										</div>
 
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="http://127.0.0.1:8000/miApp/productos" class="image fit" id="mini"><img src="https://http2.mlstatic.com/circuitos-integrados-varios-modelos-anri-tv-D_NQ_NP_709905-MLA25115723839_102016-F.jpg" alt="productos">PRODUCTOS</a>
+											<a href="http://127.0.0.1:8000/miApp/productos" class="image fit" id="mini">
+												<img class="ims" src="https://http2.mlstatic.com/circuitos-integrados-varios-modelos-anri-tv-D_NQ_NP_709905-MLA25115723839_102016-F.jpg"
+												<img class="ims" src="https://pngimage.net/wp-content/uploads/2018/06/producto-png-3.png"
+													 onmouseover="this.width=400;this.height=230;"
+													 onmouseout="this.width=300;this.height=200;"
+													 width="300" height="200" alt="productos">PRODUCTOS</a>
 										</div>
 
 										<!--<div class="col-4 col-6-medium col-12-small">
@@ -113,6 +150,7 @@
 					</div>
 
 				<!--FOOTER-->
+
 					<div id="footer">
 						<ul class="copyright">
 							<li>© DEUSTRONIC.</li>
@@ -126,13 +164,28 @@
 
 #article h2{font-size:14px; font-weight:bold;}
 
+.ims{
+<img src="TU IMAGEN"
+}
+
 .productos{
     display:block;
     float:left;
     margin:0 30px 0 0;
     width:250px;
-
        }
+
+.translate{
+	margin-right:50px;
+	margin-top:20px;
+	text-align:right;
+}
+
+#grafico2{
+	float: left;
+	margin-left:0px;
+	width: 250px;
+}
 
 #enlace{
 	text-decoration: none;
