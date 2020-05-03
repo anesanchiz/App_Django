@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="488be51d-cfaf-489f-b942-de4344b02f0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Pics/deustrinic.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miApp/templates/pedido_detalle.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/pedido_detalle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miApp/templates/producto_detalle.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/producto_detalle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miApp/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miApp/templates/login.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/miApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/miApp/views.py" afterDir="false" />
     </list>

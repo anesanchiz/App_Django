@@ -17,48 +17,6 @@ def prueba1(request):
     return render(request, 'Usos.html')
 
 
-# Sesiones
-# -Pagina de login
-def get_login(req):
-    context = {'form': RegisterForm, 'login': LoginForm}
-    return render(req, "login.html", context)
-
-
-# -Funcion para hacer el login
-def do_login(req):
-    print('llego aqui')
-    username = req.POST['username']
-    password = req.POST['password']
-    user = authenticate(req, username=username, password=password)
-    if user is not None:
-        login(req, user)
-        print('bien')
-        print(req.GET)
-        return redirect('index')
-    else:
-        print('mal')
-        return redirect('get_login')
-
-
-# -Funcion para hacer el logout
-def do_logout(req):
-    logout(req)
-    return redirect('get_login')
-
-
-# -Funcion para hacer el registro
-def register(req):
-    form = RegisterForm(req.POST)
-    if (form.is_valid):
-        form.save()
-        user=authenticate(req,username=form.cleaned_data['username'],password=form.cleaned_data['password'])
-        if user is not None:
-             login(req, user)
-        print("valido__")
-        return redirect('index')
-    else:
-        print("no valido")
-        return redirect('get_login')
 
 # CLIENTES
 # Listado de clientes

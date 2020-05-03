@@ -1,12 +1,11 @@
 from django.urls import path
 from . import views
-from django.contrib.auth.decorators import login_required
 
 
 urlpatterns = [
 
      #URLS QUE FUNCIONAN
-     path('', login_required(views.index), name='index'),
+     path('', views.index, name='index'),
 
      path('prueba1/', views.prueba1, name='a ver'),
 
@@ -33,10 +32,6 @@ urlpatterns = [
      path('componenteeliminar/<int:pk>/', views.ComponenteDelete.as_view(), name='componenteeliminar'),
      path('componentes/<int:pk>/', views.ComponenteDetailView.as_view(), name='componentedetalle'),
 
-     path('nuevologin/', views.get_login, name='get_login'),
-     path('login/', views.get_login, name='get_login'),
-     path('register/', views.register, name='do_register'),
-     path('logout/', views.do_logout, name='logout'),
-     path('dologin/', views.do_login, name='do_login'),
+
 
 ]
