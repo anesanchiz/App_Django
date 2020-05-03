@@ -112,6 +112,7 @@ class PedidoCreateView(CreateView):
     def get_success_url(self):
         return reverse('pedidos')
 
+
 #Detalles
 class PedidoDetailView(DetailView):
     model = Pedido
