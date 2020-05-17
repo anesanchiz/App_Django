@@ -6,6 +6,31 @@ from django.contrib.auth.models import User
 from .forms import ClienteForm, ProductoForm, PedidoForm, ComponenteForm, RegisterForm, LoginForm
 from .models import Pedido, Productos, Cliente, Componente
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
+from django.http import JsonResponse
+from django.forms import model_to_dict
+from django.views import View
+
+#VIEWS JS
+
+class PedidoListView_js(View):
+    def get(self, request):
+        if ('name' in request.GET):
+           pedido_list = Pedido.objects.filter(name_contains=request.GET['name'])
+        else:
+            pedido_list = Pedido.objects.all()
+        return JsonResponse(list(pedido_list.values()), safe=False)
+
+
+class PedidoDetailView_js(View):
+    def get(self, request, pk):
+        pedido = Pedido.objects.get(pk=pk)
+        return JsonResponse(model_to_dict(pedido))
+
+
+
+
+
+
 
 
 #PAGINA DE INICIO
@@ -187,5 +212,8 @@ class ProductoUpdate(UpdateView):
     fields = ['referencia','precio','nombre','descripcion','categoria', 'tipo_componentes']
     template_name = 'añadir.html'
     success_url = reverse_lazy('indexprod')
+
+
+
 
 

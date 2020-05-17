@@ -36,12 +36,26 @@
 
 {% block contenido %}
 
+<a class="orden" HREF="#"> ORDENAR SEGÚN </a>
+<br>
 
+        <h2>Nueva tarea:</h2>
+        <form>
+            <input type="text" name="id" placeholder="ID">
+            <input type="date" name="fecha">
+            <input type="text" name="responsable" placeholder="Responsable">
+            <input type="text" name="descripcion" placeholder="Descripción">
+            <input id="btn-nueva-tarea" type="submit" value="enviar">
+        </form>
+
+        <h2>Lista de tareas</h2>
+        <div id="tareas"></div>
+
+<script src="clientes.js"></script>
+
+<!--
 <table class="tabla">
-
-
-
-                <colgroup>
+           <colgroup>
                     <col span="5">
                 <thead>
                     <tr>
@@ -67,6 +81,6 @@
                     </tr>
                     {% endfor %}
                 </tbody>
-</table>
+</table>-->
 
 {% endblock %}
