@@ -2,50 +2,31 @@
 
 {% block intro %}
 
-<!--
-<p><img id="imagen-seleccionada" src="https://picsum.photos/id/1015/550/400" alt="Imagen grande"></p>
+
+<p><img id="imagen-seleccionada" src="https://images-na.ssl-images-amazon.com/images/I/61ndSrELPfL._AC_SX522_.jpg" alt="Imagen grande"></p>
 
 <ul id="thumbs">
 
   <li>
-    <a href="https://picsum.photos/id/1015/550/400" title="Image 6"><img src="https://picsum.photos/id/1015/550/400"></a>
+    <a class="pics" href="https://images-na.ssl-images-amazon.com/images/I/61ndSrELPfL._AC_SX522_.jpg" title="Image 6"><img class="pics" src="https://images-na.ssl-images-amazon.com/images/I/61ndSrELPfL._AC_SX522_.jpg"></a>
   </li>
   <li>
-    <a href="https://picsum.photos/id/1016/550/400" title="Image 2"><img src="https://picsum.photos/id/1016/550/400"></a>
+    <a class="pics" href="https://www1.djicdn.com/cms/uploads/d21b3516988173bd21571c9ad980c238.png" title="Image 2"><img class="pics" src="https://www1.djicdn.com/cms/uploads/d21b3516988173bd21571c9ad980c238.png"></a>
   </li>
   <li>
-    <a href="https://picsum.photos/id/1018/550/400" title="Image 3"><img src="https://picsum.photos/id/1018/550/400"></a>
+    <a class="pics" href="https://pbs.twimg.com/media/DvbNvMUX4AAPx8c.jpg" title="Image 3"><img class="pics" src="https://pbs.twimg.com/media/DvbNvMUX4AAPx8c.jpg"></a>
   </li>
   <li>
-    <a href="https://picsum.photos/id/1020/550/400" title="Image 4"><img src="https://picsum.photos/id/1020/550/400"></a>
+    <a class="pics" href="https://http2.mlstatic.com/drone-ryze-tello-edu-impulsado-por-dji-D_NQ_NP_660188-MLM31953718003_082019-F.jpg" title="Image 4"><img class="pics" src="https://http2.mlstatic.com/drone-ryze-tello-edu-impulsado-por-dji-D_NQ_NP_660188-MLM31953718003_082019-F.jpg"></a>
   </li>
   <li>
-    <a href="https://picsum.photos/id/1036/550/400" title="Image 5"><img src="https://picsum.photos/id/1036/550/400"></a>
-      </li>
+    <a class="pics" href="https://cdn.lavoz.com.ar/sites/default/files/styles/width_1072/public/nota_periodistica/Nexxt_Solutions_AHIMPFI4U1-BIG-6_1588253402.jpg" title="Image 5"><img class="pics" src="https://cdn.lavoz.com.ar/sites/default/files/styles/width_1072/public/nota_periodistica/Nexxt_Solutions_AHIMPFI4U1-BIG-6_1588253402.jpg"></a>
+  </li>
 </ul>
--->
-<a href="" id="link"><img src="" id="imagen"></a>
+
+<!--<a href="" id="link"><img src="" id="imagen"></a>-->
 
 <section id="productos" class="clear">
-
-          <!--<article class="productos">
-               <figure>
-                   <img src="https://media.vertbaudet.es/Pictures/vertbaudet/3539/alfombra-estrella.jpg?width=457" width="40" height="auto" alt="destacado">
-               </figure>
-                        <h3>PRODUCTO ESTRELLA</h3>
-                        <p>El módulo de sonido Phillips SM30 el producto más vendido el último trimestre.</p>
-          </article>
-
-
-
-          <article class="productos">
-                <figure>
-                   <img src="https://cdn-tienda.bricogeek.com/2677-thickbox_default/sensor-de-distancia-por-ultrasonidos-hc-sr04.jpg" width="60" height="auto" alt="destacado">
-               </figure>
-               <h3>PRODUCTO A DESTACAR</h3>
-               <p>El sensor de distancia por ultrasonidos de Sonic es el producto sobre el que centraremos las ventas durante este mes.</p>
-          </article>        -->
-
 
         <article class="lastbox">
             <a href = "http://127.0.0.1:8000/miApp/productonuevo/" id="enlace">
@@ -62,7 +43,7 @@
 <!--TENGO QUE COLOCARLO EN EL JS PERO NO LO RECONOCE -->
 <script>
 
-    let enlaces = document.getElementsByTagName('a')
+    let enlaces = document.getElementsByClassName("pics")
         for(el of enlaces){
             el.addEventListener('click', actualizarImagenPrincipal);
         }
@@ -74,41 +55,17 @@
         imagen.src = event.currentTarget.href;
     }
 
-
-    function rotarImagenes(){
-        contador++
-        document.getElementById("imagen").src=imagenes[contador%imagenes.length][0];
-        document.getElementById("link").href=imagenes[contador%imagenes.length][1];
-    }
-
-    var contador=0;
-    var imagenes=new Array(
-
-        ['img/1.jpg','https://picsum.photos/id/1015/550/400'],
-        ['img/2.jpg','https://picsum.photos/id/1016/550/400'],
-        ['img/3.jpg','https://picsum.photos/id/1036/550/400'],
-        ['img/4.jpg','https://picsum.photos/id/1020/550/400']);
-
-    onload=function(){
-        rotarImagenes(); // Cargamos una imagen aleatoria
-        setInterval(rotarImagenes,4000); //Cada 5 segundos cambie la imagen
-        }
-
-
-
 </script>
 
 <style>
 
 #imagen-seleccionada {
-  border: solid 1px #ccc;
   width: 250px;
-  height: auto
+  height: 250;
   padding: 5px;
 }
 
 #thumbs a {
-  border: solid 1px #ccc;
   padding: 3px;
   margin: 2px;
   float: left;
@@ -116,11 +73,7 @@
 
 li img {
   width: 80px;
-  height: auto;
-}
-
-#thumbs a:hover {
-  border-color: #FF9900;
+  height: 80;
 }
 
 ul {
@@ -134,11 +87,34 @@ li {
 {% endblock intro %}
 
 
+
+
+
+
 {% block contenido %}
 
+<!-- MENU DESPLEGABLE PARA SELECCIONAR EL ORDEN Y FILTRAR -->
+<div id="ops">
+  <ul>
+    <li id="menu" onmouseover="ver(1)" onmouseout="ocultar(1)"><a href="#">Ordenar </a>
+    <div id="submenu1">
+      <p><a href="#"> por referencia</a></p>
+      <p><a href="#"> por nombre</a></p>
+      <p><a href="#"> por código</a></p>
+    </div>
+    </li>
+    <li id="seccion2"><a href="#">Filtrar</a></li>
+  </ul>
+
+  <div class="borrar"></div>
+</div>
+
+
+
+<!-- TABLA DE PRODUCTOS -->
 <table class="tabla">
-                <colgroup>
-                    <col span="5">
+    <colgroup>
+         <col span="5">
                 <thead>
                     <tr>
                         <td>Referencia</td>
@@ -165,6 +141,20 @@ li {
                     {% endfor %}
                 </tbody>
 </table>
+
+
+
+<script type="text/javascript">
+
+function ver(n) {
+         document.getElementById("submenu"+n).style.display="block"
+         }
+
+function ocultar(n) {
+         document.getElementById("submenu"+n).style.display="none"
+         }
+
+</script>
 
 {% endblock %}
 
