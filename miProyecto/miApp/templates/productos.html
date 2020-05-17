@@ -2,10 +2,33 @@
 
 {% block intro %}
 
-<section id="productos" class="clear">
-          <!--Producto 1-->
+<!--
+<p><img id="imagen-seleccionada" src="https://picsum.photos/id/1015/550/400" alt="Imagen grande"></p>
 
-          <article class="productos">
+<ul id="thumbs">
+
+  <li>
+    <a href="https://picsum.photos/id/1015/550/400" title="Image 6"><img src="https://picsum.photos/id/1015/550/400"></a>
+  </li>
+  <li>
+    <a href="https://picsum.photos/id/1016/550/400" title="Image 2"><img src="https://picsum.photos/id/1016/550/400"></a>
+  </li>
+  <li>
+    <a href="https://picsum.photos/id/1018/550/400" title="Image 3"><img src="https://picsum.photos/id/1018/550/400"></a>
+  </li>
+  <li>
+    <a href="https://picsum.photos/id/1020/550/400" title="Image 4"><img src="https://picsum.photos/id/1020/550/400"></a>
+  </li>
+  <li>
+    <a href="https://picsum.photos/id/1036/550/400" title="Image 5"><img src="https://picsum.photos/id/1036/550/400"></a>
+      </li>
+</ul>
+-->
+<a href="" id="link"><img src="" id="imagen"></a>
+
+<section id="productos" class="clear">
+
+          <!--<article class="productos">
                <figure>
                    <img src="https://media.vertbaudet.es/Pictures/vertbaudet/3539/alfombra-estrella.jpg?width=457" width="40" height="auto" alt="destacado">
                </figure>
@@ -14,17 +37,16 @@
           </article>
 
 
-          <!--Producto 2-->
+
           <article class="productos">
                 <figure>
                    <img src="https://cdn-tienda.bricogeek.com/2677-thickbox_default/sensor-de-distancia-por-ultrasonidos-hc-sr04.jpg" width="60" height="auto" alt="destacado">
                </figure>
                <h3>PRODUCTO A DESTACAR</h3>
                <p>El sensor de distancia por ultrasonidos de Sonic es el producto sobre el que centraremos las ventas durante este mes.</p>
-          </article>
+          </article>        -->
 
 
-          <!--Producto 3-->
         <article class="lastbox">
             <a href = "http://127.0.0.1:8000/miApp/productonuevo/" id="enlace">
                 <div class="container-contact100-form-btn">
@@ -35,6 +57,80 @@
             </a>
         </article>
     </section>
+
+
+<!--TENGO QUE COLOCARLO EN EL JS PERO NO LO RECONOCE -->
+<script>
+
+    let enlaces = document.getElementsByTagName('a')
+        for(el of enlaces){
+            el.addEventListener('click', actualizarImagenPrincipal);
+        }
+
+
+    function actualizarImagenPrincipal(event){
+        event.preventDefault(); // detener la navegación
+        let imagen = document.getElementById('imagen-seleccionada');
+        imagen.src = event.currentTarget.href;
+    }
+
+
+    function rotarImagenes(){
+        contador++
+        document.getElementById("imagen").src=imagenes[contador%imagenes.length][0];
+        document.getElementById("link").href=imagenes[contador%imagenes.length][1];
+    }
+
+    var contador=0;
+    var imagenes=new Array(
+
+        ['img/1.jpg','https://picsum.photos/id/1015/550/400'],
+        ['img/2.jpg','https://picsum.photos/id/1016/550/400'],
+        ['img/3.jpg','https://picsum.photos/id/1036/550/400'],
+        ['img/4.jpg','https://picsum.photos/id/1020/550/400']);
+
+    onload=function(){
+        rotarImagenes(); // Cargamos una imagen aleatoria
+        setInterval(rotarImagenes,4000); //Cada 5 segundos cambie la imagen
+        }
+
+
+
+</script>
+
+<style>
+
+#imagen-seleccionada {
+  border: solid 1px #ccc;
+  width: 250px;
+  height: auto
+  padding: 5px;
+}
+
+#thumbs a {
+  border: solid 1px #ccc;
+  padding: 3px;
+  margin: 2px;
+  float: left;
+}
+
+li img {
+  width: 80px;
+  height: auto;
+}
+
+#thumbs a:hover {
+  border-color: #FF9900;
+}
+
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+</style>
+
 {% endblock intro %}
 
 

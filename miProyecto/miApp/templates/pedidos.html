@@ -66,14 +66,16 @@
 
                 <tbody>
                     {% for pedid in lista_pedidos %}
-                    <script>js.js</script>
+
+
+
                     <tr>
                         <td>{{ pedid.codigo }}</td>                         <!-- Aqui añadir un enlace a dicho producto.ref-->
                         <td>{{ pedid.datos_cliente.empresa }}</td> <!-- Aqui añadir un enlace a dicho cliente.cif-->
                         <td>{{ pedid.fecha }}</td>
                         <td>{{ pedid.precio_total }}</td>
 
-                        <td><a id="btn-js-mas" href = "#">[+]</a></td>
+                        <td><a id="btn-js-mas" href ="#">[+]</a></td>
 
 						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/pedidoeliminar/{{pedid.id}}">
                             <img src="https://static.vecteezy.com/system/resources/previews/000/442/652/non_2x/delete-vector-icon.jpg" width="38px">
@@ -89,5 +91,15 @@
                 </tbody>
     </table>
 </div>
+
+
+  <section class="text-center">
+    <div class="container">
+      <p id="codigo"></p>
+      <p id="fecha"></p>
+    </div>
+  </section>
+
+<script src="./js.js" ></script>
 
 {% endblock contenido %}
