@@ -2,6 +2,20 @@
 
 {% block intro %}
 
+<h1>COMPONENTES</h1>
+
+<ul id="thumbs">
+  <li>
+    <a class="pics" href="https://cemcables.com/3204-thickbox_default/diodo-led-rojo.jpg" title="Image 1"><img class="pics" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEXMAAA/z1L+AAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC" alt="led rojo"></a>
+    <a class="pics" href="https://cemcables.com/3206/diodo-led-verde.jpg" title="Image 2"><img class="pics" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEVHqDXiwlRdAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC" alt="led verde"></a>
+    <a class="pics" href="https://cemcables.com/3231-large_default/diodo-led-azul-alta-luminosidad.jpg" title="Image 3"><img class="pics" src="http://significadodeloscolores.info/wp-content/uploads/2014/08/color-azul.png" alt="led azul"></a>
+    <a class="pics" href="https://cemcables.com/3208-large_default/diodo-led-amarillo.jpg" title="Image 4"><img class="pics" src="https://cdn-3d.niceshops.com/upload/image/product/large/default/vallejo-game-color-amarillo-fluorescente-72103-17-ml-282223-es.jpg"></a>
+  </li>
+</ul>
+
+<p><img id="compimagen" src="https://cemcables.com/3204-thickbox_default/diodo-led-rojo.jpg" alt="LED">
+</p>
+
     <section id="productos" class="clear">
             <a href = "http://127.0.0.1:8000/miApp/componentenuevo/" id="enlace">
                 <div class="container-contact100-form-btn">
@@ -10,8 +24,56 @@
                     </button>
                 </div>
             </a>
-
     </section>
+
+
+
+<!--TENGO QUE COLOCARLO EN EL JS PERO NO LO RECONOCE -->
+<script>
+
+    let enlaces = document.getElementsByClassName("pics")
+        for(el of enlaces){
+        el.addEventListener('click', actualizarImagenComps);
+        }
+
+    function actualizarImagenComps(event){
+        event.preventDefault();
+        let imagen = document.getElementById('compimagen');
+        imagen.src = event.currentTarget.href;
+    }
+
+</script>
+
+<style>
+
+#compimagen {
+  width: 250px;
+  height: 250;
+  padding: 5px;
+}
+
+#thumbs a {
+  padding: 2px;
+  margin-top:0px;
+  float: right;
+
+}
+
+li img {
+  width: 30px;
+  height: auto;
+}
+
+ul {
+  padding: 0;
+  margin-top:0px;
+}
+
+li{
+list-style:none;
+}
+
+</style>
 
 {% endblock intro %}
 

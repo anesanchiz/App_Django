@@ -24,7 +24,6 @@
   </li>
 </ul>
 
-<!--<a href="" id="link"><img src="" id="imagen"></a>-->
 
 <section id="productos" class="clear">
 
@@ -50,7 +49,7 @@
 
 
     function actualizarImagenPrincipal(event){
-        event.preventDefault(); // detener la navegación
+        event.preventDefault();
         let imagen = document.getElementById('imagen-seleccionada');
         imagen.src = event.currentTarget.href;
     }
@@ -97,7 +96,7 @@ li {
 <div id="ops">
   <ul>
     <li id="menu" onmouseover="ver(1)" onmouseout="ocultar(1)"><a href="#">Ordenar </a>
-    <div id="submenu1">
+    <div id="submenu1" style="display: none;">
       <p><a href="#"> por referencia</a></p>
       <p><a href="#"> por nombre</a></p>
       <p><a href="#"> por código</a></p>
@@ -143,7 +142,7 @@ li {
 </table>
 
 
-
+<!-- ARREGLAR DESPLEGABLE -->
 <script type="text/javascript">
 
 function ver(n) {

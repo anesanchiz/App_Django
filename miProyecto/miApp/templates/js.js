@@ -1,29 +1,28 @@
 // IMAGENES PRODUCTOS
-let enlaces = document.getElementsByTagName('a')
-// Paso 2: itera por el listado de enlaces añadiendo un controlador para el evento
-for(el of enlaces){
-  el.addEventListener('click', actualizarImagenPrincipal);
-}
-// Paso 3: El controlador deberá cambiar la imagen principal accediendo a sus atributos
 function actualizarImagenPrincipal(event){
-  event.preventDefault(); // detener la navegación
+  event.preventDefault();
   let imagen = document.getElementById('imagen-seleccionada');
-  // Cambiar el atributo src de la imagen, poniendo el del enlace clickado
   imagen.src = event.currentTarget.href;
 }
 
+let enlaces = document.getElementsByTagName('a')
+for(el of enlaces){
+  el.addEventListener('click', actualizarImagenPrincipal);
+}
 
 
 
+// IMAGENES COMPONENTES
+function actualizarImagenComps(event){
+  event.preventDefault();
+  let imagen = document.getElementById('compimagen');
+  imagen.src = event.currentTarget.href;
+}
 
-
-
-
-
-
-
-
-
+let enlaces = document.getElementsByTagName('a')
+for(el of enlaces){
+  el.addEventListener('click', actualizarImagenComps);
+}
 
 
 
@@ -59,3 +58,5 @@ function loadData(URL) {
 }
 
 loadData();
+
+
