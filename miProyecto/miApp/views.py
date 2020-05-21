@@ -29,10 +29,6 @@ class PedidoDetailView_js(View):
 
 
 
-
-
-
-
 #PAGINA DE INICIO
 def index(request):
     context = {'titulo_form': 'Menu Principal'}
@@ -180,7 +176,7 @@ def lista_productos(request):
 class ProductosCreateView(CreateView):
     model = Productos
     form_class = ProductoForm
-    template_name = 'añadir.html'
+    template_name = 'añadir_producto.html'
 
     def get_success_url(self):
         return reverse('indexprod')

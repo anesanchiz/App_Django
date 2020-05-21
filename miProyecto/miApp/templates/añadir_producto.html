@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block intro %}
+
+    <h1> ACTUALIZACIÓN </h1>
+
+    <form method="post" id="formito1">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+
+
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        <input class="limpito" type="submit" value="Registrar">
+                    </button>
+                </div>
+    </form>
+
+<!-- ESTILO DE PÁGINA -->
+<style>
+
+    h1{
+        text-align:center;
+        margin:0;
+    }
+
+
+    #formito{
+        height:20%;
+        font-size: 16px;
+        box-size:50%;
+    }
+
+</style>
+
+{% endblock intro %}
+
+
+
+{% block contenido %}
+<!-- ESTILO DE PÁGINA -->
+<style>
+	#main > #work{
+		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
+		}
+</style>
+{% endblock contenido %}

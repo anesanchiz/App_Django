@@ -35,10 +35,17 @@ function loadData() {
     .then((response) => response.json())
     .then((json) => {
 
-      let qElement = document.getElementById("quote");
-      qElement.textContent = `"${json.1.codigo}"`;
+    var txt = '{"name":"John", "age":30, "city":"New York"}'
+    var obj = JSON.parse(txt);
+
+
+      let txt = document.getElementById("quote");
+      txt.textContent = `${json.1.codigo}`;
+
       let cElement = document.getElementById("character");
-      cElement.textContent = `- ${json.2} -`;
+      cElement.textContent = `${json.2}`;
+
+
     });
 }
 
