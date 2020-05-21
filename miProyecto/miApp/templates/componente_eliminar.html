@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block intro %}
+
     <form method="post">{% csrf_token %}
         <p id="eliminar">Confirma para eliminar el componente:</p>
         <p>    Código: {{ componente.codigo }} </p>
@@ -14,6 +15,7 @@
             </button>
         </div>
     </form>
+
 {% endblock intro %}
 
 {% block contenido %}

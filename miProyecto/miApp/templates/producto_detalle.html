@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block intro %}
 
     <table class="tabla">
@@ -32,20 +32,23 @@
                     </tr>
                         </tbody>
     </table>
+
+
+<!-- ESTILO DE BLOQUE -->
 <style>
-
-
     .tabla{
         border: 1px solid #B90C65;
         padding: 20px;
     }
 
 </style>
+
 {% endblock intro %}
 
 
 {% block contenido %}
 
+<!-- ESTILO DE BLOQUE -->
  <style>
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);

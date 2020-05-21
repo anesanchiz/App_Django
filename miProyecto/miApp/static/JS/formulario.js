@@ -1,3 +1,4 @@
+
 var formulario= document.getElementById("formito1");
 
 formulario.addEventListener('submit',function(e){
@@ -5,16 +6,13 @@ formulario.addEventListener('submit',function(e){
 
    var datos = new FormData(formulario);
    var DatosForm = {
-
     referencia: datos.get('referencia'),
     precio: datos.get('precio'),
     nombre: datos.get('nombre'),
     descripcion: datos.get('descripcion'),
     categoria: datos.get('categoria'),
     tipo_componentes: datos.get('tipo_componentes'),
-
 };
-
 
     for (var key in DatosForm) {
       console.log(key, DatosForm[key]);
@@ -34,7 +32,7 @@ formulario.addEventListener('submit',function(e){
 
       .then((data) => {
       console.log(data)
-      })
+      }
 
 
 function reset(){

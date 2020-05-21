@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block intro %}
 
     <form method="post">{% csrf_token %}
@@ -20,13 +20,15 @@
                     </button>
         </div>
     </form>
-
 {% endblock intro %}
 
 {% block contenido %}
+
+<!-- ESTILO DE BLOQUE -->
 <style>
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
 		}
 </style>
+
 {% endblock contenido %}
