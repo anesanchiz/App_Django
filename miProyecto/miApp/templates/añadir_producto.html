@@ -10,12 +10,14 @@
 
                 <div class="container-contact100-form-btn">
                     <button class="contact100-form-btn">
-                        <input class="limpito" type="submit" value="Registrar">
+                        <input id="botoncit" class="limpito" type="submit" value="Registrar">
                     </button>
                 </div>
     </form>
 
-<script src = "{% static 'JS/formulario.js' %}"></script>
+
+<script src = "{% static 'JS/form1.js' %}"></script>
+
 
 <!-- ESTILO DE BLOQUE -->
 <style>
@@ -40,10 +42,15 @@
 
 {% block contenido %}
 
-<!-- ESTILO DE BLOQUE -->
+<script src = "{% static 'JS/popup.js' %}"></script>
+<div id="popup"></div>
+
+<!-- ESTILO DE BLOQUE
+
 <style>
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
 		}
-</style>
+</style>-->
+
 {% endblock contenido %}
