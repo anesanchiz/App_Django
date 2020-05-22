@@ -2,7 +2,23 @@
 {% load static %}
 {% block intro %}
 
+ <h1>TABLON DE INCIDENCIAS</h1>
+
+<div>
+    <input class="incidencia" type = text>
+    <input class="incidencia" type = date>
+
+</div>
+
+    <button onclick="cargarDatos()">Atrás</button>
+
+    <script src= "{% static 'JS/fetch_script.js' %}"></script>
+    <script src= "{% static 'JS/js.js' %}"></script>
+
 {% endblock intro %}
-<h1>TABLON DE INCIDENCIAS</h1>
+
+
+
 
 {% block contenido %}
+{% endblock contenido %}

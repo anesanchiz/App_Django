@@ -3,11 +3,15 @@ from . import views
 
 
 urlpatterns = [
+#MAS PRUEBAS
+#    path('pedidosAPI/', views.PedidosAPI.as_view(), name='pedidosAPI'),
+
 
      #URLS QUE FUNCIONAN
      path('', views.index, name='index'),
 
      path('prueba1/', views.prueba1, name='a ver'),
+     path('incidencias/', views.incidencias, name= 'incidencias'),
 
      path('productos/', views.lista_productos, name='indexprod'),
      path('productonuevo/', views.ProductosCreateView.as_view(), name='productonuevo'),

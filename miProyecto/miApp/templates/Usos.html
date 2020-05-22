@@ -2,6 +2,8 @@
 {% block intro %}
 
     <h2>FACTURACIÓN TOTAL</h2>
+
+<!--
     <input id="load-quote-btn" type="submit" value="enviar">
 
 
@@ -20,6 +22,7 @@
     </div>
   </section>
 
+
 <script type="text/javascript">
 
 const SERVICE_URL = "http://127.0.0.1:8000/miApp/pedidosjs/";
@@ -35,17 +38,15 @@ function loadData() {
     .then((response) => response.json())
     .then((json) => {
 
-    var txt = '{"name":"John", "age":30, "city":"New York"}'
-    var obj = JSON.parse(txt);
+    var txt1 = '{"name":"John", "age":30, "city":"New York"}'
+    var obj = JSON.parse(txt1);
 
 
       let txt = document.getElementById("quote");
-      txt.textContent = `${json.1.codigo}`;
+      txt.textContent = `${json.quotes}`;
 
       let cElement = document.getElementById("character");
-      cElement.textContent = `${json.2}`;
-
-
+      cElement.textContent = `${json.characters}`;
     });
 }
 
@@ -54,7 +55,7 @@ loadData();
         </script>
 
 
-
+-->
 
 {% endblock intro %}
 
@@ -68,7 +69,6 @@ loadData();
         <form>
             <input type="text" name="id" placeholder="ID">
             <input type="date" name="fecha">
-            <input type="text" name="responsable" placeholder="Responsable">
             <input type="text" name="descripcion" placeholder="Descripción">
             <input id="btn-nueva-tarea" type="submit" value="enviar">
         </form>
@@ -77,51 +77,44 @@ loadData();
     </main>
 
 
-
-
-
 <script>
 
+const SERVICE_URL = "http://127.0.0.1:8000/miApp/pedidosjs/";
 
 
-</script>
+fetch(SERVICE_URL)
+    .then((response) => response.json())
+    .then((json) => {
 
-
-<!--
 const tareas = [
     {
         id : 1,
-        descripcion : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        responsable : 'Mikel',
-        fecha : '03-10-2020'
+        fecha : '03-10-2020',
+        descripcion : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
         id : 2,
         descripcion : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        responsable : 'Unai',
         fecha : '12-08-2020'
     },
     {
         id : 3,
         descripcion : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        responsable : 'Ane',
         fecha : '11-12-2020'
     },
     {
         id : 4,
         descripcion : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        responsable : 'Nora',
         fecha : '07-06-2020'
     }
 ];
 
 
-function crearTarea(id, descripcion, responsable, fecha){
+function crearTarea(id, descripcion, fecha){
     return `
         <tr>
             <td>${id}</td>
             <td>${fecha}</td>
-            <td>${responsable}</td>
             <td>${descripcion}</td>
         </tr>`;
 }
@@ -133,14 +126,13 @@ function generarHTMLTablaTareas(tareas) {
                 <tr>
                     <td>ID</td>
                     <td>Fecha</td>
-                    <td>Responsable</td>
-                    <td>Descripción</td>
+                    <td>Incidencia</td>
                 </tr>
             </thead>
             <tbody>
     `;
     for(const tarea of tareas) {
-        tabla += crearTarea(tarea.id, tarea.descripcion, tarea.responsable, tarea.fecha);
+        tabla += crearTarea(tarea.id, tarea.descripcion, tarea.fecha);
     }
     tabla += '</tbody></table>'
     return tabla;
@@ -164,7 +156,6 @@ document.getElementById('btn-nueva-tarea').addEventListener('click', function(ev
     let nuevaTarea = {
         id: formulario.children["id"].value,
         descripcion: formulario.children["descripcion"].value,
-        responsable: formulario.children["responsable"].value,
         fecha: formulario.children["fecha"].value
     }
 
@@ -174,6 +165,6 @@ document.getElementById('btn-nueva-tarea').addEventListener('click', function(ev
     // Volver a crear la tabla (ahora la lista ya contiene la nueva tarea)
     crearTablaTareas(tareas);
 });
-</script>-->
+</script>
 
 {% endblock contenido %}
