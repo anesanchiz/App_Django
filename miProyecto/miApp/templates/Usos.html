@@ -2,42 +2,18 @@
 {% load static %}
 {% block intro %}
 
-<form enctype="multipart/form-data" id="formuploadajax" method="post">
-        Nombre: <input type="text" name="nombre" placeholder="Escribe tu nombre">
-        <br />
-        <input  type="file" id="archivo1" name="archivo1"/>
-        <br />
-        <input  type="file" id="archivo2" name="archivo2"/>
-        <br />
-        <input type="submit" value="Subir archivos"/>
-    </form>
-    <div id="mensaje"></div>
+<label for="productos" id="loadBtn2">Elige un producto:</label>
+<select id="productos" >
+    <option id="op1" value="prod1"></option>
+    <option id="op2" value="prod2"></option>
+    <option id="op3" value="prod3"></option>
+</select>
 
 
 
-<script src= "{% static 'JS/js.js' %}"></script>
-<style>
-
-    #form {
-    max-width: 600px;
-    margin: auto;
-}
-
-#button {
-    margin-top: 50px;
-    margin-right: 20px;
-    float: right;
-}
-
-#fileuploader-container{
-    border: 1px solid #d3d3d3;
-    margin: 20px 20px 0 20px;
-}
-
-#form h3 {
-    margin-left: 20px;
-    font-weight: normal;
-    font-size: 22px;
-}
-</style>
+<script src= "{% static 'JS/prueba.js' %}"></script>
 {% endblock intro %}
+
+{% block contenido %}
+
+{% endblock contenido %}

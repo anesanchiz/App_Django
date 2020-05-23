@@ -1,5 +1,4 @@
 function devuelveDatos(datos){
-
     const datos_form = new FormData();
 
     for(key in datos){
@@ -41,3 +40,4 @@ document.getElementById('botoncit').addEventListener('click', function(event){
     console.log(datos);
     devuelveDatos(datos);
 });
+

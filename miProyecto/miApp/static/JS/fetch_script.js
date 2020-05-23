@@ -23,7 +23,10 @@ function cargarJson() {
       rango.innerHTML = "El listado de pedidos es de 0 a "+ json.length
       console.log(rango)
 
-      let cElement = document.getElementById("codigo");
+      
+
+
+      let cElement = document.getElementById("fecha");
       cElement.textContent = "Fecha:  "+`${json[porNum].fecha}`;
 
       let qElement = document.getElementById("precio");
@@ -33,26 +36,30 @@ function cargarJson() {
     });
 }
 
-//FUNCION UPLOAD FILE
+let loadBtn3 = document.getElementById("loadBtn2");
 
-$(function(){
-        $("#form-upload").on("submit", function(e){
-            e.preventDefault();
-            var f = $(this);
-            var formData = new FormData(document.getElementById("form-upload"));
-            formData.append("dato", "valor");
+loadBtn3.addEventListener("click", (event) => {
+  cargarJson2();
+});
 
-            $.ajax({
-                url: "recibe.php",
-                type: "post",
-                dataType: "html",
-                data: formData,
-                cache: false,
-                contentType: false,
-	     processData: false
-            })
-                .done(function(res){
-                    $("#mensaje").html("Respuesta: " + res);
-                });
-        });
+
+function cargarJson2() {
+  fetch('http://127.0.0.1:8000/miApp/pedidosjs')
+    .then((response) => response.json())
+    .then((json) => {
+    console.log(json);
+
+      let opci1 = document.getElementById("op1");
+      opci1.textContent = `${json[0].codigo}`;
+
+      let opci2 = document.getElementById("op2");
+      opci2.textContent = `${json[1].codigo}`;
+
+      let opci3 = document.getElementById("op3");
+      opci3.textContent = `${json[2].codigo}`;
+
+      let opci4 = document.getElementById("op4");
+      opci4.textContent = `${json[3].codigo}`;
+
     });
+}

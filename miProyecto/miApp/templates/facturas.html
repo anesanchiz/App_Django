@@ -12,47 +12,62 @@
          <p id="rango1">Selecciona el pedido por ID para adjuntar la factura correspondiente.</p>
     </article>
 
-    <article class="productos">
+    <article class="lastbox">
         <form method="POST" action="page2.php" class="container-contact100-form-btn">
             <input class="limpito" id="num" type="number" name="total" placeholder="Nº pedido">
         </form>
-        <p id="codigo"></p>
+        <p id="fecha"></p>
         <p id="precio" ></p>
         <button class="contact100-form-btn" id="loadBtn1" type="button" >Cargar</button>
     </article>
 
 
-<!-- FILE UPLOADER -->
-    <img id="examinador" src="https://image.freepik.com/vector-gratis/examinar-concepto-archivos_1459-2303.jpg" alt="examinar-archivos" width="80px">
 
-    <article class="lastbox">
-         <form class="container-contact100-form-btn" enctype="multipart/form-data" id="form-upload" class="limpito" method="post">
-            <input class="contact100-form-btn" class="limpito" type="file" id="archivo" name="archivo">
-        </form>
-        <div id="mensaje"></div>
-    </article>
-</section>
-
+    <label for="productos1" id="loadBtn2">Click aquí para ver los disponibles</label>
+        <select id="productos1" >
+            <option id="op1" value="prod1"></option>
+            <option id="op2" value="prod2"></option>
+            <option id="op3" value="prod3"></option>
+        </select>
 
 
 <script src= "{% static 'JS/fetch_script.js' %}"></script>
 
-<style>
- #loadBtn{
-    width:100%
- }
-</style>
 
 {% endblock intro %}
 
 
-
-
 {% block contenido %}
-<!-- ESTILO DE BLOQUE -->
+<h2>Subida de documentos</h2>
+         <p>Archivos admitidos.jpg</p>
+
+<!-- FILE UPLOADER -->
+<div id="examinador">
+    <img src="https://image.freepik.com/vector-gratis/examinar-concepto-archivos_1459-2303.jpg" alt="examinar-archivos" width="80px">
+        <input class="contact100-form-btn" type="file" id="file-selector" name="archivo">
+</div>
+
+<div id="doc">
+    <img id="output" src="" width="800px">
+</div>
+
+<script src= "{% static 'JS/file_upload.js' %}"></script>
+
 <style>
-	#main > #work{
-		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
-		}
+ #doc{
+    float: center;
+	height: auto;
+	width: 100%;
+	border: 1px solid #ddd;
+	overflow-y: scroll;
+	overflow-x: scroll;
+	margin: 20px;
+}
+
+#examinador{
+    margin-top:0px;
+}
+
 </style>
+
 {% endblock contenido %}
