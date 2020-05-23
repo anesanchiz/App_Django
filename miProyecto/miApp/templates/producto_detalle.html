@@ -3,34 +3,32 @@
 {% block intro %}
 
     <table class="tabla">
-
-                <colgroup>
-                    <col span="5">
-
-
-                <thead>
                     <tr>
-                        <td>Referencia</td>
-                        <td>Nombre</td>
-                        <td>Descripción</td>
-                        <td>Categoría</td>
-                        <td>Componentes</td>
-                        <td>Precio</td>
+                        <th>Referencia</th>
+                        <td>{{productos.referencia}}</td>
                     </tr>
-                </thead>
-
-                        <tbody>
                     <tr>
-                        <td>{{ productos.referencia }}</td>
-                        <td>{{ productos.nombre }}</td> <!-- Aqui añadir un enlace a dicho cliente.cif-->
-                        <td>{{ productos.descripcion }}</td>
-                        <td>{{ productos.categoria }}</td>
-                            {% for comp in object.tipo_componentes.all %}
-                        <td>{{ comp.codigo }}</td>
-                            {% endfor %}
-                        <td>{{ productos.precio }}</td>
+                        <th>Nombre</th>
+                    <td>{{ productos.nombre }}</td>
                     </tr>
-                        </tbody>
+                    <tr>
+                        <th>Descripción</th>
+                        <td>{{productos.descripcion}}</td>
+                    </tr>
+                    <tr>
+                        <th>Categoría</th>
+                        <td>{{productos.categoria}}</td>
+                    </tr>
+                    <tr>
+                        <th>Componentes</th>
+                        {% for comp in object.tipo_componentes.all %}
+                        <td>{{comp.codigo}}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <th>Precio</th>
+                        <td>{{productos.precio}}</td>
+                    </tr>
     </table>
 
 
@@ -41,6 +39,12 @@
         padding: 20px;
     }
 
+    th{
+        float: left;
+        font-weight:bolder;
+        color: #A3016D ;
+        font-size: 18px;
+    }
 </style>
 
 {% endblock intro %}

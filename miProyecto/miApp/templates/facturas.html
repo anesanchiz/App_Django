@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block intro %}
+
+
+<!-- SELECTOR DE PEDIDOS DE JSON -->
+
+<section id="productos" class="clear">
+
+    <article class="productos">
+         <h2>Factura de pedidos</h2>
+         <p id="rango1">Selecciona el pedido por ID para adjuntar la factura correspondiente.</p>
+    </article>
+
+    <article class="productos">
+        <form method="POST" action="page2.php" class="container-contact100-form-btn">
+            <input class="limpito" id="num" type="number" name="total" placeholder="Nº pedido">
+        </form>
+        <p id="codigo"></p>
+        <p id="precio" ></p>
+        <button class="contact100-form-btn" id="loadBtn1" type="button" >Cargar</button>
+    </article>
+
+
+<!-- FILE UPLOADER -->
+    <img id="examinador" src="https://image.freepik.com/vector-gratis/examinar-concepto-archivos_1459-2303.jpg" alt="examinar-archivos" width="80px">
+
+    <article class="lastbox">
+         <form class="container-contact100-form-btn" enctype="multipart/form-data" id="form-upload" class="limpito" method="post">
+            <input class="contact100-form-btn" class="limpito" type="file" id="archivo" name="archivo">
+        </form>
+        <div id="mensaje"></div>
+    </article>
+</section>
+
+
+
+<script src= "{% static 'JS/fetch_script.js' %}"></script>
+
+<style>
+ #loadBtn{
+    width:100%
+ }
+</style>
+
+{% endblock intro %}
+
+
+
+
+{% block contenido %}
+<!-- ESTILO DE BLOQUE -->
+<style>
+	#main > #work{
+		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
+		}
+</style>
+{% endblock contenido %}

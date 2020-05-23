@@ -4,12 +4,18 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse,reverse_lazy
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
-from .forms import ClienteForm, ProductoForm, PedidoForm, ComponenteForm, RegisterForm, LoginForm
+from .forms import ClienteForm, ProductoForm, PedidoForm, ComponenteForm
 from .models import Pedido, Productos, Cliente, Componente
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
 from django.http import JsonResponse
 from django.forms import model_to_dict
 from django.views import View
+
+
+#BORRAR
+def prueba1(request):
+    return render(request, 'Usos.html')
+
 
 #VIEWS JS
 #
@@ -28,21 +34,14 @@ class PedidoDetailView_js(View):
         return JsonResponse(model_to_dict(pedido))
 
 
+def FacturasView(request):
+    return render(request, 'facturas.html')
 
 
 #PAGINA DE INICIO
 def index(request):
     context = {'titulo_form': 'Menu Principal'}
     return render(request, 'base.html')
-
-
-
-def prueba1(request):
-    return render(request, 'Usos.html')
-
-def incidencias(request):
-    return render(request, 'incidencias.html')
-
 
 
 

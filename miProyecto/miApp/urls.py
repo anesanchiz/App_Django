@@ -3,15 +3,16 @@ from . import views
 
 
 urlpatterns = [
-#MAS PRUEBAS
-#    path('pedidosAPI/', views.PedidosAPI.as_view(), name='pedidosAPI'),
 
+     #BORRAR
+     path('prueba1/', views.prueba1, name='a ver'),
 
-     #URLS QUE FUNCIONAN
      path('', views.index, name='index'),
 
-     path('prueba1/', views.prueba1, name='a ver'),
-     path('incidencias/', views.incidencias, name= 'incidencias'),
+     #AÑADIDAS
+     path('facturas/', views.FacturasView, name= 'facturas'),
+     path('pedidosjs/', views.PedidoListView_js.as_view(), name = 'pedidosjs'),
+     path('pedidosjs/<int:pk>/', views.PedidoDetailView_js.as_view(), name = 'pedidojs'),
 
      path('productos/', views.lista_productos, name='indexprod'),
      path('productonuevo/', views.ProductosCreateView.as_view(), name='productonuevo'),
@@ -26,9 +27,6 @@ urlpatterns = [
      path('pedidoeliminar/<int:pk>/', views.PedidoDelete.as_view(), name='pedidoeliminar'),
      path('pedidos/<int:pk>/', views.PedidoDetailView.as_view(), name='pedidodetalle'),
 
-     path('pedidosjs/', views.PedidoListView_js.as_view(), name = 'pedidosjs'),
-     path('pedidosjs/<int:pk>/', views.PedidoDetailView_js.as_view(), name = 'pedidojs'),
-
 
      path('clientes/', views.cliente, name='cliente'),
      path('clientenuevo/', views.ClienteCreateView.as_view(), name='cliente_nuevo'),
@@ -40,7 +38,4 @@ urlpatterns = [
      path('componenteeditar/<int:pk>/', views.ComponenteUpdate.as_view(), name='componenteeditar'),
      path('componenteeliminar/<int:pk>/', views.ComponenteDelete.as_view(), name='componenteeliminar'),
      path('componentes/<int:pk>/', views.ComponenteDetailView.as_view(), name='componentedetalle'),
-
-
-
 ]

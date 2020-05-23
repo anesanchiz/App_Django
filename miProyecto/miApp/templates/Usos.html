@@ -1,170 +1,43 @@
 {% extends "base.html" %}
+{% load static %}
 {% block intro %}
 
-    <h2>FACTURACIÓN TOTAL</h2>
-
-<!--
-    <input id="load-quote-btn" type="submit" value="enviar">
-
-
-
-  <section class="text-center">
-    <div class="container">
-      <p id="codigo" class="lead my-4"></p>
-      <p id="fecha" class="my-4"></p>
-    </div>
-  </section>
-
-  <section class="text-center">
-    <div class="container">
-      <p id="quote" class="lead my-4"></p>
-      <p id="character" class="my-4"></p>
-    </div>
-  </section>
+<form enctype="multipart/form-data" id="formuploadajax" method="post">
+        Nombre: <input type="text" name="nombre" placeholder="Escribe tu nombre">
+        <br />
+        <input  type="file" id="archivo1" name="archivo1"/>
+        <br />
+        <input  type="file" id="archivo2" name="archivo2"/>
+        <br />
+        <input type="submit" value="Subir archivos"/>
+    </form>
+    <div id="mensaje"></div>
 
 
-<script type="text/javascript">
 
-const SERVICE_URL = "http://127.0.0.1:8000/miApp/pedidosjs/";
+<script src= "{% static 'JS/js.js' %}"></script>
+<style>
 
-let loadBtn = document.getElementById("load-quote-btn");
-
-loadBtn.addEventListener("click", (event) => {
-  loadData();
-});
-
-function loadData() {
-  fetch(SERVICE_URL)
-    .then((response) => response.json())
-    .then((json) => {
-
-    var txt1 = '{"name":"John", "age":30, "city":"New York"}'
-    var obj = JSON.parse(txt1);
-
-
-      let txt = document.getElementById("quote");
-      txt.textContent = `${json.quotes}`;
-
-      let cElement = document.getElementById("character");
-      cElement.textContent = `${json.characters}`;
-    });
+    #form {
+    max-width: 600px;
+    margin: auto;
 }
 
-loadData();
+#button {
+    margin-top: 50px;
+    margin-right: 20px;
+    float: right;
+}
 
-        </script>
+#fileuploader-container{
+    border: 1px solid #d3d3d3;
+    margin: 20px 20px 0 20px;
+}
 
-
--->
-
+#form h3 {
+    margin-left: 20px;
+    font-weight: normal;
+    font-size: 22px;
+}
+</style>
 {% endblock intro %}
-
-{% block contenido %}
-
-
-
-    <main>
-        <h1>Task Manager App</h1>
-        <h2>Nueva tarea:</h2>
-        <form>
-            <input type="text" name="id" placeholder="ID">
-            <input type="date" name="fecha">
-            <input type="text" name="descripcion" placeholder="Descripción">
-            <input id="btn-nueva-tarea" type="submit" value="enviar">
-        </form>
-        <h2>Lista de tareas</h2>
-        <div id="tareas"></div>
-    </main>
-
-
-<script>
-
-const SERVICE_URL = "http://127.0.0.1:8000/miApp/pedidosjs/";
-
-
-fetch(SERVICE_URL)
-    .then((response) => response.json())
-    .then((json) => {
-
-const tareas = [
-    {
-        id : 1,
-        fecha : '03-10-2020',
-        descripcion : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-    },
-    {
-        id : 2,
-        descripcion : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        fecha : '12-08-2020'
-    },
-    {
-        id : 3,
-        descripcion : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        fecha : '11-12-2020'
-    },
-    {
-        id : 4,
-        descripcion : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        fecha : '07-06-2020'
-    }
-];
-
-
-function crearTarea(id, descripcion, fecha){
-    return `
-        <tr>
-            <td>${id}</td>
-            <td>${fecha}</td>
-            <td>${descripcion}</td>
-        </tr>`;
-}
-
-function generarHTMLTablaTareas(tareas) {
-    let tabla = `
-        <table id="tabla-tareas">
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Fecha</td>
-                    <td>Incidencia</td>
-                </tr>
-            </thead>
-            <tbody>
-    `;
-    for(const tarea of tareas) {
-        tabla += crearTarea(tarea.id, tarea.descripcion, tarea.fecha);
-    }
-    tabla += '</tbody></table>'
-    return tabla;
-}
-
-function crearTablaTareas(tareas){
-    let tabla = generarHTMLTablaTareas(tareas);
-    document.getElementById('tareas').innerHTML = tabla;
-}
-
-// Crear tabla de tareas
-crearTablaTareas(tareas);
-
-// Controlador para añadir nuevas tareas
-document.getElementById('btn-nueva-tarea').addEventListener('click', function(event){
-    event.preventDefault(); // Detener el envío del formulario
-
-    let formulario = event.currentTarget.parentNode; // Acceder al formulario desde el botón
-
-    // Crear un objeto Tarea con los datos del formulario
-    let nuevaTarea = {
-        id: formulario.children["id"].value,
-        descripcion: formulario.children["descripcion"].value,
-        fecha: formulario.children["fecha"].value
-    }
-
-
-    // Añadir la nueva tarea al listado de tareas
-    tareas.push(nuevaTarea);
-    // Volver a crear la tabla (ahora la lista ya contiene la nueva tarea)
-    crearTablaTareas(tareas);
-});
-</script>
-
-{% endblock contenido %}

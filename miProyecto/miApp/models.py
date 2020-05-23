@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 class Cliente (models.Model):
     CIF = models.CharField(max_length=9)
@@ -42,7 +41,3 @@ class Pedido(models.Model):
     def __str__(self):
         return f"Cod: {self.codigo}, Cliente: {self.datos_cliente}, Product: {self.productos}, Uds: {self.cantidad}, Precio: {self.precio_total}"
 
-
-class Usuario(User):
-    username = models.CASCADE
-    password = models.CASCADE

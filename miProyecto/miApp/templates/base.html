@@ -14,6 +14,9 @@
 
 
 <body class="is-preload">
+
+<!----------   GOOGLE TRANSLATOR ---------->
+
 				<div class="translate">
 						<div>
 							<div id="google_translate_element">
@@ -29,11 +32,13 @@
 						</script>
 						</div>
 				</div>
-		<!-- Wrapper-->
+
+
 			<div id="wrapper">
 
 
-				<!-- Nav -->
+<!----------   MENU NAV PRINCIPAL  ---------->
+
 					<nav id="nav">
 						<a href="http://127.0.0.1:8000/miApp/" ><span>Inicio</span></a>
 						<a href="http://127.0.0.1:8000/miApp/clientes" ><span>Clientes</span></a>
@@ -42,7 +47,7 @@
 						<a href="http://127.0.0.1:8000/miApp/componentes" ><span>Comps.</span></a>
 					</nav>
 
-				<!-- Main -->
+
 				<div id="main">
 							<article id="home" class="panel intro">
 								<header>
@@ -51,8 +56,11 @@
 									<h1>DEUSTRONIC TECHNOLOGY</h1>
 									<p>Electrónica industrial</p>
 
-
 									<div id="cal">
+
+
+
+<!----------   CALENDARIO ---------->
 
           				<div class="cabez">
            			 		<span class="left button" id="prev"> &lang; </span>
@@ -73,9 +81,6 @@
              			</table>
 
 
-
-
-
 					<div id="cal-frame">
 
                			<table class="curr">
@@ -92,20 +97,17 @@
 				</div>
 
 
+					<figure id="grafics">
+						<img id="grafico2" src="https://programacion.net/files/article/20170425050426_pie-chart.png" alt="gráfica2">
+					</figure>
+
+					{% endblock %}
+
+					</header>
+				</article>
 
 
-
-									<figure id="grafics">
-										<img id="grafico2" src="https://programacion.net/files/article/20170425050426_pie-chart.png" alt="gráfica2">
-									</figure>
-
-									{% endblock %}
-								</header>
-							</article>
-
-
-
-						<!-- Work -->
+<!----------   BLOQUE CONTENIDO  ---------->
 							<article id="work" class="panel">
 								<header>
 									<h2 class="titulo">{{ titulo_form }}</h2>
@@ -134,27 +136,17 @@
 										</div>
 
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="http://127.0.0.1:8000/miApp/productos" class="image fit" id="mini">
-												<img class="ims" src="https://http2.mlstatic.com/circuitos-integrados-varios-modelos-anri-tv-D_NQ_NP_709905-MLA25115723839_102016-F.jpg"
+											<a href="http://127.0.0.1:8000/miApp/facturas" class="image fit" id="mini">
+												<img class="ims" src="https://static.vecteezy.com/system/resources/previews/000/350/512/non_2x/invoice-vector-icon.jpg" alt="facturas"
 													 onmouseover="this.width=400;this.height=230;"
 													 onmouseout="this.width=300;this.height=200;"
-													 width="300" height="200" alt="productos">PRODUCTOS</a>
+													 width="300" height="200" alt="productos">FACTURAS</a>
 										</div>
-
-										<!--<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
-										</div>
-										</div>-->
-
 									</div>
 								</section>
 								{% endblock %}
-
-								<div>
-
-								</div>
 							</article>
-					</div>
+						</div>
 
 
 
@@ -306,7 +298,6 @@ float: right;
 
 .container-contact100-form-btn {
   width: 100%;
-
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 20px;
