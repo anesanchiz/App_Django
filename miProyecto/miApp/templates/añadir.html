@@ -3,7 +3,7 @@
 
 {% block intro %}
 
-
+<!-- FORMULARIOS GENERADOS POR DJANGO-->
     <form method="post" id="formito">
         {% csrf_token %}
         {{ form.as_p }}
@@ -17,9 +17,8 @@
                 </div>
     </form>
 
-
+<!-- ESTILO DE BLOQUE -->
 <style>
-
     h1{
         text-align:center;
         margin:0;
@@ -30,17 +29,15 @@
         height:10%;
         font-size: 16px;
         box-size:50%;
-
-
     }
-
-
 </style>
 
 {% endblock intro %}
 
 
 {% block contenido %}
+
+<!-- ESTILO DE BLOQUE -->
 <style>
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);

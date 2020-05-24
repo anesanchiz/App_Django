@@ -2,6 +2,8 @@
 {% load static %}
 {% block intro %}
 
+
+<!-- FORMULARIO DE REGISTRAR UN NUEVO PRODUCTO QUE REALIZA SU FUNCION MEDIANTE AYAX  -->
     <form method="post" id="formito1">
         {% csrf_token %}
         {{ form.as_p }}

@@ -28,19 +28,20 @@
 
 
 <script src= "{% static 'JS/fetch_script.js' %}"></script>
-
-
 {% endblock intro %}
 
 
+
 {% block contenido %}
+
 <h2>Subida de documentos</h2>
          <p>Archivos admitidos.jpg</p>
 
 <!-- FILE UPLOADER -->
 <div id="examinador">
-    <img src="https://image.freepik.com/vector-gratis/examinar-concepto-archivos_1459-2303.jpg" alt="examinar-archivos" width="80px">
+    <img src="https://image.freepik.com/vector-gratis/examinar-concepto-archivos_1459-2303.jpg" alt="examinar-archivos" width="80px" accept=".image, .jpeg, .jpg">
         <input class="contact100-form-btn" type="file" id="file-selector" name="archivo">
+
 </div>
 
 <div id="doc">

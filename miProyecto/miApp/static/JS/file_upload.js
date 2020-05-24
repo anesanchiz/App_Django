@@ -1,3 +1,6 @@
+     //FUNCION QUE SIRVE PARA MOSTRAR POR PANTALLA LA IMG CARGADA EN EL FILE
+     // INPUT
+
       const status = document.getElementById('status');
       const output = document.getElementById('output');
       if (window.FileList && window.File && window.FileReader) {

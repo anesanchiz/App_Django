@@ -3,18 +3,17 @@ from . import views
 
 
 urlpatterns = [
-
-     #BORRAR
-     path('prueba1/', views.prueba1, name='a ver'),
-
      path('', views.index, name='index'),
 
      #AÑADIDAS
      path('facturas/', views.FacturasView, name= 'facturas'),
      path('pedidosjs/', views.PedidoListView_js.as_view(), name = 'pedidosjs'),
-     path('pedidosjs/<int:pk>/', views.PedidoDetailView_js.as_view(), name = 'pedidojs'),
+
 
      path('productos/', views.lista_productos, name='indexprod'),
+     path('productos/order-nombre/', views.lista_productos1, name='prod_order_1'),
+     path('productos/order-precio/', views.lista_productos2, name='prod_order_2'),
+
      path('productonuevo/', views.ProductosCreateView.as_view(), name='productonuevo'),
      path('productoeditar/<int:pk>/', views.ProductoUpdate.as_view(), name='productoeditar'),
      path('productoeliminar/<int:pk>/', views.ProductoDelete.as_view(), name='productoeliminar'),

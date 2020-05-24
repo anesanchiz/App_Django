@@ -2,6 +2,7 @@
 {% load static %}
 {% block intro %}
 
+<!-- VENTANA DE ELIMINACIÓN DEL PEDIDO SELECCIONADO  -->
     <form method="post">{% csrf_token %}
         <p id="eliminar">Confirma para eliminar el pedido:</p>
         <p> Código: {{ pedido.codigo }} </p>

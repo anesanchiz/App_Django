@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block intro %}
+
+<!-- VENTANA DE ELIMINACIÓN DEL CLIENTE SELECCIONADO  -->
     <form method="post">{% csrf_token %}
         <p id="eliminar">Confirma para eliminar el cliente:</p>
         <p>CIF : {{ cliente.CIF }}</p>
@@ -12,13 +14,13 @@
                         <input class="limpito" type="submit" value="Confirm">
                     </button>
         </div>
-
     </form>
 
 {% endblock intro %}
 
 {% block contenido %}
 
+<!-- ESTILO DE BLOQUE -->
 <style>
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);

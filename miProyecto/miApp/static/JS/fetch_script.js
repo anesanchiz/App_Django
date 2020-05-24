@@ -1,5 +1,7 @@
 
 //FUNCION FETCH PEDIDOS
+//A PARTIR DE LA VISTA DE PEDIDOS EN FORMATO JSON LA FUNCION RECOGE LA
+// POSICION INTRODUCIDA POR EL INPUT TEXT Y SACA LOS DATOS DE DICHO PEDIDO
 
 let loadBtn = document.getElementById("loadBtn1");
 
@@ -19,10 +21,6 @@ function cargarJson() {
 
       console.log(porNum)
 
-      let rango = document.createElement('p');
-      rango.innerHTML = "El listado de pedidos es de 0 a "+ json.length
-      console.log(rango)
-
       let cElement = document.getElementById("fecha");
       cElement.textContent = "Fecha:  "+`${json[porNum].fecha}`;
 
@@ -40,6 +38,8 @@ loadBtn3.addEventListener("click", (event) => {
 });
 
 
+//FUNCION QUE CARGA LA LISTA DE LOS CÓDIGOS DE PEDIDO DISPONIBLE PARA QUE
+//EL USUARIO LOS INTRODUZCA EN EL TEXT INPUT DE AL LADO
 function cargarJson2() {
   fetch('http://127.0.0.1:8000/miApp/pedidosjs')
     .then((response) => response.json())

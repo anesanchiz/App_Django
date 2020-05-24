@@ -3,7 +3,7 @@
 
 {% block intro %}
 
-
+<!-- IMAGENES DINÁMICAS DE LOS PRODUCTOS DE DEUSTRÓNIC  -->
 <p><img id="imagen-seleccionada" src="https://images-na.ssl-images-amazon.com/images/I/61ndSrELPfL._AC_SX522_.jpg" alt="Imagen grande"></p>
 
 <ul id="thumbs">
@@ -83,13 +83,12 @@ li {
 <div id="ops">
   <ul>
     <li id="menu" onmouseover="ver(1)" onmouseout="ocultar(1)"><a href="#">Ordenar </a>
-    <div id="submenu1" style="display: none;">
-      <p><a href="#"> por referencia</a></p>
-      <p><a href="#"> por nombre</a></p>
-      <p><a href="#"> por código</a></p>
-    </div>
+        <div id="submenu1" style="display: none;">
+            <p><a href="http://127.0.0.1:8000/miApp/productos/"> por referencia</a></p>
+            <p><a href="http://127.0.0.1:8000/miApp/productos/order-nombre/"> por nombre</a></p>
+            <p><a href="http://127.0.0.1:8000/miApp/productos/order-precio/"> por precio</a></p>
+        </div>
     </li>
-    <li id="seccion2"><a href="#">Filtrar</a></li>
   </ul>
 
   <div class="borrar"></div>
@@ -97,7 +96,7 @@ li {
 
 
 
-<!-- TABLA DE PRODUCTOS -->
+<!-- LISTADO DE COMPONENTES  -->
 <table class="tabla">
     <colgroup>
          <col span="5">

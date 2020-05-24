@@ -12,13 +12,8 @@ from django.forms import model_to_dict
 from django.views import View
 
 
-#BORRAR
-def prueba1(request):
-    return render(request, 'Usos.html')
-
-
 #VIEWS JS
-#
+
 class PedidoListView_js(View):
     def get(self, request):
         if ('name' in request.GET):
@@ -26,13 +21,6 @@ class PedidoListView_js(View):
         else:
             pedido_list = Pedido.objects.all()
         return JsonResponse(list(pedido_list.values()), safe=False)
-
-
-class PedidoDetailView_js(View):
-    def get(self, request, pk):
-        pedido = Pedido.objects.get(pk=pk)
-        return JsonResponse(model_to_dict(pedido))
-
 
 def FacturasView(request):
     return render(request, 'facturas.html')
@@ -175,6 +163,16 @@ class ComponenteUpdate(UpdateView):
 #Listado de productos
 def lista_productos(request):
     productos = Productos.objects.order_by('referencia')
+    context = {'titulo_form':'Listado de productos','titulo_pagina':'Productos' ,'lista_productos': productos}
+    return render(request, 'productos.html', context)
+
+def lista_productos1(request):
+    productos = Productos.objects.order_by('nombre')
+    context = {'titulo_form':'Listado de productos','titulo_pagina':'Productos' ,'lista_productos': productos}
+    return render(request, 'productos.html', context)
+
+def lista_productos2(request):
+    productos = Productos.objects.order_by('precio')
     context = {'titulo_form':'Listado de productos','titulo_pagina':'Productos' ,'lista_productos': productos}
     return render(request, 'productos.html', context)
 
