@@ -12,7 +12,7 @@
          <p id="rango1">Selecciona el pedido por ID para adjuntar la factura correspondiente.</p>
     </article>
 
-    <article class="lastbox">
+    <article class="productos">
         <form method="POST" action="page2.php" class="container-contact100-form-btn">
             <input class="limpito" id="num" type="number" name="total" placeholder="Nº pedido">
         </form>
@@ -21,14 +21,10 @@
         <button class="contact100-form-btn" id="loadBtn1" type="button" >Cargar</button>
     </article>
 
-
-
-    <label for="productos1" id="loadBtn2">Click aquí para ver los disponibles</label>
-        <select id="productos1" >
-            <option id="op1" value="prod1"></option>
-            <option id="op2" value="prod2"></option>
-            <option id="op3" value="prod3"></option>
-        </select>
+    <article class="lastbox">
+        <ul id="ay"></ul>
+        <label id="loadBtn2">Click para ver disponibles</label>
+    </article>
 
 
 <script src= "{% static 'JS/fetch_script.js' %}"></script>

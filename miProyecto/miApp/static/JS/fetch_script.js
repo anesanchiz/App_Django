@@ -23,9 +23,6 @@ function cargarJson() {
       rango.innerHTML = "El listado de pedidos es de 0 a "+ json.length
       console.log(rango)
 
-      
-
-
       let cElement = document.getElementById("fecha");
       cElement.textContent = "Fecha:  "+`${json[porNum].fecha}`;
 
@@ -49,17 +46,12 @@ function cargarJson2() {
     .then((json) => {
     console.log(json);
 
-      let opci1 = document.getElementById("op1");
-      opci1.textContent = `${json[0].codigo}`;
-
-      let opci2 = document.getElementById("op2");
-      opci2.textContent = `${json[1].codigo}`;
-
-      let opci3 = document.getElementById("op3");
-      opci3.textContent = `${json[2].codigo}`;
-
-      let opci4 = document.getElementById("op4");
-      opci4.textContent = `${json[3].codigo}`;
-
+    ;
+    for(i=0; i<json.length; i++){
+      let ay = document.getElementById("ay")
+      var lista
+      lista += "<li>"+`${json[i].codigo}`+"</li>"
+      ay.innerHTML=lista
+}
     });
 }
