@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from django.views.decorators.csrf import csrf_exempt
+
 from .forms import ClienteForm, ProductoForm, PedidoForm, ComponenteForm
 from .models import Pedido, Productos, Cliente, Componente
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
@@ -11,9 +11,16 @@ from django.http import JsonResponse
 from django.forms import model_to_dict
 from django.views import View
 
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+
+def success(request):
+    return HttpResponse("success")
+
+def error(request):
+    HttpResponse("error")
 
 #VIEWS JS
-
 class PedidoListView_js(View):
     def get(self, request):
         if ('name' in request.GET):
@@ -177,13 +184,14 @@ def lista_productos2(request):
     return render(request, 'productos.html', context)
 
 #Añadir
+@method_decorator(csrf_exempt,name='dispatch')
 class ProductosCreateView(CreateView):
     model = Productos
     form_class = ProductoForm
     template_name = 'añadir_producto.html'
 
     def get_success_url(self):
-        return reverse('indexprod')
+        return reverse('success')
 
 
 #Detalles

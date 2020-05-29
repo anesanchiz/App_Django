@@ -5,10 +5,11 @@ from . import views
 urlpatterns = [
      path('', views.index, name='index'),
 
+
      #AÑADIDAS
      path('facturas/', views.FacturasView, name= 'facturas'),
      path('pedidosjs/', views.PedidoListView_js.as_view(), name = 'pedidosjs'),
-
+     path('success/', views.success, name='success'),
 
      path('productos/', views.lista_productos, name='indexprod'),
      path('productos/order-nombre/', views.lista_productos1, name='prod_order_1'),

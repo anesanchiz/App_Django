@@ -15,9 +15,11 @@ function devuelveDatos(datos){
        } else {
            throw "Error en la llamada AJAX";
        }
-
     })
     .then(function(texto) {
+        if (texto == "success"){
+            alert("producto añadido");
+        }
        console.log(texto);
     })
     .catch(function(err) {
