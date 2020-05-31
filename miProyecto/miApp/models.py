@@ -1,5 +1,9 @@
 from django.db import models
 
+class Factura(models.Model):
+    imagen=models.ImageField(upload_to="facturas", blank=True)
+    fecha=models.DateField()
+
 class Cliente (models.Model):
     CIF = models.CharField(max_length=9)
     empresa = models.CharField(max_length=30)

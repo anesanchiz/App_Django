@@ -40,12 +40,19 @@
 <!-- FILE UPLOADER -->
 <div id="examinador">
     <img src="https://image.freepik.com/vector-gratis/examinar-concepto-archivos_1459-2303.jpg" alt="examinar-archivos" width="80px" accept=".image, .jpeg, .jpg">
-        <input class="contact100-form-btn" type="file" id="file-selector" name="archivo">
-
+        <form action="{%url 'facturas'%}" method="POST" enctype="multipart/form-data">
+           {{ formulario.imagen }}
+            <input type="submit" value="Enviar"/>
+        </form>
 </div>
 
 <div id="doc">
-    <img id="output" src="" width="800px">
+    {% for factura in facturas %}
+    <div class="factura">
+        <img src="../media/{{factura.imagen}}" alt="factura" width="800px"/>
+        <span>{{factura.fecha}}</span>
+    </div>
+    {%endfor%}
 </div>
 
 <script src= "{% static 'JS/file_upload.js' %}"></script>

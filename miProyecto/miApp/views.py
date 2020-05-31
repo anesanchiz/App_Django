@@ -4,8 +4,8 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse,reverse_lazy
 from django.contrib.auth.models import User
 
-from .forms import ClienteForm, ProductoForm, PedidoForm, ComponenteForm
-from .models import Pedido, Productos, Cliente, Componente
+from .forms import ClienteForm, ProductoForm, PedidoForm, ComponenteForm, FacturaForm
+from .models import Pedido, Productos, Cliente, Componente, Factura
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
 from django.http import JsonResponse
 from django.forms import model_to_dict
@@ -13,6 +13,39 @@ from django.views import View
 
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+
+import datetime
+
+
+@method_decorator(csrf_exempt, name ='dispatch')
+class FacturasView(View):
+
+    def get (self, request, *args, **kwargs):
+        form = FacturaForm()
+        facturas = Factura.objects.all()
+        context = {
+            'formulario': form,
+            'facturas': facturas
+        }
+
+        return render(request,'facturas.html', context)
+
+    #Funcion post al servidor
+    def post (self, req):
+        data=req.POST.copy()
+        data.update({"fecha":datetime.date.today()})
+        form = FacturaForm(data, req.FILES)
+
+        if(form.is_valid()):
+            print("valido")
+            form.save()
+        else:
+            print("no")
+
+        return redirect('facturas')
+
+
+
 
 def success(request):
     return HttpResponse("success")
@@ -28,9 +61,6 @@ class PedidoListView_js(View):
         else:
             pedido_list = Pedido.objects.all()
         return JsonResponse(list(pedido_list.values()), safe=False)
-
-def FacturasView(request):
-    return render(request, 'facturas.html')
 
 
 #PAGINA DE INICIO
