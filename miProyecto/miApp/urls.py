@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
-from . import static
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
@@ -10,10 +11,8 @@ urlpatterns = [
      #AÑADIDAS
      path('facturas/', views.FacturasView.as_view(), name= 'facturas'),
 
-
      path('pedidosjs/', views.PedidoListView_js.as_view(), name = 'pedidosjs'),
      path('success/', views.success, name='success'),
-
 
      path('productos/', views.lista_productos, name='indexprod'),
      path('productos/order-nombre/', views.lista_productos1, name='prod_order_1'),
