@@ -3,34 +3,35 @@
 {% block intro %}
 
 <!-- VENTANA DE ELIMINACIÓN DEL PEDIDO SELECCIONADO  -->
-    <form method="post">{% csrf_token %}
-        <p id="eliminar">Confirma para eliminar el pedido:</p>
-        <p> Código: {{ pedido.codigo }} </p>
-        <p> Fecha: {{ pedido.fecha }} </p>
-        <p> Cliente: {{ pedido.datos_cliente.empresa }}</p>
-            {% for ped in object.productos.all %}
-        <p>Producto: {{ ped.nombre }}<p/>
-            {% endfor %}
-        <p> Cantidad: {{ pedido.cantidad }} </p>
-        <p> Precio: {{ pedido.precio_total }}</p>
+<form method="post">{% csrf_token %}
+    <p id="eliminar">Confirma para eliminar el pedido:</p>
+    <p> Código: {{ pedido.codigo }} </p>
+    <p> Fecha: {{ pedido.fecha }} </p>
+    <p> Cliente: {{ pedido.datos_cliente.empresa }}</p>
+    {% for ped in object.productos.all %}
+    <p>Producto: {{ ped.nombre }}
+    <p/>
+    {% endfor %}
+    <p> Cantidad: {{ pedido.cantidad }} </p>
+    <p> Precio: {{ pedido.precio_total }}</p>
 
 
-        <div class="container-contact100-form-btn" >
-                    <button class="contact100-form-btn" id="bienpuesto">
-                        <input class="limpito" type="submit" value="Confirm">
-                    </button>
-        </div>
-    </form>
+    <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn" id="bienpuesto">
+            <input class="limpito" type="submit" value="Confirm">
+        </button>
+    </div>
+</form>
 
 
 <article class="atras">
-  <a href = "http://127.0.0.1:8000/miApp/pedidos/" id="enlace">
-    <div class="container-contact100-form-btn">
-        <button class="contact100-form-btn limpito">
-             Atrás
-        </button>
-    </div>
-  </a>
+    <a href="http://127.0.0.1:8000/miApp/pedidos/" id="enlace">
+        <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn limpito">
+                Atrás
+            </button>
+        </div>
+    </a>
 </article>
 {% endblock intro %}
 
@@ -41,6 +42,7 @@
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
 		}
+
 </style>
 
 {% endblock contenido %}

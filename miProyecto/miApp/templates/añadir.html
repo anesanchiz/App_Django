@@ -4,18 +4,17 @@
 {% block intro %}
 
 <!-- FORMULARIOS GENERADOS POR DJANGO-->
-    <form method="post" id="formito">
-        {% csrf_token %}
-        {{ form.as_p }}
+<form method="post" id="formito">
+    {% csrf_token %}
+    {{ form.as_p }}
 
 
-
-                <div class="container-contact100-form-btn">
-                    <button class="contact100-form-btn">
-                        <input class="limpito" type="submit" value="Registrar">
-                    </button>
-                </div>
-    </form>
+    <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn">
+            <input class="limpito" type="submit" value="Registrar">
+        </button>
+    </div>
+</form>
 
 
 <!-- ESTILO DE BLOQUE -->
@@ -31,6 +30,7 @@
         font-size: 16px;
         box-size:50%;
     }
+
 </style>
 
 {% endblock intro %}
@@ -43,5 +43,6 @@
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
 		}
+
 </style>
 {% endblock contenido %}

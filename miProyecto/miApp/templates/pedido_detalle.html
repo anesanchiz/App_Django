@@ -3,46 +3,47 @@
 {% block intro %}
 
 <!-- DETALLE DEL PRODUCTO SELECIONADO -->
-  <table class="tabla">
+<table class="tabla">
 
-                    <tr>
-                        <th>Código</th>
-                        <td>{{pedido.codigo}}</td>
-                    </tr>
-                    <tr>
-                        <th>Productos</th>
-                      {% for ped in object.productos.all %}
-                    <td>{{ ped.referencia }}</td>
-                            {% endfor %}
-                    </tr>
-                    <tr>
-                        <th>Cliente</th>
-                        <td>{{pedido.datos_cliente.empresa}}</td>
-                    </tr>
-                    <tr>
-                        <th>Fecha</th>
-                        <td>{{pedido.fecha}}</td>
-                    </tr>
-                    <tr>
-                        <th>Cantidad</th>
-                        <td>{{pedido.cantidad}}</td>
-                    </tr>
-                    <tr>
-                        <th>Precio</th>
-                        <td>{{pedido.precio}}</td>
-                    </tr>
+    <tr>
+        <th>Código</th>
+        <td>{{pedido.codigo}}</td>
+    </tr>
+    <tr>
+        <th>Productos</th>
+        {% for ped in object.productos.all %}
+        <td>{{ ped.referencia }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Cliente</th>
+        <td>{{pedido.datos_cliente.empresa}}</td>
+    </tr>
+    <tr>
+        <th>Fecha</th>
+        <td>{{pedido.fecha}}</td>
+    </tr>
+    <tr>
+        <th>Cantidad</th>
+        <td>{{pedido.cantidad}}</td>
+    </tr>
+    <tr>
+        <th>Precio</th>
+        <td>{{pedido.precio}}</td>
+    </tr>
 
-    </table>
+</table>
 
 <article class="atras">
-  <a href = "http://127.0.0.1:8000/miApp/pedidos/" id="enlace">
-    <div class="container-contact100-form-btn">
-        <button class="contact100-form-btn limpito">
-             Atrás
-        </button>
-    </div>
-  </a>
+    <a href="http://127.0.0.1:8000/miApp/pedidos/" id="enlace">
+        <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn limpito">
+                Atrás
+            </button>
+        </div>
+    </a>
 </article>
+
 <!-- ESTILO DE BLOQUE -->
 <style>
     .tabla{
@@ -56,11 +57,10 @@
     color: #A3016D ;
     font-size: 18px;
     }
+
 </style>
 
 {% endblock intro %}
-
-
 
 
 {% block contenido %}
@@ -70,6 +70,7 @@
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
 		}
+
 </style>
 
 {% endblock contenido %}

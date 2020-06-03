@@ -4,42 +4,53 @@
 {% block intro %}
 
 <!-- IMAGENES DINÁMICAS DE LOS PRODUCTOS DE DEUSTRÓNIC  -->
-<p><img id="imagen-seleccionada" src="https://images-na.ssl-images-amazon.com/images/I/61ndSrELPfL._AC_SX522_.jpg" alt="Imagen grande"></p>
+<p><img id="imagen-seleccionada" src="https://images-na.ssl-images-amazon.com/images/I/61ndSrELPfL._AC_SX522_.jpg"
+        alt="Imagen grande"></p>
 
 <ul id="thumbs">
 
-  <li>
-    <a class="pics" href="https://images-na.ssl-images-amazon.com/images/I/61ndSrELPfL._AC_SX522_.jpg" title="Image 6"><img class="pics" src="https://images-na.ssl-images-amazon.com/images/I/61ndSrELPfL._AC_SX522_.jpg"></a>
-  </li>
-  <li>
-    <a class="pics" href="https://www1.djicdn.com/cms/uploads/d21b3516988173bd21571c9ad980c238.png" title="Image 2"><img class="pics" src="https://www1.djicdn.com/cms/uploads/d21b3516988173bd21571c9ad980c238.png"></a>
-  </li>
-  <li>
-    <a class="pics" href="https://pbs.twimg.com/media/DvbNvMUX4AAPx8c.jpg" title="Image 3"><img class="pics" src="https://pbs.twimg.com/media/DvbNvMUX4AAPx8c.jpg"></a>
-  </li>
-  <li>
-    <a class="pics" href="https://http2.mlstatic.com/drone-ryze-tello-edu-impulsado-por-dji-D_NQ_NP_660188-MLM31953718003_082019-F.jpg" title="Image 4"><img class="pics" src="https://http2.mlstatic.com/drone-ryze-tello-edu-impulsado-por-dji-D_NQ_NP_660188-MLM31953718003_082019-F.jpg"></a>
-  </li>
-  <li>
-    <a class="pics" href="https://cdn.lavoz.com.ar/sites/default/files/styles/width_1072/public/nota_periodistica/Nexxt_Solutions_AHIMPFI4U1-BIG-6_1588253402.jpg" title="Image 5"><img class="pics" src="https://cdn.lavoz.com.ar/sites/default/files/styles/width_1072/public/nota_periodistica/Nexxt_Solutions_AHIMPFI4U1-BIG-6_1588253402.jpg"></a>
-  </li>
+    <li>
+        <a class="pics" href="https://images-na.ssl-images-amazon.com/images/I/61ndSrELPfL._AC_SX522_.jpg"
+           title="Image 6"><img class="pics"
+                                src="https://images-na.ssl-images-amazon.com/images/I/61ndSrELPfL._AC_SX522_.jpg"></a>
+    </li>
+    <li>
+        <a class="pics" href="https://www1.djicdn.com/cms/uploads/d21b3516988173bd21571c9ad980c238.png" title="Image 2"><img
+                class="pics" src="https://www1.djicdn.com/cms/uploads/d21b3516988173bd21571c9ad980c238.png"></a>
+    </li>
+    <li>
+        <a class="pics" href="https://pbs.twimg.com/media/DvbNvMUX4AAPx8c.jpg" title="Image 3"><img class="pics"
+                                                                                                    src="https://pbs.twimg.com/media/DvbNvMUX4AAPx8c.jpg"></a>
+    </li>
+    <li>
+        <a class="pics"
+           href="https://http2.mlstatic.com/drone-ryze-tello-edu-impulsado-por-dji-D_NQ_NP_660188-MLM31953718003_082019-F.jpg"
+           title="Image 4"><img class="pics"
+                                src="https://http2.mlstatic.com/drone-ryze-tello-edu-impulsado-por-dji-D_NQ_NP_660188-MLM31953718003_082019-F.jpg"></a>
+    </li>
+    <li>
+        <a class="pics"
+           href="https://cdn.lavoz.com.ar/sites/default/files/styles/width_1072/public/nota_periodistica/Nexxt_Solutions_AHIMPFI4U1-BIG-6_1588253402.jpg"
+           title="Image 5"><img class="pics"
+                                src="https://cdn.lavoz.com.ar/sites/default/files/styles/width_1072/public/nota_periodistica/Nexxt_Solutions_AHIMPFI4U1-BIG-6_1588253402.jpg"></a>
+    </li>
 </ul>
 
 
 <section id="productos" class="clear">
 
-        <article class="lastbox">
-            <a href = "http://127.0.0.1:8000/miApp/productonuevo/" id="enlace">
-                <div class="container-contact100-form-btn">
-                    <button class="contact100-form-btn">
-                        Añadir
-                    </button>
-                </div>
-            </a>
-        </article>
+    <article class="lastbox">
+        <a href="http://127.0.0.1:8000/miApp/productonuevo/" id="enlace">
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn">
+                    Añadir
+                </button>
+            </div>
+        </a>
+    </article>
 </section>
 
-<script src = "{% static 'JS/img_dinamic.js' %}"></script>
+<script src="{% static 'JS/img_dinamic.js' %}"></script>
 
 <!-- ESTILO DE BLOQUE -->
 
@@ -68,63 +79,61 @@ ul {
 li {
   list-style: none;
 }
+
 </style>
 
 {% endblock intro %}
-
-
-
-
 
 
 {% block contenido %}
 
 <!-- MENU DESPLEGABLE PARA SELECCIONAR EL ORDEN Y FILTRAR -->
 <div id="ops">
-  <ul>
-    <li id="menu" onmouseover="ver(1)" onmouseout="ocultar(1)"><a href="#">Ordenar </a>
-        <div id="submenu1" style="display: none;">
-            <p><a href="http://127.0.0.1:8000/miApp/productos/"> por referencia</a></p>
-            <p><a href="http://127.0.0.1:8000/miApp/productos/order-nombre/"> por nombre</a></p>
-            <p><a href="http://127.0.0.1:8000/miApp/productos/order-precio/"> por precio</a></p>
-        </div>
-    </li>
-  </ul>
+    <ul>
+        <li id="menu" onmouseover="ver(1)" onmouseout="ocultar(1)"><a href="#">Ordenar </a>
+            <div id="submenu1" style="display: none;">
+                <p><a href="http://127.0.0.1:8000/miApp/productos/"> por referencia</a></p>
+                <p><a href="http://127.0.0.1:8000/miApp/productos/order-nombre/"> por nombre</a></p>
+                <p><a href="http://127.0.0.1:8000/miApp/productos/order-precio/"> por precio</a></p>
+            </div>
+        </li>
+    </ul>
 
-  <div class="borrar"></div>
+    <div class="borrar"></div>
 </div>
-
 
 
 <!-- LISTADO DE COMPONENTES  -->
 <table class="tabla">
     <colgroup>
-         <col span="5">
-                <thead>
-                    <tr>
-                        <td>Referencia</td>
-                        <td>Nombre</td>
-                        <td>Precio</td>
+        <col span="5">
+    <thead>
+    <tr>
+        <td>Referencia</td>
+        <td>Nombre</td>
+        <td>Precio</td>
 
-                    </tr>
-                </thead>
+    </tr>
+    </thead>
 
-                <tbody>
-                    {% for prod in lista_productos %}
-                    <tr>
-                        <td>{{prod.referencia}}</td>
-                        <td>{{prod.nombre}}</td>
-                        <td>{{prod.precio}}</td>
-                        <td><a id="mas" href = "http://127.0.0.1:8000/miApp/productos/{{prod.id}}">[+]</a></td>
-						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/productoeliminar/{{prod.id}}">
-							     <img src="https://static.vecteezy.com/system/resources/previews/000/442/652/non_2x/delete-vector-icon.jpg" width="38px">
-							</a></td>
-						<td><a id="editar" href = "http://127.0.0.1:8000/miApp/productoeditar/{{prod.id}}">
-							<img src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-pencil-icon-png-image_4152536.jpg" width="35px">
-						</a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
+    <tbody>
+    {% for prod in lista_productos %}
+    <tr>
+        <td>{{prod.referencia}}</td>
+        <td>{{prod.nombre}}</td>
+        <td>{{prod.precio}}</td>
+        <td><a id="mas" href="http://127.0.0.1:8000/miApp/productos/{{prod.id}}">[+]</a></td>
+        <td><a id="eliminar" href="http://127.0.0.1:8000/miApp/productoeliminar/{{prod.id}}">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/442/652/non_2x/delete-vector-icon.jpg"
+                 width="38px">
+        </a></td>
+        <td><a id="editar" href="http://127.0.0.1:8000/miApp/productoeditar/{{prod.id}}">
+            <img src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-pencil-icon-png-image_4152536.jpg"
+                 width="35px">
+        </a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
 </table>
 
 
@@ -138,6 +147,7 @@ function ver(n) {
 function ocultar(n) {
          document.getElementById("submenu"+n).style.display="none"
          }
+
 
 </script>
 

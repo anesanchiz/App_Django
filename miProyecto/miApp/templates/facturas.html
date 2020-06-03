@@ -8,8 +8,8 @@
 <section id="productos" class="clear">
 
     <article class="productos">
-         <h2>Factura de pedidos</h2>
-         <p id="rango1">Selecciona el pedido por ID para adjuntar la factura correspondiente.</p>
+        <h2>Factura de pedidos</h2>
+        <p id="rango1">Selecciona el pedido por ID para adjuntar la factura correspondiente.</p>
     </article>
 
     <article class="productos">
@@ -17,8 +17,8 @@
             <input class="limpito" id="num" type="number" name="total" placeholder="Nº pedido">
         </form>
         <p id="fecha"></p>
-        <p id="precio" ></p>
-        <button class="contact100-form-btn" id="loadBtn1" type="button" >Cargar</button>
+        <p id="precio"></p>
+        <button class="contact100-form-btn" id="loadBtn1" type="button">Cargar</button>
     </article>
 
     <article class="lastbox">
@@ -27,37 +27,37 @@
     </article>
 
 
-<script src= "{% static 'JS/fetch_script.js' %}"></script>
-{% endblock intro %}
+    <script src="{% static 'JS/fetch_script.js' %}"></script>
+    {% endblock intro %}
 
 
+    {% block contenido %}
 
-{% block contenido %}
+    <h2>Subida de documentos</h2>
+    <p>Archivos admitidos.jpg</p>
 
-<h2>Subida de documentos</h2>
-         <p>Archivos admitidos.jpg</p>
-
-<!-- FILE UPLOADER -->
-<div id="examinador">
-    <img src="https://image.freepik.com/vector-gratis/examinar-concepto-archivos_1459-2303.jpg" alt="examinar-archivos" width="80px" accept=".image, .jpeg, .jpg">
+    <!-- FILE UPLOADER -->
+    <div id="examinador">
+        <img src="https://image.freepik.com/vector-gratis/examinar-concepto-archivos_1459-2303.jpg"
+             alt="examinar-archivos" width="80px" accept=".image, .jpeg, .jpg">
         <form action="{%url 'facturas'%}" method="POST" enctype="multipart/form-data">
-           {{ formulario.imagen }}
+            {{ formulario.imagen }}
             <input type="submit" value="Enviar"/>
         </form>
-</div>
-
-<div id="doc">
-    {% for factura in facturas %}
-    <div class="factura">
-        <img src="../media/{{factura.imagen}}" alt="factura" width="800px"/>
-        <span>{{factura.fecha}}</span>
     </div>
-    {%endfor%}
-</div>
 
-<script src= "{% static 'JS/file_upload.js' %}"></script>
+    <div id="doc">
+        {% for factura in facturas %}
+        <div class="factura">
+            <img src="../media/{{factura.imagen}}" alt="factura" width="800px"/>
+            <span>{{factura.fecha}}</span>
+        </div>
+        {%endfor%}
+    </div>
 
-<style>
+    <script src="{% static 'JS/file_upload.js' %}"></script>
+
+    <style>
  #doc{
     float: center;
 	height: auto;
@@ -72,6 +72,7 @@
     margin-top:0px;
 }
 
-</style>
 
-{% endblock contenido %}
+    </style>
+
+    {% endblock contenido %}

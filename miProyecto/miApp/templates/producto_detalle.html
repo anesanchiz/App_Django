@@ -3,43 +3,43 @@
 {% block intro %}
 
 <!-- DETALLE DEL PRODUCTO SELECIONADO -->
-    <table class="tabla">
-                    <tr>
-                        <th>Referencia</th>
-                        <td>{{productos.referencia}}</td>
-                    </tr>
-                    <tr>
-                        <th>Nombre</th>
-                    <td>{{ productos.nombre }}</td>
-                    </tr>
-                    <tr>
-                        <th>Descripción</th>
-                        <td>{{productos.descripcion}}</td>
-                    </tr>
-                    <tr>
-                        <th>Categoría</th>
-                        <td>{{productos.categoria}}</td>
-                    </tr>
-                    <tr>
-                        <th>Componentes</th>
-                        {% for comp in object.tipo_componentes.all %}
-                        <td>{{comp.codigo}}</td>
-                        {% endfor %}
-                    </tr>
-                    <tr>
-                        <th>Precio</th>
-                        <td>{{productos.precio}}</td>
-                    </tr>
-    </table>
+<table class="tabla">
+    <tr>
+        <th>Referencia</th>
+        <td>{{productos.referencia}}</td>
+    </tr>
+    <tr>
+        <th>Nombre</th>
+        <td>{{ productos.nombre }}</td>
+    </tr>
+    <tr>
+        <th>Descripción</th>
+        <td>{{productos.descripcion}}</td>
+    </tr>
+    <tr>
+        <th>Categoría</th>
+        <td>{{productos.categoria}}</td>
+    </tr>
+    <tr>
+        <th>Componentes</th>
+        {% for comp in object.tipo_componentes.all %}
+        <td>{{comp.codigo}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Precio</th>
+        <td>{{productos.precio}}</td>
+    </tr>
+</table>
 
 <article class="atras">
-  <a href = "http://127.0.0.1:8000/miApp/productos/" id="enlace">
-    <div class="container-contact100-form-btn">
-        <button class="contact100-form-btn limpito">
-             Atrás
-        </button>
-    </div>
-  </a>
+    <a href="http://127.0.0.1:8000/miApp/productos/" id="enlace">
+        <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn limpito">
+                Atrás
+            </button>
+        </div>
+    </a>
 </article>
 
 
@@ -56,6 +56,7 @@
         color: #A3016D ;
         font-size: 18px;
     }
+
 </style>
 
 {% endblock intro %}
@@ -64,10 +65,11 @@
 {% block contenido %}
 
 <!-- ESTILO DE BLOQUE -->
- <style>
+<style>
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
 		}
+
 </style>
 
 {% endblock contenido %}

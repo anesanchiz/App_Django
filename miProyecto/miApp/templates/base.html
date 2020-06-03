@@ -2,11 +2,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-
-
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Deustronic</title>
 </head>
@@ -16,149 +13,194 @@
 
 <!----------   GOOGLE TRANSLATOR ---------->
 
-				<div class="translate">
-						<div>
-							<div id="google_translate_element">
-						</div>
+<div class="translate">
+    <div>
+        <div id="google_translate_element">
+        </div>
 
-						<script type="text/javascript">
+        <script type="text/javascript">
 						//<![CDATA[
 							function googleTranslateElementInit() {
 							new google.translate.TranslateElement({pageLanguage: 'es'}, 'google_translate_element');
 							}
 						//]]>
-						</script><script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
-						</script>
-						</div>
-				</div>
 
 
-			<div id="wrapper">
-
-<!----------   MENU NAV PRINCIPAL  ---------->
-
-					<nav id="nav">
-						<a href="http://127.0.0.1:8000/miApp/" ><span>Inicio</span></a>
-						<a href="http://127.0.0.1:8000/miApp/clientes" ><span>Clientes</span></a>
-						<a href="http://127.0.0.1:8000/miApp/pedidos" ><span>Pedidos</span></a>
-						<a href="http://127.0.0.1:8000/miApp/productos" ><span>Productos</span></a>
-						<a href="http://127.0.0.1:8000/miApp/componentes" ><span>Comps.</span></a>
-					</nav>
+        </script>
+        <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+                type="text/javascript">
+        </script>
+    </div>
+</div>
 
 
-				<div id="main">
-							<article id="home" class="panel intro">
-								<header>
-									<h1 class="titulo">{{ titulo_pagina }}</h1>
-									{% block intro %}
-									<h1>DEUSTRONIC TECHNOLOGY</h1>
-									<p>Electrónica industrial</p>
+<div id="wrapper">
 
-									<div id="cal">
+    <!----------   MENU NAV PRINCIPAL  ---------->
 
-
-
-<!----------   CALENDARIO ---------->
-
-          				<div class="cabez">
-           			 		<span class="left button" id="prev"> &lang; </span>
-            				<span class="left hook"></span>
-            				<span class="month-year" id="label"> Mayo 2020 </span>
-            				<span class="right hook"></span>
-            				<span class="right button" id="next"> &rang; </span>
-          				</div>
-
-            			<table id="days">
-               				<td>L</td>
-               				<td>M</td>
-               				<td>X</td>
-               				<td>J</td>
-               				<td>V</td>
-               				<td>S</td>
-               				<td>D</td>
-             			</table>
+    <nav id="nav">
+        <a href="http://127.0.0.1:8000/miApp/"><span>Inicio</span></a>
+        <a href="http://127.0.0.1:8000/miApp/clientes"><span>Clientes</span></a>
+        <a href="http://127.0.0.1:8000/miApp/pedidos"><span>Pedidos</span></a>
+        <a href="http://127.0.0.1:8000/miApp/productos"><span>Productos</span></a>
+        <a href="http://127.0.0.1:8000/miApp/componentes"><span>Comps.</span></a>
+    </nav>
 
 
-					<div id="cal-frame">
+    <div id="main">
+        <article id="home" class="panel intro">
+            <header>
+                <h1 class="titulo">{{ titulo_pagina }}</h1>
+                {% block intro %}
+                <h1>DEUSTRONIC TECHNOLOGY</h1>
+                <p>Electrónica industrial</p>
 
-               			<table class="curr">
-
-							<tbody>
-                       			<tr><td class="nil"></td><td class="nil"><td class="nil"></td><td class="nil"></td></td><td>1</td><td>2</td><td>3</td></tr>
-					   			<tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-					  			<tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
-					   			<tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
-                       			<tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
-                   			</tbody>
-						</table>
-            		</div>
-				</div>
+                <div id="cal">
 
 
-					<figure id="grafics">
-						<img id="grafico2" src="https://programacion.net/files/article/20170425050426_pie-chart.png" alt="gráfica2">
-					</figure>
+                    <!----------   CALENDARIO ---------->
 
-					{% endblock %}
+                    <div class="cabez">
+                        <span class="left button" id="prev"> &lang; </span>
+                        <span class="left hook"></span>
+                        <span class="month-year" id="label"> Mayo 2020 </span>
+                        <span class="right hook"></span>
+                        <span class="right button" id="next"> &rang; </span>
+                    </div>
 
-					</header>
-				</article>
-
-
-<!----------   BLOQUE CONTENIDO  ---------->
-							<article id="work" class="panel">
-								<header>
-									<h2 class="titulo">{{ titulo_form }}</h2>
-								</header>
-
-								{% block contenido %}
-								<section>
-									<div class="row">
-
-
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="http://127.0.0.1:8000/miApp/clientes" class="image fit">
-												<img class="ims" src="https://algalia.com/wp-content/uploads/2016/09/empleo.png"
-													 onmouseover="this.width=400;this.height=230;"
-													 onmouseout="this.width=300;this.height=200;"
-													 width="300" height="200" alt="clientes" />CLIENTES</a>
-										</div>
+                    <table id="days">
+                        <td>L</td>
+                        <td>M</td>
+                        <td>X</td>
+                        <td>J</td>
+                        <td>V</td>
+                        <td>S</td>
+                        <td>D</td>
+                    </table>
 
 
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="http://127.0.0.1:8000/miApp/pedidos" class="image fit">
-												<img class="ims" src="https://pngimage.net/wp-content/uploads/2018/06/producto-png-3.png"
-													 onmouseover="this.width=400;this.height=230;"
-													 onmouseout="this.width=300;this.height=200;"
-													 width="300" height="200" alt="pedidos">GESTIÓN DE PEDIDOS</a>
-										</div>
+                    <div id="cal-frame">
 
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="http://127.0.0.1:8000/miApp/facturas" class="image fit" id="mini">
-												<img class="ims" src="https://static.vecteezy.com/system/resources/previews/000/350/512/non_2x/invoice-vector-icon.jpg" alt="facturas"
-													 onmouseover="this.width=400;this.height=230;"
-													 onmouseout="this.width=300;this.height=200;"
-													 width="300" height="200" alt="productos">FACTURAS</a>
-										</div>
-									</div>
-								</section>
-								{% endblock %}
-							</article>
-						</div>
+                        <table class="curr">
+
+                            <tbody>
+                            <tr>
+                                <td class="nil"></td>
+                                <td class="nil">
+                                <td class="nil"></td>
+                                <td class="nil"></td>
+                                </td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>14</td>
+                                <td>15</td>
+                                <td>16</td>
+                                <td>17</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>19</td>
+                                <td>20</td>
+                                <td>21</td>
+                                <td>22</td>
+                                <td>23</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td>26</td>
+                                <td>27</td>
+                                <td>28</td>
+                                <td>29</td>
+                                <td>30</td>
+                                <td>31</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
 
+                <figure id="grafics">
+                    <img id="grafico2" src="https://programacion.net/files/article/20170425050426_pie-chart.png"
+                         alt="gráfica2">
+                </figure>
+
+                {% endblock %}
+
+            </header>
+        </article>
 
 
-				<!--FOOTER-->
+        <!----------   BLOQUE CONTENIDO  ---------->
+        <article id="work" class="panel">
+            <header>
+                <h2 class="titulo">{{ titulo_form }}</h2>
+            </header>
 
-					<div id="footer">
-						<ul class="copyright">
-							<li>© DEUSTRONIC.</li>
-							<li>Design: <a href="https://github.com/anesanchiz/RETO2">Aritzane</a></li>
-						</ul>
-					</div>
-			</div>
-	</body>
+            {% block contenido %}
+            <section>
+                <div class="row">
+
+
+                    <div class="col-4 col-6-medium col-12-small">
+                        <a href="http://127.0.0.1:8000/miApp/clientes" class="image fit">
+                            <img class="ims" src="https://algalia.com/wp-content/uploads/2016/09/empleo.png"
+                                 onmouseover="this.width=400;this.height=230;"
+                                 onmouseout="this.width=300;this.height=200;"
+                                 width="300" height="200" alt="clientes"/>CLIENTES</a>
+                    </div>
+
+
+                    <div class="col-4 col-6-medium col-12-small">
+                        <a href="http://127.0.0.1:8000/miApp/pedidos" class="image fit">
+                            <img class="ims" src="https://pngimage.net/wp-content/uploads/2018/06/producto-png-3.png"
+                                 onmouseover="this.width=400;this.height=230;"
+                                 onmouseout="this.width=300;this.height=200;"
+                                 width="300" height="200" alt="pedidos">GESTIÓN DE PEDIDOS</a>
+                    </div>
+
+                    <div class="col-4 col-6-medium col-12-small">
+                        <a href="http://127.0.0.1:8000/miApp/facturas" class="image fit" id="mini">
+                            <img class="ims"
+                                 src="https://static.vecteezy.com/system/resources/previews/000/350/512/non_2x/invoice-vector-icon.jpg"
+                                 alt="facturas"
+                                 onmouseover="this.width=400;this.height=230;"
+                                 onmouseout="this.width=300;this.height=200;"
+                                 width="300" height="200" alt="productos">FACTURAS</a>
+                    </div>
+                </div>
+            </section>
+            {% endblock %}
+        </article>
+    </div>
+
+
+    <!--FOOTER-->
+
+    <div id="footer">
+        <ul class="copyright">
+            <li>© DEUSTRONIC.</li>
+            <li>Design: <a href="https://github.com/anesanchiz/RETO2">Aritzane</a></li>
+        </ul>
+    </div>
+</div>
+</body>
 
 <style TYPE="text/css">
 .atras{ float: right;}
@@ -1097,6 +1139,8 @@ footer, header, menu, nav, section {
     -moz-box-shadow:0px 0px 0px;
     -webkit-box-shadow:0px 0px 0px;
 }
+
+
 
 
 </style>

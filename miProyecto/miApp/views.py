@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
-from django.urls import reverse,reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.contrib.auth.models import User
 
 from .forms import ClienteForm, ProductoForm, PedidoForm, ComponenteForm, FacturaForm
@@ -17,10 +17,10 @@ from django.utils.decorators import method_decorator
 import datetime
 
 
-@method_decorator(csrf_exempt, name ='dispatch')
+@method_decorator(csrf_exempt, name='dispatch')
 class FacturasView(View):
 
-    def get (self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         form = FacturaForm()
         facturas = Factura.objects.all()
         context = {
@@ -28,15 +28,15 @@ class FacturasView(View):
             'facturas': facturas
         }
 
-        return render(request,'facturas.html', context)
+        return render(request, 'facturas.html', context)
 
-    #Funcion post al servidor
-    def post (self, req):
-        data=req.POST.copy()
-        data.update({"fecha":datetime.date.today()})
+    # Funcion post al servidor
+    def post(self, req):
+        data = req.POST.copy()
+        data.update({"fecha": datetime.date.today()})
         form = FacturaForm(data, req.FILES)
 
-        if(form.is_valid()):
+        if (form.is_valid()):
             print("valido")
             form.save()
         else:
@@ -45,39 +45,39 @@ class FacturasView(View):
         return redirect('facturas')
 
 
-
-
 def success(request):
     return HttpResponse("success")
+
 
 def error(request):
     HttpResponse("error")
 
-#VIEWS JS
+
+# VIEWS JS
 class PedidoListView_js(View):
     def get(self, request):
         if ('name' in request.GET):
-           pedido_list = Pedido.objects.filter(name_contains=request.GET['name'])
+            pedido_list = Pedido.objects.filter(name_contains=request.GET['name'])
         else:
             pedido_list = Pedido.objects.all()
         return JsonResponse(list(pedido_list.values()), safe=False)
 
 
-#PAGINA DE INICIO
+# PAGINA DE INICIO
 def index(request):
     context = {'titulo_form': 'Menu Principal'}
     return render(request, 'base.html')
-
 
 
 # CLIENTES
 # Listado de clientes
 def cliente(request):
     clientes = Cliente.objects.order_by('CIF')
-    context = {'titulo_form': 'Listado de clientes','titulo_pagina':'Clientes','lista_clientes': clientes}
+    context = {'titulo_form': 'Listado de clientes', 'titulo_pagina': 'Clientes', 'lista_clientes': clientes}
     return render(request, 'clientes.html', context)
 
-#Añadir
+
+# Añadir
 class ClienteCreateView(CreateView):
     model = Cliente
     form_class = ClienteForm
@@ -86,34 +86,35 @@ class ClienteCreateView(CreateView):
     def get_success_url(self):
         return reverse('cliente')
 
-#Eliminar
+
+# Eliminar
 class ClienteDelete(DeleteView):
-    model = Cliente #modelo que se esta utilizando
-    template_name = 'cliente_eliminar.html' #template que se va a utilizar
-    success_url = reverse_lazy('cliente') #template a la que va a volver
+    model = Cliente  # modelo que se esta utilizando
+    template_name = 'cliente_eliminar.html'  # template que se va a utilizar
+    success_url = reverse_lazy('cliente')  # template a la que va a volver
 
     def get_context_data(self, **kwargs):
         context = super(ClienteDelete, self).get_context_data(**kwargs)
         return context
 
-#Actualizar
+
+# Actualizar
 class ClienteUpdate(UpdateView):
     model = Cliente
-    fields = ['CIF','empresa','telefono']
+    fields = ['CIF', 'empresa', 'telefono']
     template_name = 'añadir.html'
     success_url = reverse_lazy('cliente')
 
 
-
-
-#PEDIDOS
+# PEDIDOS
 # Listado de pedidos
 def lista_pedidos(request):
     pedidos = Pedido.objects.order_by('codigo')
-    context = {'titulo_form': 'Listado de pedidos','titulo_pagina':'Pedidos','lista_pedidos': pedidos}
+    context = {'titulo_form': 'Listado de pedidos', 'titulo_pagina': 'Pedidos', 'lista_pedidos': pedidos}
     return render(request, 'pedidos.html', context)
 
-#Añadir
+
+# Añadir
 class PedidoCreateView(CreateView):
     model = Pedido
     form_class = PedidoForm
@@ -123,7 +124,7 @@ class PedidoCreateView(CreateView):
         return reverse('pedidos')
 
 
-#Detalles
+# Detalles
 class PedidoDetailView(DetailView):
     model = Pedido
     template_name = 'pedido_detalle.html'
@@ -134,7 +135,7 @@ class PedidoDetailView(DetailView):
         return context
 
 
-#Eliminar
+# Eliminar
 class PedidoDelete(DeleteView):
     model = Pedido
     template_name = 'pedido_eliminar.html'
@@ -144,22 +145,24 @@ class PedidoDelete(DeleteView):
         context = super(PedidoDelete, self).get_context_data(**kwargs)
         return context
 
-#Actualizar
+
+# Actualizar
 class PedidoUpdate(UpdateView):
     model = Pedido
-    fields = ['datos_cliente','productos','cantidad','precio_total']
+    fields = ['datos_cliente', 'productos', 'cantidad', 'precio_total']
     template_name = 'añadir.html'
     success_url = reverse_lazy('pedidos')
 
 
-#COMPONENTES
-#Listado de Componentes
+# COMPONENTES
+# Listado de Componentes
 def lista_componente(request):
     componente = Componente.objects.order_by('codigo')
-    context = {'titulo_form': 'Listado de componentes','titulo_pagina':'Componentes','lista_componente': componente}
+    context = {'titulo_form': 'Listado de componentes', 'titulo_pagina': 'Componentes', 'lista_componente': componente}
     return render(request, 'componentes.html', context)
 
-#Añadir
+
+# Añadir
 class ComponenteCreateView(CreateView):
     model = Componente
     form_class = ComponenteForm
@@ -168,7 +171,8 @@ class ComponenteCreateView(CreateView):
     def get_success_url(self):
         return reverse('componentes')
 
-#Detalles
+
+# Detalles
 class ComponenteDetailView(DetailView):
     model = Componente
     template_name = 'componente_detalle.html'
@@ -178,7 +182,8 @@ class ComponenteDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles del componente'
         return context
 
-#Eliminar
+
+# Eliminar
 class ComponenteDelete(DeleteView):
     model = Componente
     template_name = 'componente_eliminar.html'
@@ -188,33 +193,37 @@ class ComponenteDelete(DeleteView):
         context = super(ComponenteDelete, self).get_context_data(**kwargs)
         return context
 
-#Actualizar
+
+# Actualizar
 class ComponenteUpdate(UpdateView):
     model = Componente
-    fields = ['codigo','modelo','marca']
+    fields = ['codigo', 'modelo', 'marca']
     template_name = 'añadir.html'
     success_url = reverse_lazy('componentes')
 
 
-#PRODUCTOS
-#Listado de productos
+# PRODUCTOS
+# Listado de productos
 def lista_productos(request):
     productos = Productos.objects.order_by('referencia')
-    context = {'titulo_form':'Listado de productos','titulo_pagina':'Productos' ,'lista_productos': productos}
+    context = {'titulo_form': 'Listado de productos', 'titulo_pagina': 'Productos', 'lista_productos': productos}
     return render(request, 'productos.html', context)
+
 
 def lista_productos1(request):
     productos = Productos.objects.order_by('nombre')
-    context = {'titulo_form':'Listado de productos','titulo_pagina':'Productos' ,'lista_productos': productos}
+    context = {'titulo_form': 'Listado de productos', 'titulo_pagina': 'Productos', 'lista_productos': productos}
     return render(request, 'productos.html', context)
+
 
 def lista_productos2(request):
     productos = Productos.objects.order_by('precio')
-    context = {'titulo_form':'Listado de productos','titulo_pagina':'Productos' ,'lista_productos': productos}
+    context = {'titulo_form': 'Listado de productos', 'titulo_pagina': 'Productos', 'lista_productos': productos}
     return render(request, 'productos.html', context)
 
-#Añadir
-@method_decorator(csrf_exempt,name='dispatch')
+
+# Añadir
+@method_decorator(csrf_exempt, name='dispatch')
 class ProductosCreateView(CreateView):
     model = Productos
     form_class = ProductoForm
@@ -224,7 +233,7 @@ class ProductosCreateView(CreateView):
         return reverse('success')
 
 
-#Detalles
+# Detalles
 class ProductoDetailView(DetailView):
     model = Productos
     template_name = 'producto_detalle.html'
@@ -234,7 +243,8 @@ class ProductoDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles del producto'
         return context
 
-#Eliminar
+
+# Eliminar
 class ProductoDelete(DeleteView):
     model = Productos
     template_name = 'producto_eliminar.html'
@@ -244,14 +254,10 @@ class ProductoDelete(DeleteView):
         context = super(ProductoDelete, self).get_context_data(**kwargs)
         return context
 
-#Actualizar
+
+# Actualizar
 class ProductoUpdate(UpdateView):
     model = Productos
-    fields = ['referencia','precio','nombre','descripcion','categoria', 'tipo_componentes']
+    fields = ['referencia', 'precio', 'nombre', 'descripcion', 'categoria', 'tipo_componentes']
     template_name = 'añadir.html'
     success_url = reverse_lazy('indexprod')
-
-
-
-
-

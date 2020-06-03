@@ -3,34 +3,34 @@
 {% block intro %}
 
 <!-- VENTANA DE ELIMINACIÓN DEL PRODUCTO SELECCIONADO  -->
-    <form method="post">{% csrf_token %}
-        <p id="eliminar">Confirma para eliminar el producto:</p>
-        <p>
-        <p>Referencia: {{ productos.referencia }}</p>
-        <p>Precio: {{ productos.precio }}</p>
-        <p>Nombre: {{ productos.nombre }}</p>
-        <p>Descripción: {{ productos.descripcion }}</p>
-        <p>Categoría : {{ productos.categoria }}</p>
-        {% for comp in object.tipo_componentes.all %}
-        <p>Código:  {{ comp.codigo }}</p>
-        {% endfor %}
+<form method="post">{% csrf_token %}
+    <p id="eliminar">Confirma para eliminar el producto:</p>
+    <p>
+    <p>Referencia: {{ productos.referencia }}</p>
+    <p>Precio: {{ productos.precio }}</p>
+    <p>Nombre: {{ productos.nombre }}</p>
+    <p>Descripción: {{ productos.descripcion }}</p>
+    <p>Categoría : {{ productos.categoria }}</p>
+    {% for comp in object.tipo_componentes.all %}
+    <p>Código: {{ comp.codigo }}</p>
+    {% endfor %}
 
 
-        <div class="container-contact100-form-btn">
-                    <button class="contact100-form-btn">
-                        <input class="limpito" type="submit" value="Confirm">
-                    </button>
-        </div>
-    </form>
-
-<article class="atras">
-  <a href = "http://127.0.0.1:8000/miApp/productos/" id="enlace">
     <div class="container-contact100-form-btn">
-        <button class="contact100-form-btn limpito">
-             Atrás
+        <button class="contact100-form-btn">
+            <input class="limpito" type="submit" value="Confirm">
         </button>
     </div>
-  </a>
+</form>
+
+<article class="atras">
+    <a href="http://127.0.0.1:8000/miApp/productos/" id="enlace">
+        <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn limpito">
+                Atrás
+            </button>
+        </div>
+    </a>
 </article>
 
 {% endblock intro %}
@@ -42,6 +42,7 @@
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
 		}
+
 </style>
 
 {% endblock contenido %}

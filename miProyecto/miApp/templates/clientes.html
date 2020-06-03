@@ -2,32 +2,31 @@
 {% load static %}
 {% block intro %}
 
-    <section id="productos" class="clear">
+<section id="productos" class="clear">
 
-          <article class="productos">
-               <h2>Mercedes</h2>
-                <p>Se mantiene el proyecto previsto de aprovisionamiento semanal.
-                </p>
-          </article>
+    <article class="productos">
+        <h2>Mercedes</h2>
+        <p>Se mantiene el proyecto previsto de aprovisionamiento semanal.
+        </p>
+    </article>
 
 
+    <article class="productos">
+        <h2>Oreka IT</h2>
+        <p>Se trata de la última incorporación a la plantilla de clientes.
+        </p>
+    </article>
 
-          <article class="productos">
-               <h2>Oreka IT</h2>
-                <p>Se trata de la última incorporación a la plantilla de clientes.
-                </p>
-          </article>
-
-        <article class="lastbox">
-            <a href = "http://127.0.0.1:8000/miApp/clientenuevo/" id="enlace">
-                <div class="container-contact100-form-btn">
-                    <button class="contact100-form-btn">
-                        Añadir
-                    </button>
-                </div>
-            </a>
-        </article>
-    </section>
+    <article class="lastbox">
+        <a href="http://127.0.0.1:8000/miApp/clientenuevo/" id="enlace">
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn">
+                    Añadir
+                </button>
+            </div>
+        </a>
+    </article>
+</section>
 
 {% endblock intro %}
 
@@ -36,32 +35,34 @@
 
 <!-- LISTADO DE CLIENTES  -->
 <table class="tabla">
-           <colgroup>
-                    <col span="5">
-                <thead>
-                    <tr>
-                        <td>CIF</td>
-                        <td>Empresa</td>
-                        <td>Telefono</td>
-                    </tr>
-                </thead>
+    <colgroup>
+        <col span="5">
+    <thead>
+    <tr>
+        <td>CIF</td>
+        <td>Empresa</td>
+        <td>Telefono</td>
+    </tr>
+    </thead>
 
-                <tbody>
-                    {% for cli in lista_clientes %}
-                    <tr>
-                        <td>{{cli.CIF}}</td>
-                        <td>{{cli.empresa}}</td>
-                        <td>{{cli.telefono}}</td>
-						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/clienteeliminar/{{cli.id}}">
-                                <img src="https://static.vecteezy.com/system/resources/previews/000/442/652/non_2x/delete-vector-icon.jpg" width="38px">
-                        </a></td>
-						<td><a id="editar" href = "http://127.0.0.1:8000/miApp/clienteeditar/{{cli.id}}">
-                                <img src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-pencil-icon-png-image_4152536.jpg" width="35px">
-                        </a></td>
+    <tbody>
+    {% for cli in lista_clientes %}
+    <tr>
+        <td>{{cli.CIF}}</td>
+        <td>{{cli.empresa}}</td>
+        <td>{{cli.telefono}}</td>
+        <td><a id="eliminar" href="http://127.0.0.1:8000/miApp/clienteeliminar/{{cli.id}}">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/442/652/non_2x/delete-vector-icon.jpg"
+                 width="38px">
+        </a></td>
+        <td><a id="editar" href="http://127.0.0.1:8000/miApp/clienteeditar/{{cli.id}}">
+            <img src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-pencil-icon-png-image_4152536.jpg"
+                 width="35px">
+        </a></td>
 
-                    </tr>
-                    {% endfor %}
-                </tbody>
+    </tr>
+    {% endfor %}
+    </tbody>
 </table>
 
 {% endblock %}

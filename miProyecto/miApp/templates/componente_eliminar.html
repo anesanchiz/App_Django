@@ -3,28 +3,28 @@
 {% block intro %}
 
 <!-- VENTANA DE ELIMINACIÓN DEL COMPONENTE SELECCIONADO  -->
-    <form method="post">{% csrf_token %}
-        <p id="eliminar">Confirma para eliminar el componente:</p>
-        <p>    Código: {{ componente.codigo }} </p>
-        <p>    Marca: {{ componente.marca }}   </p>
-        <p>    Modelo: {{ componente.modelo }} </p>
+<form method="post">{% csrf_token %}
+    <p id="eliminar">Confirma para eliminar el componente:</p>
+    <p> Código: {{ componente.codigo }} </p>
+    <p> Marca: {{ componente.marca }} </p>
+    <p> Modelo: {{ componente.modelo }} </p>
 
 
-        <div class="container-contact100-form-btn">
-            <button class="contact100-form-btn">
-                <input class="limpito" type="submit" value="Confirm" >
-            </button>
-        </div>
-    </form>
-
-<article class="atras">
-  <a href = "http://127.0.0.1:8000/miApp/componentes/" id="enlace">
     <div class="container-contact100-form-btn">
-        <button class="contact100-form-btn limpito">
-             Atrás
+        <button class="contact100-form-btn">
+            <input class="limpito" type="submit" value="Confirm">
         </button>
     </div>
-  </a>
+</form>
+
+<article class="atras">
+    <a href="http://127.0.0.1:8000/miApp/componentes/" id="enlace">
+        <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn limpito">
+                Atrás
+            </button>
+        </div>
+    </a>
 </article>
 
 {% endblock intro %}
@@ -36,5 +36,6 @@
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
 		}
+
 </style>
 {% endblock contenido %}

@@ -6,29 +6,39 @@
 
 <h1>COMPONENTES</h1>
 <ul id="thumbs">
-  <li>
-    <a class="pics1" href="https://cemcables.com/3204-thickbox_default/diodo-led-rojo.jpg" title="Image 1"><img class="pics1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEXMAAA/z1L+AAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC" alt="led rojo"></a>
-    <a class="pics1" href="https://cemcables.com/3206/diodo-led-verde.jpg" title="Image 2"><img class="pics1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEVHqDXiwlRdAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC" alt="led verde"></a>
-    <a class="pics1" href="https://cemcables.com/3231-large_default/diodo-led-azul-alta-luminosidad.jpg" title="Image 3"><img class="pics1" src="http://significadodeloscolores.info/wp-content/uploads/2014/08/color-azul.png" alt="led azul"></a>
-    <a class="pics1" href="https://cemcables.com/3208-large_default/diodo-led-amarillo.jpg" title="Image 4"><img class="pics1" src="https://cdn-3d.niceshops.com/upload/image/product/large/default/vallejo-game-color-amarillo-fluorescente-72103-17-ml-282223-es.jpg"></a>
-  </li>
+    <li>
+        <a class="pics1" href="https://cemcables.com/3204-thickbox_default/diodo-led-rojo.jpg" title="Image 1"><img
+                class="pics1"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEXMAAA/z1L+AAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC"
+                alt="led rojo"></a>
+        <a class="pics1" href="https://cemcables.com/3206/diodo-led-verde.jpg" title="Image 2"><img class="pics1"
+                                                                                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEVHqDXiwlRdAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC"
+                                                                                                    alt="led verde"></a>
+        <a class="pics1" href="https://cemcables.com/3231-large_default/diodo-led-azul-alta-luminosidad.jpg"
+           title="Image 3"><img class="pics1"
+                                src="http://significadodeloscolores.info/wp-content/uploads/2014/08/color-azul.png"
+                                alt="led azul"></a>
+        <a class="pics1" href="https://cemcables.com/3208-large_default/diodo-led-amarillo.jpg" title="Image 4"><img
+                class="pics1"
+                src="https://cdn-3d.niceshops.com/upload/image/product/large/default/vallejo-game-color-amarillo-fluorescente-72103-17-ml-282223-es.jpg"></a>
+    </li>
 </ul>
 
 <p><img id="compimagen" src="https://cemcables.com/3204-thickbox_default/diodo-led-rojo.jpg" alt="LED">
 </p>
 
-    <section id="productos" class="clear">
-            <a href = "http://127.0.0.1:8000/miApp/componentenuevo/" id="enlace">
-                <div class="container-contact100-form-btn">
-                    <button class="contact100-form-btn">
-                    Añadir
-                    </button>
-                </div>
-            </a>
-    </section>
+<section id="productos" class="clear">
+    <a href="http://127.0.0.1:8000/miApp/componentenuevo/" id="enlace">
+        <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn">
+                Añadir
+            </button>
+        </div>
+    </a>
+</section>
 
 
-<script src = "{% static 'JS/img_dinamic.js' %}"></script>
+<script src="{% static 'JS/img_dinamic.js' %}"></script>
 
 
 <!-- ESTILO DE BLOQUE -->
@@ -60,13 +70,10 @@ li{
 list-style:none;
 }
 
+
 </style>
 
 {% endblock intro %}
-
-
-
-
 
 
 {% block contenido %}
@@ -75,32 +82,34 @@ list-style:none;
 <div>
     <table class="tabla">
 
-                <colgroup>
-                    <col span="5">
+        <colgroup>
+            <col span="5">
 
-                <thead>
-                    <tr>
-                        <td>Código</td>
-                        <td>Marca</td>
-                        <td>Modelo</td>
-                    </tr>
-                </thead>
+        <thead>
+        <tr>
+            <td>Código</td>
+            <td>Marca</td>
+            <td>Modelo</td>
+        </tr>
+        </thead>
 
-                <tbody>
-                    {% for comp in lista_componente %}
-                    <tr>
-                        <td>{{comp.codigo}}</td>
-                        <td>{{comp.marca}}</td><!-- Aqui añadir un enlace a dicho producto.ref-->
-                        <td>{{comp.modelo}}</td>
-						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/componenteeliminar/{{comp.id}}">
-                            <img src="https://static.vecteezy.com/system/resources/previews/000/442/652/non_2x/delete-vector-icon.jpg" width="38px">
-                        </a></td>
-						<td><a id="editar" href = "http://127.0.0.1:8000/miApp/componenteeditar/{{comp.id}}">
-                            <img src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-pencil-icon-png-image_4152536.jpg" width="35px">
-                        </a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
+        <tbody>
+        {% for comp in lista_componente %}
+        <tr>
+            <td>{{comp.codigo}}</td>
+            <td>{{comp.marca}}</td><!-- Aqui añadir un enlace a dicho producto.ref-->
+            <td>{{comp.modelo}}</td>
+            <td><a id="eliminar" href="http://127.0.0.1:8000/miApp/componenteeliminar/{{comp.id}}">
+                <img src="https://static.vecteezy.com/system/resources/previews/000/442/652/non_2x/delete-vector-icon.jpg"
+                     width="38px">
+            </a></td>
+            <td><a id="editar" href="http://127.0.0.1:8000/miApp/componenteeditar/{{comp.id}}">
+                <img src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-pencil-icon-png-image_4152536.jpg"
+                     width="35px">
+            </a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
     </table>
 </div>
 

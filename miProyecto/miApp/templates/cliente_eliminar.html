@@ -3,28 +3,28 @@
 {% block intro %}
 
 <!-- VENTANA DE ELIMINACIÓN DEL CLIENTE SELECCIONADO  -->
-    <form method="post">{% csrf_token %}
-        <p id="eliminar">Confirma para eliminar el cliente:</p>
-        <p>CIF : {{ cliente.CIF }}</p>
-        <p>Empresa: {{ cliente.empresa }}</p>
-        <p>Telefono: {{ cliente.telefono }}</p>
+<form method="post">{% csrf_token %}
+    <p id="eliminar">Confirma para eliminar el cliente:</p>
+    <p>CIF : {{ cliente.CIF }}</p>
+    <p>Empresa: {{ cliente.empresa }}</p>
+    <p>Telefono: {{ cliente.telefono }}</p>
 
-        <div class="container-contact100-form-btn limpito">
-                    <button class="contact100-form-btn ">
-                        <input class="limpito" type="submit" value="Confirm">
-                    </button>
-        </div>
-    </form>
+    <div class="container-contact100-form-btn limpito">
+        <button class="contact100-form-btn ">
+            <input class="limpito" type="submit" value="Confirm">
+        </button>
+    </div>
+</form>
 
 
 <article class="atras">
-  <a href = "http://127.0.0.1:8000/miApp/clientes/" id="enlace">
-    <div class="container-contact100-form-btn">
-        <button class="contact100-form-btn limpito">
-             Atrás
-        </button>
-    </div>
-  </a>
+    <a href="http://127.0.0.1:8000/miApp/clientes/" id="enlace">
+        <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn limpito">
+                Atrás
+            </button>
+        </div>
+    </a>
 </article>
 {% endblock intro %}
 
@@ -35,6 +35,7 @@
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
 		}
+
 </style>
 
 {% endblock %}

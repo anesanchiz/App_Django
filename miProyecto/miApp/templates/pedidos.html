@@ -3,43 +3,43 @@
 {% block intro %}
 
 
-    <section id="productos" class="clear">
-          <!--Producto 1-->
-          <article class="productos">
-               <figure>
-                   <img src="https://media1.tenor.com/images/e68cc33983bed347554ce23fe2bd08bd/tenor.gif?itemid=13876443"
-                        width="60" height="auto" alt="destacado">
-               </figure>
-               <h3>PENDIENTES</h3>
-                <p> No hay pedidos pendientes de entrega.
-                </p>
-          </article>
+<section id="productos" class="clear">
+    <!--Producto 1-->
+    <article class="productos">
+        <figure>
+            <img src="https://media1.tenor.com/images/e68cc33983bed347554ce23fe2bd08bd/tenor.gif?itemid=13876443"
+                 width="60" height="auto" alt="destacado">
+        </figure>
+        <h3>PENDIENTES</h3>
+        <p> No hay pedidos pendientes de entrega.
+        </p>
+    </article>
 
 
-          <!--Producto 2-->
-          <article class="productos">
-               <figure>
-                   <img src="https://www.grupointercobros.com/wp-content/uploads/2016/07/gesti%C3%B3n-de-impagados.jpg"
-                        width="80" height="auto" alt="destacado">
-               </figure>
-               <h3>IMPAGADOS</h3>
-                <input type="checkbox" >5643<BR>
-                <input type="checkbox" >3453<BR>
-                <input type="checkbox" >2367<BR>
-          </article>
+    <!--Producto 2-->
+    <article class="productos">
+        <figure>
+            <img src="https://www.grupointercobros.com/wp-content/uploads/2016/07/gesti%C3%B3n-de-impagados.jpg"
+                 width="80" height="auto" alt="destacado">
+        </figure>
+        <h3>IMPAGADOS</h3>
+        <input type="checkbox">5643<BR>
+        <input type="checkbox">3453<BR>
+        <input type="checkbox">2367<BR>
+    </article>
 
 
-          <!--Producto 3-->
-        <article class="lastbox">
-            <a href = "http://127.0.0.1:8000/miApp/pedidonuevo/" id="enlace">
-                <div class="container-contact100-form-btn">
-                    <button class="contact100-form-btn">
-                        Añadir
-                    </button>
-                </div>
-            </a>
-        </article>
-    </section>
+    <!--Producto 3-->
+    <article class="lastbox">
+        <a href="http://127.0.0.1:8000/miApp/pedidonuevo/" id="enlace">
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn">
+                    Añadir
+                </button>
+            </div>
+        </a>
+    </article>
+</section>
 
 {% endblock intro %}
 
@@ -49,58 +49,57 @@
 <div>
     <table class="tabla">
 
-                <colgroup>
-                    <col span="5">
+        <colgroup>
+            <col span="5">
 
 
-                <thead>
-                    <tr>
-                        <td>Código</td>
-                        <td>Cliente</td>
-                        <td>Fecha</td>
-                        <td>Precio</td>
+        <thead>
+        <tr>
+            <td>Código</td>
+            <td>Cliente</td>
+            <td>Fecha</td>
+            <td>Precio</td>
 
-                    </tr>
-                </thead>
-
-
+        </tr>
+        </thead>
 
 
-                <tbody>
-                    {% for pedid in lista_pedidos %}
+        <tbody>
+        {% for pedid in lista_pedidos %}
 
-                    <tr>
-                        <td>{{ pedid.codigo }}</td>
-                        <td>{{ pedid.datos_cliente.empresa }}</td>
-                        <td>{{ pedid.fecha }}</td>
-                        <td>{{ pedid.precio_total }}</td>
-
-
-                        <td><a id="mas" href =http://127.0.0.1:8000/miApp/pedidos/{{pedid.id}}>[+]</a></td>
+        <tr>
+            <td>{{ pedid.codigo }}</td>
+            <td>{{ pedid.datos_cliente.empresa }}</td>
+            <td>{{ pedid.fecha }}</td>
+            <td>{{ pedid.precio_total }}</td>
 
 
-						<td><a id="eliminar" href = "http://127.0.0.1:8000/miApp/pedidoeliminar/{{pedid.id}}">
-                            <img src="https://static.vecteezy.com/system/resources/previews/000/442/652/non_2x/delete-vector-icon.jpg" width="38px">
-                        </a></td>
-						<td><a id="editar" href = "http://127.0.0.1:8000/miApp/pedidoeditar/{{pedid.id}}">
-                            <img src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-pencil-icon-png-image_4152536.jpg" width="35px">
-                        </a></td>
+            <td><a id="mas" href=http://127.0.0.1:8000/miApp/pedidos/{{pedid.id}}>[+]</a></td>
 
 
+            <td><a id="eliminar" href="http://127.0.0.1:8000/miApp/pedidoeliminar/{{pedid.id}}">
+                <img src="https://static.vecteezy.com/system/resources/previews/000/442/652/non_2x/delete-vector-icon.jpg"
+                     width="38px">
+            </a></td>
+            <td><a id="editar" href="http://127.0.0.1:8000/miApp/pedidoeditar/{{pedid.id}}">
+                <img src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-pencil-icon-png-image_4152536.jpg"
+                     width="35px">
+            </a></td>
 
-                    </tr>
-                    {% endfor %}
-                </tbody>
+
+        </tr>
+        {% endfor %}
+        </tbody>
     </table>
 </div>
 
 
-  <section class="text-center">
+<section class="text-center">
     <div class="container">
-      <p id="codigo"></p>
-      <p id="fecha"></p>
+        <p id="codigo"></p>
+        <p id="fecha"></p>
     </div>
-  </section>
+</section>
 
 
 {% endblock contenido %}
