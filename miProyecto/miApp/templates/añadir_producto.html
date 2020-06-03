@@ -16,7 +16,20 @@
     </form>
 
 
+<article class="atras">
+  <a href = "http://127.0.0.1:8000/miApp/productos/" id="enlace">
+    <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn limpito">
+             Atrás
+        </button>
+    </div>
+  </a>
+</article>
+
+
+
 <script src = "{% static 'JS/form1.js' %}"></script>
+
 
 
 <!-- ESTILO DE BLOQUE -->
@@ -34,13 +47,15 @@
         box-size:50%;
     }
 
-</style>
 
+</style>
 {% endblock intro %}
 
 
 
 {% block contenido %}
+
+<div id="popup"></div>
 
 <!-- ESTILO DE BLOQUE-->
 
@@ -48,6 +63,11 @@
 	#main > #work{
 		background: linear-gradient(135deg, #6A8FF0 0%, #E86DEC 100%);
 		}
+
+	#popup p{
+	    color:white;
+
+	}
 </style>
 
 {% endblock contenido %}

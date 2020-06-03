@@ -1,3 +1,17 @@
+//POP UP
+function crearPopup(){
+    let confirm = `<p id="contenido-mensaje">PRODUCTO AÑADIDO CON ÉXITO</p>`;
+     return confirm;
+}
+
+function mostrarPopup(){
+    let div = document.getElementById('popup');
+    let confirm = crearPopup();
+    div.innerHTML='';
+    div.innerHTML = confirm;
+}
+
+//FORMULARIO
 function devuelveDatos(datos){
     const datos_form = new FormData();
 
@@ -18,9 +32,9 @@ function devuelveDatos(datos){
     })
     .then(function(texto) {
         if (texto == "success"){
-            alert("producto añadido");
+            console.log("producto añadido");
+            mostrarPopup();
         }
-       console.log(texto);
     })
     .catch(function(err) {
        console.log(err);
@@ -42,4 +56,5 @@ document.getElementById('botoncit').addEventListener('click', function(event){
     console.log(datos);
     devuelveDatos(datos);
 });
+
 
